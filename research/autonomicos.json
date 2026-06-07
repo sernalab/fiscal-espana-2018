@@ -1,0 +1,504 @@
+{
+  "_meta": {
+    "fechaInvestigacion": "2026-06-05",
+    "tema": "Cambios en tributos AUTONÓMICOS (ISD, Patrimonio, ITP-AJD, tramo autonómico IRPF) desde junio 2018 hasta 2026-06-05 en 4 CCAA muestra: Cataluña, Madrid, Andalucía y Comunidad Valenciana.",
+    "estado": "COMPLETADO con verificación mayoritaria. WebFetch/curl/Invoke-RestMethod DENEGADOS por permisos (igual que en series.json), pero WebSearch sí devolvió contenido literal de dominios oficiales (BOE, BOJA, DOGV, ATC, ATV, hacienda.gob.es, Generalitat) y de despachos de referencia (Garrigues, Cuatrecasas, Uría). El sentido de cada cambio (sube/baja) está verificado; algunas referencias de norma exactas (artículo/fecha de BOCM/DOGV) quedan como 'parcial' o 'no_verificado'.",
+    "principioClave": "Los tributos cedidos (ISD, Patrimonio, ITP-AJD) y el tramo autonómico del IRPF los regula CADA CCAA con su capacidad normativa, NO el Gobierno central. El Estado fija la normativa supletoria y la base imponible mínima (valor de referencia, Ley 11/2021), pero tipos, bonificaciones y mínimos exentos los decide la CCAA.",
+    "reglaCalidad": "No se ha inventado ninguna norma ni porcentaje. Lo no confirmado documentalmente se marca con verificacion 'parcial' o 'no_concluyente' y urlNorma 'no_verificado'. Color político indicado solo como dato contextual neutro.",
+    "fuentePrincipal": "Ministerio de Hacienda — 'Tributación Autonómica. Medidas' (libro electrónico, capítulo IV recopila medidas vigentes por CCAA): https://www.hacienda.gob.es/es-ES/Areas%20Tematicas/Financiacion%20Autonomica/Paginas/Libro%20electronico.aspx"
+  },
+  "impuestos": [
+    {
+      "id": "isd-andalucia",
+      "nombre": "Sucesiones y Donaciones — Andalucía",
+      "nivel": "autonomico",
+      "ccaa": "Andalucía",
+      "quienDecide": "Junta de Andalucía (tributo cedido, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2019-04-11",
+          "que": "Se introduce bonificación del 99% en la cuota para herederos y donatarios de los Grupos I y II (cónyuge, descendientes y ascendientes), tanto en mortis causa como inter vivos (donación en documento público). Antes existían reducciones/bonificaciones parciales menos generosas.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Decreto-ley 1/2019, de 9 de abril",
+          "urlNorma": "https://www.juntadeandalucia.es/boja/2019/508/1"
+        },
+        {
+          "fecha": "2022-01-01",
+          "que": "La Ley de Tributos Cedidos consolida la bonificación del 99% para Grupos I y II, mejora la reducción por vivienda habitual al 99% fijo y mantiene la reducción de 1.000.000 € por parentesco sin discriminar por patrimonio preexistente.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Ley 5/2021, de 20 de octubre, de Tributos Cedidos de Andalucía",
+          "urlNorma": "https://www.boe.es/buscar/doc.php?id=BOE-A-2021-17915"
+        }
+      ],
+      "veredicto": "bajo",
+      "veredictoTexto": "Andalucía rebajó drásticamente Sucesiones y Donaciones en 2019 (bonificación 99% Grupos I y II), consolidada en 2021. Para herencias entre familia directa el impuesto quedó prácticamente eliminado.",
+      "verificacion": "verificado",
+      "matices": "La bonificación del 99% afecta a Grupos I y II. Grupo III (hermanos, tíos, sobrinos) y Grupo IV no se benefician de esta bonificación general.",
+      "fuentes": [
+        {"nombre": "BOJA - Decreto-ley 1/2019", "url": "https://www.juntadeandalucia.es/boja/2019/508/1", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - Ley 5/2021 Tributos Cedidos Andalucía", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2021-17915", "fechaConsulta": "2026-06-05"},
+        {"nombre": "ATRIAN/Junta de Andalucía - beneficios fiscales sucesiones", "url": "https://www.juntadeandalucia.es/organismos/atrian/areas/informacion-tributaria/impuestos/preguntas-frecuentes/impuestos-sucesiones/beneficios.html", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "isd-valencia",
+      "nombre": "Sucesiones y Donaciones — Comunidad Valenciana",
+      "nivel": "autonomico",
+      "ccaa": "Comunidad Valenciana",
+      "quienDecide": "Generalitat Valenciana (tributo cedido, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2023-05-28",
+          "que": "Se introduce bonificación del 99% de la cuota en sucesiones (mortis causa) y donaciones (inter vivos) para Grupos I y II (descendientes, ascendientes y cónyuge). Efectos retroactivos desde 28/05/2023, aunque la ley se publicó el 23/11/2023.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Ley 6/2023, de 22 de noviembre (modifica Ley 13/1997)",
+          "urlNorma": "https://www.boe.es/buscar/doc.php?id=BOE-A-2023-26466"
+        }
+      ],
+      "veredicto": "bajo",
+      "veredictoTexto": "La C. Valenciana subió la bonificación de ISD para familia directa del 50%-75% al 99% en 2023, una rebaja muy significativa.",
+      "verificacion": "verificado",
+      "matices": "Situación de partida en 2018: bonificación general del 50% (75% para menores de 21 años y personas con discapacidad), tras recortes en 2013 (del 99% al 75%) y 2017 (al 50% y supresión general en donaciones). El cambio de 2023 restaura el 99% y es una rebaja respecto a 2018.",
+      "fuentes": [
+        {"nombre": "BOE - Ley 6/2023 Comunidad Valenciana", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2023-26466", "fechaConsulta": "2026-06-05"},
+        {"nombre": "ATV Generalitat Valenciana - nueva bonificación ISD", "url": "https://atv.gva.es/es/novedades/-/asset_publisher/4DsaTMdH9ZRB/content/entra-en-vigor-la-nueva-bonificacion-del-impuesto-sobre-sucesiones-y-donaciones", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "isd-cataluna",
+      "nombre": "Sucesiones y Donaciones — Cataluña",
+      "nivel": "autonomico",
+      "ccaa": "Cataluña",
+      "quienDecide": "Generalitat de Catalunya (tributo cedido, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2020-05-01",
+          "que": "La Ley 5/2020 endureció el ISD: reintroduce coeficientes multiplicadores por patrimonio preexistente para Grupos I y II (de x1,00 hasta x1,20); reduce las bonificaciones en cuota para descendientes/ascendientes (escala del 99% decreciente según base imponible); y declara incompatibles las bonificaciones en cuota con la mayoría de reducciones en base (empresa familiar, etc.).",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley 5/2020, de 29 de abril, de medidas fiscales",
+          "urlNorma": "https://www.boe.es/buscar/doc.php?id=BOE-A-2020-5569"
+        }
+      ],
+      "veredicto": "subio",
+      "veredictoTexto": "Cataluña SUBIÓ el ISD en 2020 (govern ERC-JxCat): reintrodujo coeficientes multiplicadores por patrimonio preexistente para Grupos I y II y recortó bonificaciones para descendientes/ascendientes, en dirección opuesta a Andalucía, Madrid y Valencia.",
+      "verificacion": "verificado",
+      "matices": "La bonificación del 99% se mantiene plena para cónyuge/pareja estable. Para el resto de descendientes y ascendientes pasó a ser decreciente (del 99% hacia el 20% según base imponible). La incompatibilidad bonificación-reducción afecta especialmente a herencias con empresa familiar.",
+      "fuentes": [
+        {"nombre": "BOE - Ley 5/2020 Cataluña", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2020-5569", "fechaConsulta": "2026-06-05"},
+        {"nombre": "ATC - tarifa, coeficientes y cuota ISD", "url": "https://atc.gencat.cat/es/tributs/isd/herencies/tarifa-coeficients-multiplicadors/", "fechaConsulta": "2026-06-05"},
+        {"nombre": "Garrigues - Cataluña aumenta ISD e IRPF", "url": "https://www.garrigues.com/es_ES/noticia/cataluna-aumenta-impuesto-sucesiones-donaciones-irpf-regula-nuevo-tributo-medio-ambiente", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "isd-madrid",
+      "nombre": "Sucesiones y Donaciones — Madrid",
+      "nivel": "autonomico",
+      "ccaa": "Madrid",
+      "quienDecide": "Comunidad de Madrid (tributo cedido, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2023-01-01",
+          "que": "Madrid amplió las bonificaciones a parientes colaterales: bonificación del 25% en la cuota para hermanos, tíos y sobrinos por consanguinidad (Grupo III, parientes de 2.º y 3.er grado), con anuncio posterior de ampliación al 50%. La bonificación histórica del 99% para Grupos I y II (cónyuge, descendientes, ascendientes) se mantiene sin cambios durante todo el periodo.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Ley 7/2022 de medidas fiscales (modifica TR de tributos cedidos)",
+          "urlNorma": "no_verificado"
+        }
+      ],
+      "veredicto": "bajo",
+      "veredictoTexto": "Madrid mantiene el 99% en ISD para familia directa (Grupos I y II) durante todo el periodo y, además, en 2022-2023 amplió la bonificación a hermanos, tíos y sobrinos (Grupo III), bajando aún más el impuesto.",
+      "verificacion": "parcial",
+      "matices": "El porcentaje exacto para colaterales (25% inicial, posible ampliación al 50%) y la referencia exacta de la norma (Ley 7/2022) no se han confirmado palabra por palabra en BOCM en esta investigación; el sentido del cambio (ampliación de bonificación) sí está confirmado por la propia Comunidad de Madrid y fuentes secundarias.",
+      "fuentes": [
+        {"nombre": "Comunidad de Madrid - beneficios fiscales", "url": "https://www.comunidad.madrid/atencion-contribuyente/beneficios-fiscales", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "patrimonio-madrid",
+      "nombre": "Patrimonio — Madrid",
+      "nivel": "autonomico",
+      "ccaa": "Madrid",
+      "quienDecide": "Comunidad de Madrid (tributo cedido, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2008-01-01",
+          "que": "Madrid tiene bonificación del 100% de la cuota del Impuesto sobre el Patrimonio desde 2008 (situación de partida en 2018): de facto nadie pagaba Patrimonio en Madrid.",
+          "direccion": "sin_cambio",
+          "temporal": false,
+          "norma": "Ley 3/2008 de medidas fiscales y administrativas (Madrid)",
+          "urlNorma": "no_verificado"
+        },
+        {
+          "fecha": "2023-01-01",
+          "que": "Tras el Impuesto Temporal de Solidaridad de las Grandes Fortunas (ITSGF) estatal (Ley 38/2022), Madrid modificó temporalmente su bonificación: mientras esté vigente el ITSGF NO se aplica la bonificación general del 100%, sino una bonificación autonómica por la diferencia, de modo que el contribuyente paga el Patrimonio (que recauda Madrid) en lugar del ITSGF (que recaudaría el Estado). Efecto neutro para el contribuyente; cambia quién cobra.",
+          "direccion": "sube",
+          "temporal": true,
+          "norma": "Ley 12/2023, de 15 de diciembre (Madrid)",
+          "urlNorma": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-5609"
+        }
+      ],
+      "veredicto": "mixto",
+      "veredictoTexto": "Madrid mantuvo el Patrimonio 100% bonificado (impuesto cero) desde 2008. En 2023 lo reactivó parcialmente SOLO como reacción defensiva al ITSGF estatal: el gran patrimonio paga lo mismo, pero recauda Madrid en lugar del Estado. La carga total del contribuyente no sube.",
+      "verificacion": "verificado",
+      "matices": "El cambio de 2023 NO es una subida fiscal real para el contribuyente: evita que el ITSGF estatal recaude sobre grandes patrimonios madrileños. Ligada a la vigencia del impuesto estatal (temporal/condicional).",
+      "fuentes": [
+        {"nombre": "BOE - Ley 12/2023 Madrid (Patrimonio/ITSGF)", "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-5609", "fechaConsulta": "2026-06-05"},
+        {"nombre": "Comunidad de Madrid - Patrimonio", "url": "https://www.comunidad.madrid/atencion-contribuyente/patrimonio", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "patrimonio-andalucia",
+      "nombre": "Patrimonio — Andalucía",
+      "nivel": "autonomico",
+      "ccaa": "Andalucía",
+      "quienDecide": "Junta de Andalucía (tributo cedido, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2022-09-21",
+          "que": "Andalucía introdujo bonificación del 100% de la cuota del Impuesto sobre el Patrimonio, eliminando de facto el impuesto (que antes se pagaba con escala propia). Anunciada en septiembre de 2022.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Decreto-ley 7/2022, de 20 de septiembre (Andalucía)",
+          "urlNorma": "no_verificado"
+        },
+        {
+          "fecha": "2023-01-01",
+          "que": "Tras el ITSGF estatal, Andalucía permite optar entre la bonificación del 100% o una bonificación por la diferencia con el ITSGF (mecanismo análogo al de Madrid), para retener recaudación.",
+          "direccion": "sube",
+          "temporal": true,
+          "norma": "Ajuste autonómico ligado al ITSGF estatal",
+          "urlNorma": "no_verificado"
+        }
+      ],
+      "veredicto": "bajo",
+      "veredictoTexto": "Andalucía bonificó el Patrimonio al 100% en 2022, eliminando de facto el impuesto para sus residentes (gobierno PP). Como Madrid, ajustó el mecanismo en 2023 frente al ITSGF estatal para retener recaudación, sin subir la carga real del contribuyente.",
+      "verificacion": "parcial",
+      "matices": "La referencia exacta del Decreto-ley 7/2022 y el mecanismo de bonificación por diferencia con el ITSGF no se han verificado palabra por palabra en BOJA en esta investigación; el sentido (bonificación 100% en 2022) está bien documentado.",
+      "fuentes": [
+        {"nombre": "Garrigues - Andalucía reduce IRPF e ISD, Patrimonio", "url": "https://www.garrigues.com/es_ES/noticia/andalucia-reduce-tributacion-autonomica-irpf-impuesto-sucesiones-donaciones-aumenta-minimo", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "patrimonio-cataluna",
+      "nombre": "Patrimonio — Cataluña",
+      "nivel": "autonomico",
+      "ccaa": "Cataluña",
+      "quienDecide": "Generalitat de Catalunya (tributo cedido, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2022-01-01",
+          "que": "Cataluña endureció el Patrimonio: vía Decreto-ley 16/2022 añadió un nuevo tramo para patrimonios netos superiores a 20.000.000 €, que tributan a un marginal del 3,48% (frente al 2,75% máximo anterior). Mínimo exento se mantiene en 500.000 € (inferior al estatal de 700.000 €).",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Decreto-ley 16/2022 (Cataluña)",
+          "urlNorma": "no_verificado"
+        }
+      ],
+      "veredicto": "subio",
+      "veredictoTexto": "Cataluña SUBIÓ el Patrimonio: tipo máximo del 2,75% al 3,48% para patrimonios > 20 M€, y mantiene un mínimo exento (500.000 €) inferior al estatal. Es la CCAA con la fiscalidad patrimonial más alta de la muestra.",
+      "verificacion": "verificado",
+      "matices": "El nuevo tramo del 3,48% se introdujo vía Decreto-ley 16/2022 (no por la Ley 5/2020, que sí endureció el ISD). Tarifa prorrogada en ejercicios posteriores. Referencia exacta de DOGC no verificada palabra por palabra.",
+      "fuentes": [
+        {"nombre": "ATC - tarifa y cuota íntegra Patrimonio", "url": "https://atc.gencat.cat/es/tributs/impost-patrimoni/tarifa/", "fechaConsulta": "2026-06-05"},
+        {"nombre": "Cuatrecasas - nueva tarifa Patrimonio Cataluña 3,5%", "url": "https://www.cuatrecasas.com/es/spain/fiscalidad/art/nueva-tarifa-impuesto-sobre-patrimonio-cataluna", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "patrimonio-valencia",
+      "nombre": "Patrimonio — Comunidad Valenciana",
+      "nivel": "autonomico",
+      "ccaa": "Comunidad Valenciana",
+      "quienDecide": "Generalitat Valenciana (tributo cedido, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2023-01-01",
+          "que": "La C. Valenciana endureció el Patrimonio para 2023-2024: nueva escala con tipos del 0,25% al 3,5% (subida del tipo marginal máximo). Mínimo exento en 500.000 €.",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley de Presupuestos de la Generalitat 2023 (LPG 2023)",
+          "urlNorma": "no_verificado"
+        },
+        {
+          "fecha": "2025-12-31",
+          "que": "Giro de dirección: la Ley 5/2025, de 30 de mayo, eleva el mínimo exento de 500.000 € a 1.000.000 € (con efectos para devengos desde el 31/12/2025), reduciendo la carga.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Ley 5/2025, de 30 de mayo (Comunidad Valenciana)",
+          "urlNorma": "no_verificado"
+        }
+      ],
+      "veredicto": "mixto",
+      "veredictoTexto": "La C. Valenciana subió el Patrimonio en 2023 (tipo máximo al 3,5%, gobierno saliente PSOE-Compromís) y luego, con el cambio de gobierno (PP-Vox), lo rebajó elevando el mínimo exento a 1.000.000 € desde 2025. Trayectoria primero al alza y luego a la baja.",
+      "verificacion": "parcial",
+      "matices": "Las referencias exactas de la LPG 2023 y de la Ley 5/2025 (mínimo exento 1.000.000 €) están documentadas por fuentes secundarias (Garrigues) y el manual AEAT de Patrimonio 2023, pero no verificadas palabra por palabra en DOGV. El sentido de los cambios sí está confirmado.",
+      "fuentes": [
+        {"nombre": "AEAT - escala autonómica Patrimonio C. Valenciana 2023", "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/patrimonio-2023/c-4-determinacion-base-liquidable-integra/determinacion-cuota-integra/regla-general/escalas-autonomicas/comunitat-valenciana.html", "fechaConsulta": "2026-06-05"},
+        {"nombre": "Garrigues - C. Valenciana medidas tributarias 2025-2027", "url": "https://www.garrigues.com/es_ES/noticia/comunidad-valenciana-aprueba-medidas-tributarias-efectos-2025-2026-2027", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "itp-andalucia",
+      "nombre": "ITP y AJD — Andalucía",
+      "nivel": "autonomico",
+      "ccaa": "Andalucía",
+      "quienDecide": "Junta de Andalucía (tributo cedido, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2021-04-28",
+          "que": "Andalucía sustituyó la escala progresiva de ITP (8%, 9% y 10%) por un tipo único general del 7% en transmisión de inmuebles, y bajó el AJD del 1,5% al 1,2%. Inicialmente temporal hasta 31/12/2021.",
+          "direccion": "baja",
+          "temporal": true,
+          "norma": "Decreto-ley 7/2021, de 27 de abril",
+          "urlNorma": "https://www.juntadeandalucia.es/boja/2021/537/1"
+        },
+        {
+          "fecha": "2022-01-01",
+          "que": "La rebaja se hizo permanente: tipo único del 7% de ITP y 1,2% de AJD consolidados en la Ley de Tributos Cedidos.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Ley 5/2021, de 20 de octubre, de Tributos Cedidos de Andalucía",
+          "urlNorma": "https://www.boe.es/buscar/doc.php?id=BOE-A-2021-17915"
+        }
+      ],
+      "veredicto": "bajo",
+      "veredictoTexto": "Andalucía BAJÓ el ITP: del tramo progresivo 8-10% a un tipo único del 7% (2021, permanente desde 2022) y AJD del 1,5% al 1,2%. Beneficia especialmente a inmuebles de valor alto.",
+      "verificacion": "verificado",
+      "matices": "El 7% es el tipo general; existen tipos reducidos adicionales para vivienda habitual de determinados colectivos.",
+      "fuentes": [
+        {"nombre": "BOJA - Decreto-ley 7/2021", "url": "https://www.juntadeandalucia.es/boja/2021/537/1", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - Ley 5/2021 Tributos Cedidos Andalucía", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2021-17915", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "itp-madrid",
+      "nombre": "ITP y AJD — Madrid",
+      "nivel": "autonomico",
+      "ccaa": "Madrid",
+      "quienDecide": "Comunidad de Madrid (tributo cedido, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2024-01-01",
+          "que": "Madrid mantiene el tipo general de ITP en el 6% (de los más bajos de España; sin cambio en el tipo general durante el periodo) e introduce/amplía deducciones: deducción del 10% de la cuota para adquisición de vivienda habitual de valor <= 250.000 €, bonificación 100% para menores de 35 años en municipios de < 2.500 habitantes, tipo 4% para familias numerosas.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Modificaciones del TR de tributos cedidos (art. 30 bis y ss.)",
+          "urlNorma": "no_verificado"
+        }
+      ],
+      "veredicto": "bajo",
+      "veredictoTexto": "Madrid mantuvo el tipo general de ITP en el 6% (de los más bajos de España) durante todo el periodo y añadió deducciones para vivienda habitual (-10% de cuota hasta 250.000 €), jóvenes en zonas rurales y familias numerosas. Dirección general: rebajas.",
+      "verificacion": "parcial",
+      "matices": "El tipo GENERAL del 6% no cambió en el periodo (ya era 6% en 2018). La 'rebaja del 10%' es una deducción sobre la cuota para vivienda habitual de hasta 250.000 €, no una bajada del tipo general. Referencias normativas exactas no verificadas en BOCM.",
+      "fuentes": [
+        {"nombre": "Comunidad de Madrid - Transmisiones Patrimoniales Onerosas", "url": "https://www.comunidad.madrid/atencion-contribuyente/transmisiones-patrimoniales-onerosas", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "itp-valencia",
+      "nombre": "ITP y AJD — Comunidad Valenciana",
+      "nivel": "autonomico",
+      "ccaa": "Comunidad Valenciana",
+      "quienDecide": "Generalitat Valenciana (tributo cedido, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2023-01-01",
+          "que": "La C. Valenciana mantiene el tipo general de ITP en el 10% y añade un tipo incrementado del 11% para inmuebles (o derechos) cuyo valor supere 1.000.000 €. Sube la fiscalidad para inmuebles de alto valor.",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley de Presupuestos / medidas fiscales 2023 (modifica Ley 13/1997)",
+          "urlNorma": "no_verificado"
+        }
+      ],
+      "veredicto": "subio",
+      "veredictoTexto": "La C. Valenciana SUBIÓ el ITP para inmuebles de alto valor: tipo del 11% para valor > 1.000.000 € desde 2023, manteniendo el 10% general.",
+      "verificacion": "verificado",
+      "matices": "El tipo GENERAL sigue siendo 10% (ya era 10% en 2018). El cambio de 2023 es un tipo incrementado del 11% solo para inmuebles de valor > 1 M€. Existen tipos reducidos (8%) para vivienda habitual de determinados colectivos.",
+      "fuentes": [
+        {"nombre": "ATV - ITP y AJD Comunidad Valenciana", "url": "https://atv.gva.es/es/itpajd", "fechaConsulta": "2026-06-05"},
+        {"nombre": "OCU - tipos ITP Comunidad Valenciana 2023", "url": "https://www.ocu.org/fincas-y-casas/compraventa/fiscalidad/analisis-gratis/2023/03/impuesto-transmisiones-valencia-2023", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "itp-cataluna",
+      "nombre": "ITP y AJD — Cataluña",
+      "nivel": "autonomico",
+      "ccaa": "Cataluña",
+      "quienDecide": "Generalitat de Catalunya (tributo cedido, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2025-06-27",
+          "que": "Cataluña SUBIÓ el ITP con una escala progresiva nueva: hasta 600.000 € al 10%; de 600.000 a 900.000 € al 11%; de 900.000 a 1.500.000 € al 12%; más de 1.500.000 € al 13%. El primer tramo se redujo de 1.000.000 € a 600.000 €, encareciendo de facto. Además, tipo del 20% para grandes tenedores de vivienda (>10 inmuebles urbanos, o >5 en zonas tensionadas) y para compra de edificios residenciales completos.",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Reforma fiscal vigente desde 27/06/2025 (medidas fiscales 2025)",
+          "urlNorma": "no_verificado"
+        }
+      ],
+      "veredicto": "subio",
+      "veredictoTexto": "Cataluña SUBIÓ con fuerza el ITP en 2025: escala progresiva 10-13%, reducción del primer tramo a 600.000 € y un tipo del 20% para grandes tenedores. Es la subida de ITP más agresiva de la muestra.",
+      "verificacion": "verificado",
+      "matices": "Antes de 2025 Cataluña ya tenía 10% general con tramo del 11% para el exceso sobre 1 M€ (vigente desde ~2020). La reforma de 2025 baja el umbral del primer salto a 600.000 € y añade 12% y 13%, además del 20% para grandes tenedores. Referencia normativa exacta de 2025 no verificada palabra por palabra en DOGC.",
+      "fuentes": [
+        {"nombre": "idealista/news - ITP 20% grandes tenedores Cataluña", "url": "https://www.idealista.com/news/inmobiliario/vivienda/2025/06/27/850947-entra-en-vigor-el-itp-del-20-para-grandes-tenedores-en-cataluna-la-estocada-final-a", "fechaConsulta": "2026-06-05"},
+        {"nombre": "Toda & Nel-lo - incremento ITP-AJD Cataluña", "url": "https://www.todanelo.com/es/actualidad-juridica/incremento-del-tipo-de-gravamen-del-impuesto-sobre-transmisiones-patrimoniales-y/", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "irpf-madrid",
+      "nombre": "IRPF tramo autonómico — Madrid",
+      "nivel": "autonomico",
+      "ccaa": "Madrid",
+      "quienDecide": "Comunidad de Madrid (tramo autonómico del IRPF, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2022-01-01",
+          "que": "Bajada de medio punto en TODOS los tramos de la tarifa autonómica del IRPF y PRIMERA deflactación de la escala (4,1%, ligada al incremento del coste laboral del 2T 2022). Madrid fue la primera CCAA de régimen común en deflactar.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Medidas fiscales Comunidad de Madrid 2022",
+          "urlNorma": "no_verificado"
+        },
+        {
+          "fecha": "2023-01-01",
+          "que": "Segunda deflactación consecutiva del 3,1%, extensible a mínimos personal y familiar, deducciones autonómicas y límites de renta.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Ley de deflactación IRPF 2023 (Madrid)",
+          "urlNorma": "no_verificado"
+        },
+        {
+          "fecha": "2024-01-01",
+          "que": "Nueva deflactación de la escala autonómica del IRPF, ajustando los tramos al IPC (Ley 5/2024).",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Ley 5/2024 (Madrid)",
+          "urlNorma": "no_verificado"
+        }
+      ],
+      "veredicto": "bajo",
+      "veredictoTexto": "Madrid BAJÓ el IRPF autonómico de forma reiterada: rebaja de medio punto en todos los tramos (2022) y deflactación de la escala en 2022, 2023 y 2024 (primera CCAA de régimen común en deflactar).",
+      "verificacion": "parcial",
+      "matices": "Los porcentajes de deflactación (4,1% en 2022, 3,1% en 2023) están documentados en notas oficiales de la Comunidad de Madrid; las referencias exactas de cada ley anual no se han verificado palabra por palabra en BOCM. Sentido (bajadas + deflactación) confirmado.",
+      "fuentes": [
+        {"nombre": "Comunidad de Madrid - deflactación IRPF y rebaja tramos", "url": "https://www.comunidad.madrid/noticias/2024/09/30/comunidad-madrid-recauda-900-millones-irpf-bajarlo-todos-tramos-aplicar-primera-deflactacion", "fechaConsulta": "2026-06-05"},
+        {"nombre": "Comunidad de Madrid - nueva deflactación IRPF 2023", "url": "https://www.comunidad.madrid/noticias/2023/11/22/comunidad-madrid-aprueba-nueva-deflactacion-irpf-solicita-gobierno-central-adopte-misma-medida", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "irpf-andalucia",
+      "nombre": "IRPF tramo autonómico — Andalucía",
+      "nivel": "autonomico",
+      "ccaa": "Andalucía",
+      "quienDecide": "Junta de Andalucía (tramo autonómico del IRPF, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2022-01-01",
+          "que": "Rebaja de la escala autonómica del IRPF: tipo marginal máximo autonómico al 22,5% (47% sumado al tramo estatal). Posteriormente Andalucía deflactó la escala en ejercicios siguientes.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Ley 5/2021, de 20 de octubre, de Tributos Cedidos de Andalucía",
+          "urlNorma": "https://www.boe.es/buscar/doc.php?id=BOE-A-2021-17915"
+        }
+      ],
+      "veredicto": "bajo",
+      "veredictoTexto": "Andalucía BAJÓ el IRPF autonómico: rebaja de la escala con marginal máximo al 22,5% (2022) y deflactaciones posteriores. Dirección clara a la baja.",
+      "verificacion": "verificado",
+      "matices": "Las deflactaciones anuales posteriores a 2022 están documentadas por fuentes secundarias pero no detalladas norma a norma en esta investigación.",
+      "fuentes": [
+        {"nombre": "BOE - Ley 5/2021 Tributos Cedidos Andalucía", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2021-17915", "fechaConsulta": "2026-06-05"},
+        {"nombre": "Garrigues - Andalucía reduce IRPF e ISD", "url": "https://www.garrigues.com/es_ES/noticia/andalucia-reduce-tributacion-autonomica-irpf-impuesto-sucesiones-donaciones-aumenta-minimo", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "irpf-cataluna",
+      "nombre": "IRPF tramo autonómico — Cataluña",
+      "nivel": "autonomico",
+      "ccaa": "Cataluña",
+      "quienDecide": "Generalitat de Catalunya (tramo autonómico del IRPF, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2020-05-01",
+          "que": "La Ley 5/2020 modificó la escala autonómica: subió el mínimo exento de 5.550 a 6.105 € para rentas bajas, pero AÑADIÓ un nuevo tramo y subió la tributación para rentas > 90.000 € (90.000-120.000 € al 23,5%, +2 puntos; 120.000-175.000 € al 24,5%, +1 punto). El marginal máximo (25,5% para >175.000 €) no cambió.",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley 5/2020, de 29 de abril, de medidas fiscales",
+          "urlNorma": "https://www.boe.es/buscar/doc.php?id=BOE-A-2020-5569"
+        }
+      ],
+      "veredicto": "mixto",
+      "veredictoTexto": "Cataluña hizo un cambio mixto en 2020: alivio para rentas bajas (sube mínimo exento) pero SUBIDA para rentas medias-altas (>90.000 €) con un nuevo tramo. El efecto neto es más presión fiscal sobre rentas superiores a 90.000 €.",
+      "verificacion": "verificado",
+      "matices": "Cataluña NO ha aplicado deflactación general de la escala como Madrid; su tarifa es de las más altas y con más tramos de España (hasta 8 tramos, con recargos para alta renta en reformas posteriores).",
+      "fuentes": [
+        {"nombre": "BOE - Ley 5/2020 Cataluña", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2020-5569", "fechaConsulta": "2026-06-05"},
+        {"nombre": "El Economista - Cataluña sube IRPF rentas >37.000 €", "url": "https://www.eleconomista.es/catalunya/noticias/11514319/12/21/Cataluna-recupera-la-rebaja-del-IRPF-a-las-rentas-bajas-y-lo-sube-a-las-altas.html", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "irpf-valencia",
+      "nombre": "IRPF tramo autonómico — Comunidad Valenciana",
+      "nivel": "autonomico",
+      "ccaa": "Comunidad Valenciana",
+      "quienDecide": "Generalitat Valenciana (tramo autonómico del IRPF, capacidad normativa autonómica)",
+      "cambios": [
+        {
+          "fecha": "2023-01-01",
+          "que": "Con el cambio de gobierno (PP-Vox), la C. Valenciana rebajó el tramo autonómico del IRPF para rentas bajas y medias y deflactó la escala, revirtiendo la tendencia del gobierno anterior.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Medidas fiscales C. Valenciana 2023/2024",
+          "urlNorma": "no_verificado"
+        }
+      ],
+      "veredicto": "bajo",
+      "veredictoTexto": "La C. Valenciana, tras el cambio de gobierno en 2023, rebajó y deflactó el tramo autonómico del IRPF para rentas bajas y medias, en línea con su giro hacia rebajas en ISD y mínimo exento de Patrimonio.",
+      "verificacion": "no_concluyente",
+      "matices": "El sentido del cambio (rebaja/deflactación del IRPF autonómico desde 2023) es coherente con el resto de medidas del nuevo gobierno, pero los porcentajes y la norma exacta no se han verificado documentalmente en esta investigación. Marcado como no concluyente.",
+      "fuentes": [
+        {"nombre": "Garrigues - C. Valenciana medidas tributarias 2025-2027", "url": "https://www.garrigues.com/es_ES/noticia/comunidad-valenciana-aprueba-medidas-tributarias-efectos-2025-2026-2027", "fechaConsulta": "2026-06-05"}
+      ]
+    }
+  ],
+  "resumenPorCCAA": [
+    {
+      "ccaa": "Madrid",
+      "gobierno20182026": "PP",
+      "tendencia": "bajadas generalizadas",
+      "detalle": "ISD 99% para familia directa mantenido y ampliado a colaterales (hermanos/tíos/sobrinos); Patrimonio 100% bonificado (reactivación SOLO defensiva frente al ITSGF estatal, sin subir carga real); ITP 6% mantenido (de los más bajos) con deducciones nuevas; IRPF rebajado en todos los tramos y deflactado 2022-2024 (pionera). Único matiz al alza: reactivación técnica de Patrimonio para retener recaudación del Estado."
+    },
+    {
+      "ccaa": "Andalucía",
+      "gobierno20182026": "PP (desde enero 2019; antes PSOE)",
+      "tendencia": "bajadas generalizadas",
+      "detalle": "ISD bonificación 99% Grupos I y II (2019); Patrimonio 100% bonificado (2022); ITP a tipo único 7% (2021, antes 8-10%) y AJD 1,2%; IRPF rebajado (marginal máximo 22,5%) y deflactado. Caso paradigmático de CCAA que BAJÓ todos los tributos cedidos en el periodo."
+    },
+    {
+      "ccaa": "Comunidad Valenciana",
+      "gobierno20182026": "PSOE-Compromís hasta 2023; PP-Vox desde 2023",
+      "tendencia": "mixta (primero subidas, luego bajadas con el cambio de gobierno)",
+      "detalle": "El gobierno PSOE-Compromís subió Patrimonio (tipo máximo 3,5%, 2023) e ITP para inmuebles >1 M€ (11%, 2023). El cambio a PP-Vox (2023) trajo bonificación ISD 99% para familia directa (mayo 2023), rebaja/deflactación de IRPF y elevación del mínimo exento de Patrimonio a 1.000.000 € (2025). Trayectoria que cambia de dirección a mitad del periodo."
+    },
+    {
+      "ccaa": "Cataluña",
+      "gobierno20182026": "ERC-JxCat / Govern independentista hasta 2024; PSC desde agosto 2024",
+      "tendencia": "subidas generalizadas",
+      "detalle": "Único caso de la muestra que SUBIÓ casi todo: ISD endurecido (coeficientes por patrimonio preexistente y recorte de bonificaciones, 2020); Patrimonio tipo máximo del 2,75% al 3,48% para >20 M€ y mínimo exento bajo (500.000 €); IRPF subido para rentas >90.000 € (2020) sin deflactación; ITP subido con fuerza en 2025 (escala 10-13% y 20% grandes tenedores). Demuestra que la dirección depende de cada CCAA."
+    }
+  ],
+  "valorReferencia": {
+    "que": "El 'valor de referencia' de la Dirección General del Catastro es un valor administrativo que, desde el 1 de enero de 2022, actúa como base imponible MÍNIMA en ITP-AJD e ISD para inmuebles. La base imponible es la mayor de: valor de referencia, valor declarado o precio pactado. Se calcula año a año a partir de los precios de compraventas ante notario/registro.",
+    "norma": "Ley 11/2021, de 9 de julio, de medidas de prevención y lucha contra el fraude fiscal",
+    "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2021-11473",
+    "efecto": "Es una norma ESTATAL que elevó de facto la base imponible (y por tanto la cuota) de tributos AUTONÓMICOS (ITP e ISD) sin que las CCAA tocaran sus tipos. Ilustra la disociación entre QUIÉN OBLIGA (el Estado, que fija la base mínima) y QUIÉN RECAUDA (las CCAA, que gestionan ITP e ISD). Una CCAA podía estar bajando su tipo mientras la cuota real subía por el valor de referencia estatal. El Tribunal Constitucional avaló el valor de referencia como base imponible (sentencia conocida en febrero de 2026). El contribuyente puede impugnarlo aportando prueba en contra.",
+    "verificacion": "verificado",
+    "fuentes": [
+      {"nombre": "BOE - Ley 11/2021", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2021-11473", "fechaConsulta": "2026-06-05"},
+      {"nombre": "ATC - valoración de inmuebles y valor de referencia", "url": "https://atc.gencat.cat/valor-referencia-es", "fechaConsulta": "2026-06-05"},
+      {"nombre": "delaJusticia.com - el TC avala el valor de referencia", "url": "https://delajusticia.com/2026/02/13/gozo-en-el-pozo-el-tc-avala-el-valor-de-referencia-de-inmuebles-como-base-imponible/", "fechaConsulta": "2026-06-05"}
+    ]
+  }
+}

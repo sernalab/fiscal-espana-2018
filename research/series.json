@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "fechaInvestigacion": "2026-06-05",
+    "estado": "INCOMPLETO - bloqueo de herramientas de red",
+    "advertenciaCritica": "En este entorno solo estuvo disponible WebSearch (titulares + fragmentos). WebFetch, curl (Bash) e Invoke-RestMethod (PowerShell) fueron DENEGADOS por permisos, por lo que NO se pudo descargar ni la respuesta de la API JSON de Eurostat (gov_10a_taxag) ni los PDF/tablas del Informe Anual de Recaudacion Tributaria de la AEAT. Solo se han rellenado las cifras que aparecieron literalmente en fragmentos de busqueda de dominios oficiales (ec.europa.eu, oecd.org, agenciatributaria.gob.es). Todo lo no verificable esta como null. NO se ha inventado ninguna cifra. Ver series-notas.md."
+  },
+  "presionFiscal": {
+    "fuente": "Eurostat gov_10a_taxag",
+    "urlFuente": "https://ec.europa.eu/eurostat/databrowser/view/gov_10a_taxag/default/table?lang=en",
+    "urlApi": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_taxag?format=JSON&geo=ES&na_item=D2_D5_D91_D61_M_D995&unit=PC_GDP&sector=S13_S212",
+    "indicador": "Total receipts from taxes and net social contributions (incl. imputed) en % del PIB (tax-to-GDP ratio Eurostat). NO VERIFICADO POR ANIO: no se pudo descargar la serie de la API/databrowser. Las cifras por anio de Eurostat para Espana NO aparecieron en los fragmentos de busqueda.",
+    "advertencia": "Ningun valor anio a anio de Eurostat para Espana pudo verificarse desde fuente oficial accesible. Todos los pctPIB estan a null. Lo unico que aparecio en fragmentos oficiales de Eurostat para Espana en 2024 fue el componente 'taxes on production and imports' = 11,3% del PIB (NO es el ratio total, no se usa aqui).",
+    "serie": [
+      {"anio": 2000, "pctPIB": null, "gobierno": "Aznar"},
+      {"anio": 2001, "pctPIB": null, "gobierno": "Aznar"},
+      {"anio": 2002, "pctPIB": null, "gobierno": "Aznar"},
+      {"anio": 2003, "pctPIB": null, "gobierno": "Aznar"},
+      {"anio": 2004, "pctPIB": null, "gobierno": "Aznar/Zapatero (cambio abr 2004)"},
+      {"anio": 2005, "pctPIB": null, "gobierno": "Zapatero"},
+      {"anio": 2006, "pctPIB": null, "gobierno": "Zapatero"},
+      {"anio": 2007, "pctPIB": null, "gobierno": "Zapatero"},
+      {"anio": 2008, "pctPIB": null, "gobierno": "Zapatero"},
+      {"anio": 2009, "pctPIB": null, "gobierno": "Zapatero"},
+      {"anio": 2010, "pctPIB": null, "gobierno": "Zapatero"},
+      {"anio": 2011, "pctPIB": null, "gobierno": "Zapatero/Rajoy (cambio dic 2011)"},
+      {"anio": 2012, "pctPIB": null, "gobierno": "Rajoy"},
+      {"anio": 2013, "pctPIB": null, "gobierno": "Rajoy"},
+      {"anio": 2014, "pctPIB": null, "gobierno": "Rajoy"},
+      {"anio": 2015, "pctPIB": null, "gobierno": "Rajoy"},
+      {"anio": 2016, "pctPIB": null, "gobierno": "Rajoy"},
+      {"anio": 2017, "pctPIB": null, "gobierno": "Rajoy"},
+      {"anio": 2018, "pctPIB": null, "gobierno": "Rajoy/Sanchez (cambio jun 2018)"},
+      {"anio": 2019, "pctPIB": null, "gobierno": "Sanchez"},
+      {"anio": 2020, "pctPIB": null, "gobierno": "Sanchez"},
+      {"anio": 2021, "pctPIB": null, "gobierno": "Sanchez"},
+      {"anio": 2022, "pctPIB": null, "gobierno": "Sanchez"},
+      {"anio": 2023, "pctPIB": null, "gobierno": "Sanchez"},
+      {"anio": 2024, "pctPIB": null, "gobierno": "Sanchez"}
+    ]
+  },
+  "contrasteOCDE": {
+    "url": "https://www.oecd.org/en/publications/revenue-statistics-2025_b1943459-en/spain_c21a0655-en.html",
+    "urlNotaPais2024": "https://www.oecd.org/content/dam/oecd/en/topics/policy-sub-issues/global-tax-revenues/revenue-statistics-spain.pdf",
+    "advertencia": "OCDE usa metodologia distinta a Eurostat; NO mezclar. Las cifras 2022/2023 provienen de fragmentos de la nota-pais OCDE (Revenue Statistics 2024). El 2018 NO aparecio en fragmentos -> null. Hay un CONFLICTO de fragmentos: un fragmento de busqueda dio 2023=36,4% y 2024=36,7% (probable cifra revisada en Revenue Statistics 2025); otro fragmento dio 2022=37,6% y 2023=37,3% (Revenue Statistics 2024). Ambas series no verificadas contra el PDF. Marcadas como noVerificado.",
+    "datos": [
+      {"anio": 2000, "pctPIB": 33.0, "noVerificado": true, "nota": "Fragmento OCDE: 'increased from 33.0% in 2000'. No verificado contra PDF."},
+      {"anio": 2018, "pctPIB": null, "nota": "No aparecio en fragmentos. Pendiente de descargar nota-pais OCDE."},
+      {"anio": 2022, "pctPIB": 37.6, "noVerificado": true, "nota": "Fragmento Revenue Statistics 2024: bajo de 37,6% (2022) a 37,3% (2023)."},
+      {"anio": 2023, "pctPIB": 37.3, "noVerificado": true, "nota": "Revenue Statistics 2024 (ultimo cerrado en esa edicion). CONFLICTO: otro fragmento da 36,4% en edicion 2025."},
+      {"anio": 2024, "pctPIB": 36.7, "noVerificado": true, "nota": "Fragmento Revenue Statistics 2025: subio de 36,4% (2023) a 36,7% (2024). Revision metodologica respecto a edicion 2024; verificar."}
+    ]
+  },
+  "recaudacionAEAT": {
+    "fuente": "AEAT Informe Anual de Recaudacion Tributaria",
+    "urlFuente": "https://sede.agenciatributaria.gob.es/static_files/AEAT/Estudios/Estadisticas/Informes_Estadisticos/Informes_Anuales_de_Recaudacion_Tributaria/Ejercicio_2024/IART24_es_es.pdf",
+    "urlEdicion2023": "https://sede.agenciatributaria.gob.es/static_files/AEAT/Estudios/Estadisticas/Informes_Estadisticos/Informes_Anuales_de_Recaudacion_Tributaria/Ejercicio_2023/IART23_es_es.pdf",
+    "urlCatalogo": "https://sede.agenciatributaria.gob.es/Sede/datosabiertos/catalogo/hacienda/Informes_anuales_de_Recaudacion_Tributaria.shtml",
+    "unidad": "millones de euros",
+    "advertencia": "El desglose por figura (IRPF, IVA, IS, IIEE) en millones NO pudo descargarse: vive en las tablas PDF del informe, inaccesibles con las herramientas disponibles. Solo se verificaron los TOTALES de 2023 y 2024 y las variaciones interanuales (% no en M€) desde fragmentos oficiales. El resto a null.",
+    "serie": [
+      {"anio": 2015, "irpf": null, "iva": null, "sociedades": null, "iiee": null, "otros": null, "total": null},
+      {"anio": 2016, "irpf": null, "iva": null, "sociedades": null, "iiee": null, "otros": null, "total": null},
+      {"anio": 2017, "irpf": null, "iva": null, "sociedades": null, "iiee": null, "otros": null, "total": null},
+      {"anio": 2018, "irpf": null, "iva": null, "sociedades": null, "iiee": null, "otros": null, "total": null},
+      {"anio": 2019, "irpf": null, "iva": null, "sociedades": null, "iiee": null, "otros": null, "total": null},
+      {"anio": 2020, "irpf": null, "iva": null, "sociedades": null, "iiee": null, "otros": null, "total": null},
+      {"anio": 2021, "irpf": null, "iva": null, "sociedades": null, "iiee": null, "otros": null, "total": null},
+      {"anio": 2022, "irpf": null, "iva": null, "sociedades": null, "iiee": null, "otros": null, "total": null},
+      {"anio": 2023, "irpf": null, "iva": null, "sociedades": null, "iiee": null, "otros": null, "total": 271935, "notaTotal": "Verificado en fragmento AEAT: ingresos tributarios 2023 = 271.935 M EUR (+6,4%). Desglose en M EUR no verificado.", "variaciones": {"irpf": "+9,9%", "iva": "+1,6%", "sociedades": "+9%", "iiee": "+2,6%"}},
+      {"anio": 2024, "irpf": null, "iva": null, "sociedades": null, "iiee": null, "otros": null, "total": 294734, "notaTotal": "Verificado en fragmento AEAT: ingresos tributarios 2024 = 294.734 M EUR (+8,4%). Desglose en M EUR no verificado.", "variaciones": {"irpf": "+7,6%", "iva": "+7,9%", "sociedades": "+11,5%", "iiee": "+6,6%"}}
+    ],
+    "nuevasFiguras": [
+      {"figura": "Gravamen energeticas (gravamen temporal energetico)", "anios": {"2023": null, "2024": null}, "nota": "Importe en M EUR no verificado; vive en tablas PDF del informe."},
+      {"figura": "Gravamen banca (gravamen temporal entidades de credito)", "anios": {"2023": null, "2024": null}, "nota": "Importe no verificado."},
+      {"figura": "Impuesto Temporal de Solidaridad de las Grandes Fortunas (ITSGF)", "anios": {"2023": null, "2024": null}, "nota": "Importe no verificado. Es ingreso estatal; datos pueden figurar aparte; verificar en informe."},
+      {"figura": "Impuesto sobre envases de plastico no reutilizable", "anios": {"2023": null, "2024": null}, "nota": "Confirmado cualitativamente: nuevo en 2023; 2024 incluye 12 meses completos. Importe en M EUR no verificado."},
+      {"figura": "Impuesto sobre Transacciones Financieras (Tasa Tobin)", "anios": {"2023": null, "2024": null}, "nota": "Importe no verificado."},
+      {"figura": "Impuesto sobre Determinados Servicios Digitales (Tasa Google)", "anios": {"2023": null, "2024": null}, "nota": "Importe no verificado."}
+    ]
+  },
+  "impactoNormativo": {
+    "notas": "AEAT 2024 (Informe Anual de Recaudacion Tributaria 2024): los cambios normativos restaron en IRPF aproximadamente 3.200 M EUR (sin ese impacto el IRPF habria crecido 10,2% en vez de 7,6%); en Impuesto sobre Sociedades los cambios normativos y de gestion restaron casi 2.200 M EUR. AEAT 2023: medidas normativas y de gestion en IVA redujeron la recaudacion en mas de 3.000 M EUR. ADVERTENCIA: la AEAT publica el impacto agregado de cambios normativos como diferencia entre crecimiento observado y crecimiento 'a normativa constante', NO publica una linea separada y explicita titulada 'impacto de la NO deflactacion del IRPF'; la parte atribuible especificamente a la no deflactacion de la tarifa estatal NO se ha podido aislar/verificar en estos fragmentos. Cifras de impacto en M EUR aproximadas segun fragmentos; el detalle (Nota informativa de cambios normativos del informe) NO pudo descargarse.",
+    "url": "https://sede.agenciatributaria.gob.es/Sede/normativa-criterios-interpretativos/analisis/2025/abril/29/ingresos-tributarios-ano-2024.html",
+    "noVerificadoCompletamente": true
+  }
+}

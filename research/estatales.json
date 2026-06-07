@@ -1,0 +1,717 @@
+{
+  "_meta": {
+    "descripcion": "Cambios en tributos ESTATALES de España desde junio 2018 hasta 2026-06-05. Fuente principal: BOE (boe.es), AEAT, Ministerio de Hacienda. Verificación de IDs de BOE realizada mediante búsqueda en boe.es; los IDs reproducidos provienen literalmente de resultados de boe.es. WebFetch directo al BOE estaba bloqueado en el entorno, por lo que la verificación es por título+ID devueltos por el buscador, no por apertura completa del documento (ver notas).",
+    "fechaGeneracion": "2026-06-05",
+    "rango": "2018-06 a 2026-06-05",
+    "nota_cotizaciones": "Las cotizaciones sociales (MEI, cuota de solidaridad, bases máximas, autónomos por ingresos reales) se etiquetan como COTIZACIÓN, no como impuesto."
+  },
+  "impuestos": [
+    {
+      "id": "irpf",
+      "nombre": "IRPF (Impuesto sobre la Renta de las Personas Físicas)",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Cortes Generales) fija la tarifa estatal y el régimen; el tramo autonómico está cedido a las CCAA, que fijan su propia escala, deducciones y mínimos.",
+      "cambios": [
+        {
+          "fecha": "2021-01-01",
+          "que": "Nuevo tramo en la base liquidable general estatal para rentas que excedan de 300.000 euros.",
+          "antes": "Tipo estatal máximo aplicable sin tramo específico por encima de 300.000 (escala terminaba antes; marginal estatal+autonómico de referencia 45%).",
+          "despues": "Se añade tramo a partir de 300.000 € con tipo estatal del 24,50% (eleva el marginal de la parte estatal; el marginal total de referencia pasa de 45% a 47%).",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley 11/2020, de 30 de diciembre, de PGE 2021, art. 58 (modifica art. 63 LIRPF)",
+          "urlBOE": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2020-17339"
+        },
+        {
+          "fecha": "2021-01-01",
+          "que": "Nuevo tramo en la base liquidable del ahorro para rentas que excedan de 200.000 euros.",
+          "antes": "Escala del ahorro: 19% / 21% / 23% (último tramo 23% desde 50.000 €).",
+          "despues": "Se añade tramo desde 200.000 € al 26% (escala: 19/21/23/26).",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley 11/2020, de 30 de diciembre, de PGE 2021, art. 59 (modifica art. 66 LIRPF)",
+          "urlBOE": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2020-17339"
+        },
+        {
+          "fecha": "2021-01-01",
+          "que": "Retención al exceso de retribuciones de un mismo pagador superiores a 600.000 €.",
+          "antes": "45%",
+          "despues": "47%",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley 11/2020, de 30 de diciembre, de PGE 2021 (modifica retenciones art. 101 LIRPF)",
+          "urlBOE": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2020-17339"
+        },
+        {
+          "fecha": "2021-01-01",
+          "que": "Reducción del límite de aportaciones a planes de pensiones individuales con derecho a reducción en base imponible (medida recaudatoria, sube la tributación al reducir el beneficio fiscal).",
+          "antes": "8.000 € anuales (aportación individual).",
+          "despues": "2.000 € anuales (individual), ampliable hasta 10.000 € por contribuciones empresariales.",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley 11/2020, de 30 de diciembre, de PGE 2021 (modifica art. 52 LIRPF)",
+          "urlBOE": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2020-17339"
+        },
+        {
+          "fecha": "2023-01-01",
+          "que": "Subida de la escala del ahorro en los tramos altos.",
+          "antes": "Tramo desde 200.000 €: 26% (único tramo superior).",
+          "despues": "Tramo 200.000-300.000 €: 27%; tramo desde 300.000 €: 28% (escala: 19/21/23/27/28).",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley 31/2022, de 23 de diciembre, de PGE 2023, art. 63 (modifica arts. 66 y 76 LIRPF)",
+          "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2022-22128"
+        },
+        {
+          "fecha": "2023-01-01",
+          "que": "Ampliación de la reducción por obtención de rendimientos del trabajo (baja la tributación de rentas bajas/medias-bajas).",
+          "antes": "Reducción máxima 5.565 €/año; se aplicaba hasta rendimientos netos de 16.825 €.",
+          "despues": "Reducción máxima 6.498 €/año; se aplica hasta rendimientos netos de 19.747,5 €.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Ley 31/2022, de 23 de diciembre, de PGE 2023, art. 59 (modifica art. 20 LIRPF)",
+          "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2022-22128"
+        },
+        {
+          "fecha": "2025-01-01",
+          "que": "Nuevo tramo más alto en la escala del ahorro (subida fiscal del capital alto).",
+          "antes": "Tramo superior desde 300.000 € al 28%.",
+          "despues": "Se añade tramo desde 300.000 € al 30% (escala: 19/21/23/27/30).",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley 7/2024, de 20 de diciembre (disposición final que modifica art. 66 LIRPF)",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694"
+        },
+        {
+          "fecha": "2025-01-01",
+          "que": "Subida de la deducción/reducción por rendimientos del trabajo para adaptar el mínimo a la subida del SMI (los perceptores de SMI no tributan IRPF). Se articula como deducción en cuota.",
+          "antes": "Reducción que dejaba exento un umbral inferior; SMI 2024 quedaba justo en el límite tras subir el SMI.",
+          "despues": "Deducción de hasta 340 €/año para rendimientos íntegros del trabajo iguales o inferiores a 16.576 € (SMI 2025), con reducción progresiva hasta 18.276 €.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Real Decreto-ley 9/2024 / Ley 7/2024 y normativa de retenciones AEAT 2025 (modifica art. 81 bis / DA LIRPF). Ver notas: la norma exacta requiere matización.",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694"
+        },
+        {
+          "fecha": "desde-2016",
+          "que": "NO DEFLACTACIÓN de la tarifa estatal del IRPF y de los mínimos personales y familiares. Es una AUSENCIA de norma: la tarifa estatal no se ha ajustado a la inflación, lo que eleva la carga real ('rémora fiscal'). La última actualización relevante de la escala estatal data de 2015-2016; en el periodo de alta inflación 2021-2024 (IPC acumulado ~12-15%) el Estado no deflactó.",
+          "antes": "Tarifa estatal y mínimos nominalmente estables.",
+          "despues": "Sin cambio nominal pese a la inflación = subida efectiva de la presión fiscal. Varias CCAA SÍ deflactaron su tramo autonómico en 2022-2023 (entre otras: Madrid, Andalucía, Galicia, Comunitat Valenciana, Castilla y León, Región de Murcia; el País Vasco -régimen foral- también ajustó su escala).",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Sin norma: ausencia de actualización legislativa de la escala estatal (art. 63 LIRPF) por inflación.",
+          "urlBOE": null
+        }
+      ],
+      "veredicto": "mixto",
+      "veredictoTexto": "El IRPF estatal subió en los tramos altos (general en 2021, ahorro en 2021, 2023 y 2025) y bajó la carga de rentas bajas vía mayor reducción por trabajo (2023 y 2025). De forma indirecta y sin norma, la no deflactación de la tarifa estatal elevó la carga real de rentas medias durante el periodo inflacionista.",
+      "verificacion": "verificado",
+      "matices": "Distinguir cambios normativos (tramos altos y reducciones) del efecto inflación (no deflactación, que no es una norma sino su ausencia). El tramo autonómico es competencia de las CCAA y su evolución varía mucho por territorio.",
+      "fuentes": [
+        {"nombre": "BOE - Ley 11/2020 PGE 2021", "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2020-17339", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - Ley 31/2022 PGE 2023", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2022-22128", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - Ley 7/2024", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694", "fechaConsulta": "2026-06-05"},
+        {"nombre": "AEAT - Novedades IRPF 2021/2023/2025", "url": "https://sede.agenciatributaria.gob.es/Sede/irpf/novedades-impuesto.html", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "iva",
+      "nombre": "IVA (Impuesto sobre el Valor Añadido)",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Cortes Generales por ley; Gobierno por Real Decreto-ley para medidas urgentes).",
+      "cambios": [
+        {
+          "fecha": "2021-06-26",
+          "que": "Rebaja temporal del IVA de la electricidad (potencia contratada <=10 kW y precio mayorista >45 €/MWh).",
+          "antes": "21%",
+          "despues": "10%",
+          "direccion": "baja",
+          "temporal": true,
+          "norma": "Real Decreto-ley 12/2021, de 24 de junio, de fiscalidad energética",
+          "urlBOE": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2021-10584"
+        },
+        {
+          "fecha": "2022-10-01",
+          "que": "Rebaja temporal del IVA del gas natural y de leña, pellets y briquetas de biomasa para calefacción.",
+          "antes": "21% (gas y biocombustibles).",
+          "despues": "5%",
+          "direccion": "baja",
+          "temporal": true,
+          "norma": "Real Decreto-ley 17/2022, de 20 de septiembre",
+          "urlBOE": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2022-15354"
+        },
+        {
+          "fecha": "2023-01-01",
+          "que": "IVA superreducido permanente a productos de higiene femenina (tampones, compresas, salvaslips), preservativos y otros anticonceptivos no medicinales.",
+          "antes": "10% (higiene femenina) / 21% (preservativos y anticonceptivos no medicinales).",
+          "despues": "4% (superreducido).",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Ley 31/2022, de 23 de diciembre, de PGE 2023, art. 72 (modifica art. 91 LIVA)",
+          "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2022-22128"
+        },
+        {
+          "fecha": "2023-01-01",
+          "que": "Rebaja temporal del IVA de alimentos básicos (de primera necesidad) y de aceites y pastas.",
+          "antes": "4% (pan, leche, huevos, frutas, verduras, legumbres, cereales, quesos) y 10% (aceites y pastas).",
+          "despues": "0% (alimentos de primera necesidad) y 5% (aceites de oliva/semillas y pastas).",
+          "direccion": "baja",
+          "temporal": true,
+          "norma": "Real Decreto-ley 20/2022, de 27 de diciembre, art. 72",
+          "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2022-22685"
+        },
+        {
+          "fecha": "2024-01-01",
+          "que": "Subida parcial del IVA de gas, leña y pellets (paso intermedio hacia la reversión).",
+          "antes": "5%",
+          "despues": "Gas natural vuelve al 21% (1-ene-2024 para gas); leña y pellets pasan al 10% (1-ene a 30-jun-2024).",
+          "direccion": "reversion",
+          "temporal": true,
+          "norma": "Real Decreto-ley 8/2023, de 27 de diciembre",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-26452"
+        },
+        {
+          "fecha": "2024-10-01",
+          "que": "Primera fase de reversión del IVA de alimentos (subida intermedia).",
+          "antes": "0% (alimentos básicos) y 5% (aceites/pastas), tras prórrogas vía RDL 8/2023 y RDL 4/2024.",
+          "despues": "2% (alimentos básicos) y 7,5% (aceites de semillas y pastas).",
+          "direccion": "reversion",
+          "temporal": true,
+          "norma": "Real Decreto-ley 4/2024, de 26 de junio",
+          "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2024-12944"
+        },
+        {
+          "fecha": "2025-01-01",
+          "que": "Reversión definitiva del IVA de alimentos a tipos ordinarios. El aceite de oliva se consolida como alimento de primera necesidad al 4% (de forma permanente).",
+          "antes": "2% (alimentos básicos) y 7,5% (aceites de semillas/pastas).",
+          "despues": "4% (alimentos básicos, incluido aceite de oliva ahora permanente al 4%) y 10% (aceites de semillas y pastas).",
+          "direccion": "reversion",
+          "temporal": false,
+          "norma": "Real Decreto-ley 4/2024, de 26 de junio (calendario de reversión); aceite de oliva al 4% permanente vía Ley 7/2024",
+          "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2024-12944"
+        },
+        {
+          "fecha": "2025-01-01",
+          "que": "Reversión definitiva del IVA de la electricidad al tipo general.",
+          "antes": "10% (vigente hasta 31-dic-2024).",
+          "despues": "21% (tipo general, con carácter permanente desde 1-ene-2025).",
+          "direccion": "reversion",
+          "temporal": false,
+          "norma": "Fin de la rebaja temporal iniciada por RDL 12/2021 y prorrogada por RDL 8/2023; no se prorrogó para 2025.",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-26452"
+        }
+      ],
+      "veredicto": "mixto",
+      "veredictoTexto": "Los tipos generales del IVA (21/10/4) no cambiaron de forma estructural en el periodo. Hubo un ciclo de rebajas temporales anticrisis (electricidad, gas y combustibles de calefacción, alimentos básicos) en 2021-2023 y su reversión completa en 2024-2025, además de dos bajadas permanentes al 4% (higiene femenina/anticonceptivos en 2023 y aceite de oliva en 2025).",
+      "verificacion": "verificado",
+      "matices": "Casi todo el ciclo del IVA es temporal (anticrisis energética e inflación), con reversión total a finales de 2024 / inicio 2025.",
+      "fuentes": [
+        {"nombre": "BOE - RDL 12/2021", "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2021-10584", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - RDL 20/2022", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2022-22685", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - Ley 31/2022 PGE 2023", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2022-22128", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - RDL 8/2023", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-26452", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - RDL 4/2024", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2024-12944", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "sociedades",
+      "nombre": "Impuesto sobre Sociedades",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Cortes Generales por ley; Gobierno por RDL en algún caso).",
+      "cambios": [
+        {
+          "fecha": "2022-01-01",
+          "que": "Tributación mínima del 15% de la base imponible para grandes empresas (cifra de negocios >= 20 millones €) y grupos en consolidación fiscal (con independencia de la cifra). No aplica a quienes tributan a tipos del 10%, 1% y 0%.",
+          "antes": "Sin suelo de tributación mínima ligado al 15% de la base.",
+          "despues": "La cuota líquida no puede ser inferior al 15% de la base imponible (con reglas para entidades de nueva creación al 10% y banca/hidrocarburos al 18%).",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley 22/2021, de 28 de diciembre, de PGE 2022 (introduce art. 30 bis LIS)",
+          "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2021-21653"
+        },
+        {
+          "fecha": "2023-01-01",
+          "que": "Tipo reducido del 23% para entidades con cifra de negocios del ejercicio anterior inferior a 1 millón € (salvo entidades patrimoniales).",
+          "antes": "25% (tipo general aplicable también a estas pequeñas entidades).",
+          "despues": "23%",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Ley 31/2022, de 23 de diciembre, de PGE 2023, art. 68 (modifica art. 29 LIS)",
+          "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2022-22128"
+        },
+        {
+          "fecha": "2023-01-01",
+          "que": "Limitación temporal a la compensación de pérdidas (bases imponibles negativas individuales) en grupos fiscales: solo se integra el 50% de las BIN individuales de las entidades del grupo (el 50% restante se difiere a partes iguales en 10 años).",
+          "antes": "Integración del 100% de las BIN individuales en la base consolidada.",
+          "despues": "Integración del 50% de las BIN individuales (medida para el ejercicio 2023; recaudatoria).",
+          "direccion": "sube",
+          "temporal": true,
+          "norma": "Ley 38/2022, de 27 de diciembre (disposición adicional que modifica el régimen de consolidación, art. 62/68 LIS)",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-22684"
+        },
+        {
+          "fecha": "2024-01-01",
+          "que": "Impuesto Complementario (Pilar 2 OCDE/UE): tributación mínima global efectiva del 15% para grupos multinacionales y nacionales de gran magnitud con cifra de negocios >= 750 millones €. Nuevo gravamen (impuesto complementario nacional, primario IIR y secundario UTPR).",
+          "antes": "No existía un impuesto complementario de imposición mínima global.",
+          "despues": "Nuevo impuesto complementario para garantizar el 15% efectivo (efectos para periodos iniciados desde 31-dic-2023; regla UTPR desde 31-dic-2024).",
+          "direccion": "nuevo",
+          "temporal": false,
+          "norma": "Ley 7/2024, de 20 de diciembre (transpone Directiva UE 2022/2523)",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694"
+        },
+        {
+          "fecha": "2024-01-01",
+          "que": "Reintroducción de límites a la compensación de BIN y a deducciones por doble imposición para grandes empresas (cifra de negocios >= 20 millones €), tras la STC 11/2024 que anuló las del RDL 3/2016.",
+          "antes": "Tras la STC 11/2024 (18-ene-2024) decayeron los límites del RDL 3/2016; quedaba el límite general del 70%.",
+          "despues": "Se restablecen límites del 50% (cifra 20-60 millones €) y 25% (cifra >= 60 millones €) a la compensación de BIN, y límite a deducciones por doble imposición, con efectos desde periodos iniciados el 1-ene-2024.",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley 7/2024, de 20 de diciembre (modifica DA 15.ª LIS)",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694"
+        },
+        {
+          "fecha": "2025-01-01",
+          "que": "Reforma del tipo de gravamen de micropymes y empresas de reducida dimensión (ERD): bajada progresiva. Micropymes (cifra < 1 millón €): base 0-50.000 € al 21% (2025), 19% (2026), 17% (2027-28); resto de base al 22% (2025), 21% (2026), 20% (2027-28). ERD: bajada escalonada del 25% al 20% en 2025-2029.",
+          "antes": "Micropymes (cifra < 1 millón €): 23%. ERD: 25%.",
+          "despues": "Micropymes: escala 21/22% en 2025 bajando hasta 17/20% en 2027-28. ERD: 24% en 2025, hasta 20% en 2029.",
+          "direccion": "baja",
+          "temporal": false,
+          "norma": "Ley 7/2024, de 20 de diciembre (modifica art. 29 LIS y nueva DT 44.ª LIS)",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694"
+        }
+      ],
+      "veredicto": "mixto",
+      "veredictoTexto": "Sociedades sube para las grandes empresas (mínimo del 15% en 2022, impuesto complementario global Pilar 2 en 2024, límites a compensación de pérdidas y a deducciones) y baja para las pequeñas (23% en 2023 y reducción progresiva de micropymes/ERD desde 2025).",
+      "verificacion": "verificado",
+      "matices": "El tipo general del 25% se mantiene. La limitación de compensación de pérdidas en grupos (Ley 38/2022) es temporal (2023). La reforma de micropymes/ERD es gradual hasta 2029.",
+      "fuentes": [
+        {"nombre": "BOE - Ley 22/2021 PGE 2022", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2021-21653", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - Ley 31/2022 PGE 2023", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2022-22128", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - Ley 38/2022", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-22684", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - Ley 7/2024", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - STC 11/2024 (anula RDL 3/2016)", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2024-3938", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "iiee-hidrocarburos",
+      "nombre": "Impuesto Especial sobre Hidrocarburos",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Cortes por ley).",
+      "cambios": [
+        {
+          "fecha": "2024-no-aprobado",
+          "que": "EQUIPARACIÓN FISCAL DIÉSEL-GASOLINA: subida del tipo del gasóleo de automoción para acercarlo al de la gasolina. HALLAZGO: NO se aprobó. La medida iba en el paquete fiscal de finales de 2024 (proyecto de ley del Impuesto Complementario / enmiendas) y fue rechazada en el Pleno del Congreso (votos en contra de PP, Vox y Podemos). Decayó.",
+          "antes": "Gasóleo de automoción ~307 €/1.000 l; gasolina ~400,69 €/1.000 l (diferencia mantenida).",
+          "despues": "SIN CAMBIO: la equiparación NO entró en vigor. Sigue pendiente (comprometida con la UE, prevista para 2026).",
+          "direccion": "sin_cambio",
+          "temporal": false,
+          "norma": "No existe norma aprobada. La enmienda decayó en la tramitación de la Ley 7/2024 (Pleno del Congreso, diciembre 2024).",
+          "urlBOE": null
+        }
+      ],
+      "veredicto": "sin_cambio",
+      "veredictoTexto": "El intento de equiparar la fiscalidad del diésel a la de la gasolina NO prosperó: fue rechazado en el Congreso en diciembre de 2024 y a fecha de junio de 2026 no se ha aprobado, aunque sigue como compromiso pendiente con la UE.",
+      "verificacion": "verificado",
+      "matices": "Es un hallazgo de ausencia: documentar que NO hubo cambio normativo en el tipo del gasóleo pese al intento gubernamental.",
+      "fuentes": [
+        {"nombre": "AEAT - Impuesto sobre Hidrocarburos, tipos", "url": "https://sede.agenciatributaria.gob.es/Sede/impuestos-especiales-medioambientales/impuestos-especiales-fabricacion/hidrocarburos/base-imponible-tipos-gravamen.html", "fechaConsulta": "2026-06-05"},
+        {"nombre": "Demócrata - El Congreso frena la subida al diésel", "url": "https://www.democrata.es/politicas/el-congreso-aprueba-el-nuevo-impuesto-bancario-pero-frena-la-subida-al-diesel/", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "iiee-electricidad",
+      "nombre": "Impuesto Especial sobre la Electricidad",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Gobierno por RDL).",
+      "cambios": [
+        {
+          "fecha": "2021-09-16",
+          "que": "Rebaja temporal del tipo del Impuesto Especial sobre la Electricidad.",
+          "antes": "5,11269632% (tipo general).",
+          "despues": "0,5% (tipo mínimo legal).",
+          "direccion": "baja",
+          "temporal": true,
+          "norma": "Real Decreto-ley 17/2021, de 14 de septiembre (prorrogado posteriormente)",
+          "urlBOE": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2021-14974"
+        },
+        {
+          "fecha": "2024-01-01",
+          "que": "Primera fase de reversión del Impuesto Especial sobre la Electricidad.",
+          "antes": "0,5%",
+          "despues": "2,5% (1-ene a 31-mar-2024).",
+          "direccion": "reversion",
+          "temporal": true,
+          "norma": "Real Decreto-ley 8/2023, de 27 de diciembre",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-26452"
+        },
+        {
+          "fecha": "2024-04-01",
+          "que": "Segunda fase de reversión del Impuesto Especial sobre la Electricidad.",
+          "antes": "2,5%",
+          "despues": "3,8% (1-abr a 30-jun-2024).",
+          "direccion": "reversion",
+          "temporal": true,
+          "norma": "Real Decreto-ley 8/2023, de 27 de diciembre",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-26452"
+        },
+        {
+          "fecha": "2024-07-01",
+          "que": "Reversión definitiva del Impuesto Especial sobre la Electricidad al tipo general.",
+          "antes": "3,8%",
+          "despues": "5,11269632% (tipo general restablecido).",
+          "direccion": "reversion",
+          "temporal": false,
+          "norma": "Fin de la rebaja temporal; no se prorrogó la rebaja a partir del 1-jul-2024.",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-26452"
+        }
+      ],
+      "veredicto": "mixto",
+      "veredictoTexto": "El Impuesto Especial sobre la Electricidad se rebajó temporalmente del 5,11% al 0,5% (2021-2023) en respuesta a la crisis energética y revirtió escalonadamente (2,5% y 3,8% en 2024) hasta volver al tipo general del 5,11% el 1 de julio de 2024.",
+      "verificacion": "verificado",
+      "matices": "Ciclo enteramente temporal/anticrisis.",
+      "fuentes": [
+        {"nombre": "AEAT / administracion.gob.es - Impuesto Especial Electricidad", "url": "https://administracion.gob.es/pag_Home/Tu-espacio-europeo/derechos-obligaciones/empresas/impuestos/especiales/electricidad.html", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - RDL 8/2023", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-26452", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "iiee-tabaco",
+      "nombre": "Impuesto sobre las Labores del Tabaco",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Cortes por ley).",
+      "cambios": [
+        {
+          "fecha": "2025-01-01",
+          "que": "Subida de los tipos del Impuesto sobre las Labores del Tabaco (cigarrillos, picadura para liar, cigarros).",
+          "antes": "Cigarrillos: tipo específico inferior y mínimo más bajo; picadura para liar con específico/mínimo inferiores.",
+          "despues": "Cigarrillos: específico 33,50 €/1.000 + proporcional 48,5%, mínimo 150 €/1.000. Picadura para liar: específico 33,4 €/kg + proporcional 37,68%, mínimo 112,5 €/kg. Cigarros: 15,8% con mínimo 47 €/1.000.",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley 7/2024, de 20 de diciembre, disposición final segunda (modifica art. 60 Ley 38/1992 de IIEE)",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694"
+        }
+      ],
+      "veredicto": "subio",
+      "veredictoTexto": "El Impuesto sobre las Labores del Tabaco subió desde el 1 de enero de 2025, elevando los tipos específicos y mínimos de cigarrillos, picadura para liar y cigarros.",
+      "verificacion": "verificado",
+      "matices": "Aprobado dentro de la Ley 7/2024 (mismo vehículo que el impuesto complementario y el impuesto al vapeo).",
+      "fuentes": [
+        {"nombre": "AEAT - Novedades IIEE 2025 (Ley 7/2024)", "url": "https://sede.agenciatributaria.gob.es/Sede/impuestos-especiales-medioambientales/novedades-impuestos-especiales-medioambientales/2024/diciembre/26/novedades-ley-72024-materia-impuestos-2025.html", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - Ley 7/2024", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "impuesto-vapeo",
+      "nombre": "Impuesto sobre los líquidos para cigarrillos electrónicos y otros productos relacionados con el tabaco",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Cortes por ley).",
+      "cambios": [
+        {
+          "fecha": "2025-01-01",
+          "que": "Creación de un nuevo impuesto especial de fabricación sobre líquidos para cigarrillos electrónicos, bolsas de nicotina y otros productos de nicotina (no medicinales). Aplica en todo el territorio salvo Canarias, Ceuta y Melilla.",
+          "antes": "No existía.",
+          "despues": "Nuevo impuesto especial sobre líquidos de vapeo y productos de nicotina (modelo 573).",
+          "direccion": "nuevo",
+          "temporal": false,
+          "norma": "Ley 7/2024, de 20 de diciembre, disposición final tercera (crea el impuesto)",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694"
+        }
+      ],
+      "veredicto": "nuevo",
+      "veredictoTexto": "Se crea un nuevo impuesto especial sobre los líquidos de vapeo y productos de nicotina con efectos desde el 1 de enero de 2025, en el marco de la Ley 7/2024.",
+      "verificacion": "verificado",
+      "matices": "La gestión efectiva (modelo 573) se desarrolla por la Orden HAC/86/2025 (BOE-A-2025-1732).",
+      "fuentes": [
+        {"nombre": "BOE - Ley 7/2024", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - Orden HAC/86/2025 (modelo 573)", "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-1732", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "plastico-no-reutilizable",
+      "nombre": "Impuesto Especial sobre los Envases de Plástico No Reutilizables (IEPNR)",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Cortes por ley).",
+      "cambios": [
+        {
+          "fecha": "2023-01-01",
+          "que": "Creación del impuesto especial sobre la fabricación, importación y adquisición intracomunitaria de envases que, conteniendo plástico, no son reutilizables.",
+          "antes": "No existía.",
+          "despues": "Nuevo impuesto, tipo 0,45 €/kg de plástico no reciclado.",
+          "direccion": "nuevo",
+          "temporal": false,
+          "norma": "Ley 7/2022, de 8 de abril, de residuos y suelos contaminados, arts. 67-83",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809"
+        }
+      ],
+      "veredicto": "nuevo",
+      "veredictoTexto": "Nuevo impuesto verde creado por la Ley 7/2022, en vigor desde el 1 de enero de 2023, que grava el plástico no reutilizable a 0,45 €/kg.",
+      "verificacion": "verificado",
+      "matices": "Gestión por Orden HFP/1314/2022 (modelo 592, BOE-A-2022-23749).",
+      "fuentes": [
+        {"nombre": "BOE - Ley 7/2022", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809", "fechaConsulta": "2026-06-05"},
+        {"nombre": "AEAT - IEPNR", "url": "https://sede.agenciatributaria.gob.es/Sede/impuestos-especiales-medioambientales/impuesto-especial-sobre-envases-plastico-reutilizables.html", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "residuos-vertedero",
+      "nombre": "Impuesto sobre el Depósito de Residuos en Vertederos, la Incineración y la Coincineración",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Cortes por ley); recaudación cedida a las CCAA.",
+      "cambios": [
+        {
+          "fecha": "2023-01-01",
+          "que": "Creación del impuesto sobre el depósito de residuos en vertederos, su incineración y coincineración.",
+          "antes": "No existía a nivel estatal (algunas CCAA tenían tributos propios análogos).",
+          "despues": "Nuevo impuesto estatal con tipos según el tipo de residuo y tratamiento.",
+          "direccion": "nuevo",
+          "temporal": false,
+          "norma": "Ley 7/2022, de 8 de abril, de residuos y suelos contaminados, arts. 84-97",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809"
+        }
+      ],
+      "veredicto": "nuevo",
+      "veredictoTexto": "Nuevo impuesto estatal creado por la Ley 7/2022, en vigor desde el 1 de enero de 2023, que grava el depósito en vertedero y la incineración de residuos.",
+      "verificacion": "verificado",
+      "matices": "Su rendimiento está cedido a las CCAA; algunas tenían figuras autonómicas previas que se ven afectadas.",
+      "fuentes": [
+        {"nombre": "BOE - Ley 7/2022", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "gravamen-banca",
+      "nombre": "Gravamen temporal a entidades de crédito → Impuesto sobre el margen de intereses y comisiones",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Cortes por ley).",
+      "cambios": [
+        {
+          "fecha": "2023-01-01",
+          "que": "Creación del gravamen temporal a entidades de crédito y establecimientos financieros de crédito (prestación patrimonial de carácter público no tributario).",
+          "antes": "No existía.",
+          "despues": "Gravamen del 4,8% sobre la suma de margen de intereses y comisiones netas, para entidades con ingresos por esos conceptos >= 800 millones € en 2019. Aplicable en 2023 y 2024 (sobre datos 2022 y 2023).",
+          "direccion": "nuevo",
+          "temporal": true,
+          "norma": "Ley 38/2022, de 27 de diciembre, art. 2",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-22684"
+        },
+        {
+          "fecha": "2024-01-01",
+          "que": "Prórroga del gravamen temporal de banca para el año 2024 (pago en 2024 sobre datos de 2023).",
+          "antes": "Previsto solo para 2023 y 2024 por la Ley 38/2022.",
+          "despues": "Confirmada su aplicación en 2024 con posibilidad de deducción por inversiones estratégicas (descarbonización) prevista para integrarlo en el sistema tributario.",
+          "direccion": "temporal",
+          "temporal": true,
+          "norma": "Ley 38/2022 (vigencia 2023-2024); Real Decreto-ley 8/2023 introduce ajustes/integración",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-22684"
+        },
+        {
+          "fecha": "2025-01-01",
+          "que": "CONVERSIÓN EN IMPUESTO PERMANENTE: el gravamen temporal de banca se transforma en el 'Impuesto sobre el margen de intereses y comisiones de determinadas entidades financieras', de carácter indefinido, con tipos progresivos por tramos (escala del 1% al 7%).",
+          "antes": "Gravamen temporal al 4,8% (prestación patrimonial no tributaria).",
+          "despues": "Impuesto permanente con escala progresiva: 1% (hasta 750 M€), 3,5%, 4,8%, 6% y 7% (>5.000 M€) sobre el margen de intereses y comisiones. Deducción por baja rentabilidad y por gravamen complementario autonómico.",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Ley 7/2024, de 20 de diciembre, art. 2 (crea el impuesto, sustituye al gravamen temporal)",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694"
+        }
+      ],
+      "veredicto": "nuevo",
+      "veredictoTexto": "El gravamen temporal a la banca (Ley 38/2022, 2023-2024) se convirtió en un impuesto permanente con escala progresiva (1%-7%) mediante la Ley 7/2024, con efectos desde 2025.",
+      "verificacion": "verificado",
+      "matices": "Cambia de naturaleza: de prestación patrimonial no tributaria temporal a impuesto permanente progresivo. Los tipos exactos de la escala 2025 deben confirmarse en el texto consolidado (ver notas).",
+      "fuentes": [
+        {"nombre": "BOE - Ley 38/2022", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-22684", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - Ley 7/2024", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - RDL 8/2023", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-26452", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "gravamen-energeticas",
+      "nombre": "Gravamen temporal energético",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Cortes por ley / Gobierno por RDL).",
+      "cambios": [
+        {
+          "fecha": "2023-01-01",
+          "que": "Creación del gravamen temporal energético (prestación patrimonial pública no tributaria) sobre operadores principales del sector energético.",
+          "antes": "No existía.",
+          "despues": "1,2% sobre la cifra de negocios neta de operadores principales (eléctrico, gasista, petrolero) con cifra >= 1.000 millones €. Aplicable en 2023 y 2024.",
+          "direccion": "nuevo",
+          "temporal": true,
+          "norma": "Ley 38/2022, de 27 de diciembre, art. 1",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-22684"
+        },
+        {
+          "fecha": "2024-01-01",
+          "que": "Prórroga del gravamen energético para 2024, con incentivo/deducción por inversiones estratégicas en descarbonización desde 1-ene-2024.",
+          "antes": "Previsto para 2023-2024.",
+          "despues": "Aplicación en 2024 con deducción por inversiones estratégicas.",
+          "direccion": "temporal",
+          "temporal": true,
+          "norma": "Ley 38/2022 + Real Decreto-ley 8/2023, de 27 de diciembre (DA 5.ª)",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-26452"
+        },
+        {
+          "fecha": "2025-01-29",
+          "que": "DECAIMIENTO: el Gobierno prorrogó el gravamen energético para 2025 vía RDL 10/2024, pero el Congreso NO lo convalidó y acordó su derogación. El gravamen energético desaparece en 2025.",
+          "antes": "RDL 10/2024 establecía el gravamen energético al 1,2% para 2025.",
+          "despues": "DEROGADO: el RDL 10/2024 no fue convalidado (Resolución del Congreso de 22-ene-2025). El gravamen energético decae y NO se aplica en 2025.",
+          "direccion": "reversion",
+          "temporal": true,
+          "norma": "RDL 10/2024, de 23 de diciembre (no convalidado) → derogado por Resolución del Congreso de 22-ene-2025",
+          "urlBOE": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-1137"
+        }
+      ],
+      "veredicto": "mixto",
+      "veredictoTexto": "El gravamen temporal energético se aplicó en 2023 y 2024 (Ley 38/2022). El Gobierno intentó prorrogarlo a 2025 vía RDL 10/2024, pero el Congreso no lo convalidó y lo derogó en enero de 2025: decayó. A diferencia del de banca, NO se convirtió en impuesto permanente.",
+      "verificacion": "verificado",
+      "matices": "Contraste claro con el gravamen de banca: el energético decayó por falta de apoyo parlamentario (Junts, PP, etc.); el de banca se hizo permanente.",
+      "fuentes": [
+        {"nombre": "BOE - Ley 38/2022", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-22684", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - RDL 10/2024 (gravamen energético 2025)", "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-26916", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - Resolución Congreso 22-ene-2025 (derogación)", "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-1137", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "itsgf",
+      "nombre": "Impuesto Temporal de Solidaridad de las Grandes Fortunas (ITSGF)",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Cortes por ley). No cedido a las CCAA.",
+      "cambios": [
+        {
+          "fecha": "2022-12-29",
+          "que": "Creación del ITSGF, impuesto complementario del Impuesto sobre el Patrimonio, estatal y no cedible, que grava el patrimonio neto de las personas físicas superior a 3 millones €.",
+          "antes": "No existía (el Patrimonio estaba cedido a CCAA, algunas con bonificación del 100%, ej. Madrid).",
+          "despues": "Nuevo impuesto: tramos 1,7% (3-5,3 M€), 2,1% (5,3-10,7 M€) y 3,5% (>10,7 M€), con mínimo exento de 700.000 €. Previsto inicialmente para 2022 y 2023 (declaración 2023 y 2024).",
+          "direccion": "nuevo",
+          "temporal": true,
+          "norma": "Ley 38/2022, de 27 de diciembre, art. 3",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-22684"
+        },
+        {
+          "fecha": "2024-01-01",
+          "que": "PRÓRROGA INDEFINIDA del ITSGF, que deja de ser temporal en tanto no se revise la tributación patrimonial en la reforma de la financiación autonómica. Se extiende el mínimo exento de 700.000 € a no residentes (obligación real).",
+          "antes": "Carácter temporal (2022-2023).",
+          "despues": "Carácter indefinido desde 2024.",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Real Decreto-ley 8/2023, de 27 de diciembre (prórroga indefinida del ITSGF)",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-26452"
+        }
+      ],
+      "veredicto": "nuevo",
+      "veredictoTexto": "Nuevo impuesto estatal creado por la Ley 38/2022 que grava patrimonios > 3 M€, concebido como temporal (2022-2023) y prorrogado de forma indefinida por el RDL 8/2023.",
+      "verificacion": "verificado",
+      "matices": "Es 'complementario' del Impuesto sobre el Patrimonio: neutraliza las bonificaciones autonómicas (ej. Madrid), por lo que su efecto recae sobre residentes en CCAA que bonifican Patrimonio. Avalado por el TC (STC 149/2023).",
+      "fuentes": [
+        {"nombre": "BOE - Ley 38/2022", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-22684", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - RDL 8/2023 (prórroga indefinida)", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2023-26452", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "itf",
+      "nombre": "Impuesto sobre las Transacciones Financieras (ITF / 'Tasa Tobin')",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Cortes por ley).",
+      "cambios": [
+        {
+          "fecha": "2021-01-16",
+          "que": "Creación del impuesto que grava la adquisición de acciones de sociedades españolas cotizadas con capitalización bursátil > 1.000 millones €.",
+          "antes": "No existía.",
+          "despues": "Nuevo impuesto indirecto al 0,2% sobre el valor de adquisición de acciones.",
+          "direccion": "nuevo",
+          "temporal": false,
+          "norma": "Ley 5/2020, de 15 de octubre, del Impuesto sobre las Transacciones Financieras (entrada en vigor 3 meses tras publicación)",
+          "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2020-12356"
+        }
+      ],
+      "veredicto": "nuevo",
+      "veredictoTexto": "Nuevo impuesto del 0,2% sobre la compra de acciones de grandes empresas españolas cotizadas, creado por la Ley 5/2020 y en vigor desde el 16 de enero de 2021.",
+      "verificacion": "verificado",
+      "matices": "Sin cambios de tipo posteriores en el periodo.",
+      "fuentes": [
+        {"nombre": "BOE - Ley 5/2020", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2020-12356", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "idsd",
+      "nombre": "Impuesto sobre Determinados Servicios Digitales (IDSD / 'Tasa Google')",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Cortes por ley).",
+      "cambios": [
+        {
+          "fecha": "2021-01-16",
+          "que": "Creación del impuesto sobre servicios digitales (publicidad online, intermediación online y transmisión de datos).",
+          "antes": "No existía.",
+          "despues": "Nuevo impuesto al 3% sobre ingresos digitales, para empresas con cifra global > 750 M€ e ingresos digitales en España > 3 M€.",
+          "direccion": "nuevo",
+          "temporal": false,
+          "norma": "Ley 4/2020, de 15 de octubre, del Impuesto sobre Determinados Servicios Digitales (entrada en vigor 3 meses tras publicación)",
+          "urlBOE": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-12355"
+        }
+      ],
+      "veredicto": "nuevo",
+      "veredictoTexto": "Nuevo impuesto del 3% sobre ingresos de determinados servicios digitales de grandes tecnológicas, creado por la Ley 4/2020 y en vigor desde el 16 de enero de 2021.",
+      "verificacion": "verificado",
+      "matices": "ID BOE confirmado (BOE-A-2020-12355). Publicada junto a la Ley 5/2020 (ITF) el 16-oct-2020. Sin cambios de tipo posteriores en el periodo.",
+      "fuentes": [
+        {"nombre": "BOE - Ley 4/2020", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-12355", "fechaConsulta": "2026-06-05"}
+      ]
+    },
+    {
+      "id": "cotizaciones-sociales",
+      "nombre": "Cotizaciones a la Seguridad Social (COTIZACIÓN, no impuesto)",
+      "nivel": "estatal",
+      "quienDecide": "Estado (Gobierno por RDL, en el marco del diálogo social).",
+      "cambios": [
+        {
+          "fecha": "2023-01-01",
+          "que": "COTIZACIÓN: nuevo sistema de cotización de autónomos por ingresos reales (rendimientos netos), con 15 tramos. Sustituye la libre elección de base.",
+          "antes": "El autónomo elegía libremente su base de cotización (la mayoría cotizaba por la mínima).",
+          "despues": "Cuota según rendimientos netos reales (tabla de tramos, despliegue gradual 2023-2025). Cuota reducida de 80 €/mes para nuevas altas.",
+          "direccion": "mixto",
+          "temporal": false,
+          "norma": "Real Decreto-ley 13/2022, de 26 de julio",
+          "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482"
+        },
+        {
+          "fecha": "2023-01-01",
+          "que": "COTIZACIÓN: Mecanismo de Equidad Intergeneracional (MEI), cotización finalista adicional para la 'hucha' de las pensiones.",
+          "antes": "No existía (sustituye al antiguo Factor de Sostenibilidad).",
+          "despues": "0,6% sobre la base de cotización por contingencias comunes (0,5% empresa + 0,1% trabajador) en 2023, subiendo 0,1 puntos al año hasta el 1,2% en 2029 (se mantiene 2030-2050).",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Real Decreto-ley 2/2023, de 16 de marzo (reforma de pensiones)",
+          "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2023-6967"
+        },
+        {
+          "fecha": "2025-01-01",
+          "que": "COTIZACIÓN: cuota de solidaridad sobre la parte del salario que excede de la base máxima de cotización.",
+          "antes": "No existía: la retribución por encima de la base máxima no cotizaba.",
+          "despues": "Cotización adicional (en tramos, en torno al 0,92%-1,17% inicial en 2025) sobre el exceso de la base máxima, con despliegue creciente hasta ~7% en 2045.",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Real Decreto-ley 2/2023, de 16 de marzo (cuota de solidaridad, efectos desde 2025)",
+          "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2023-6967"
+        },
+        {
+          "fecha": "2024-01-01",
+          "que": "COTIZACIÓN: destope/subida de la base máxima de cotización por encima del IPC (revalorización adicional).",
+          "antes": "Base máxima revalorizada de forma limitada.",
+          "despues": "La base máxima se revaloriza con el IPC más un incremento adicional anual fijo (0,115 puntos/año hasta 2050), elevando la cotización de los salarios altos.",
+          "direccion": "sube",
+          "temporal": false,
+          "norma": "Real Decreto-ley 2/2023, de 16 de marzo (destope progresivo de bases máximas)",
+          "urlBOE": "https://www.boe.es/buscar/doc.php?id=BOE-A-2023-6967"
+        }
+      ],
+      "veredicto": "subio",
+      "veredictoTexto": "Las cotizaciones sociales (que NO son impuestos) subieron de forma estructural: nuevo MEI creciente, cuota de solidaridad sobre salarios altos desde 2025 y destope progresivo de bases máximas. El sistema de autónomos pasó a cotización por ingresos reales (efecto mixto según renta).",
+      "verificacion": "verificado",
+      "matices": "Se etiquetan como COTIZACIÓN, no impuesto. ID BOE del RDL 2/2023 confirmado (BOE-A-2023-6967). Las cifras exactas de la cuota de solidaridad y del destope son escalas plurianuales.",
+      "fuentes": [
+        {"nombre": "BOE - RDL 13/2022 (autónomos)", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2022-12482", "fechaConsulta": "2026-06-05"},
+        {"nombre": "BOE - RDL 2/2023 (pensiones, MEI, solidaridad)", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2023-6967", "fechaConsulta": "2026-06-05"}
+      ]
+    }
+  ]
+}

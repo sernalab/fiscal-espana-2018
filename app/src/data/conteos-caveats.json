@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "tarea": "Conteos de subidas de impuestos (periodo Sánchez jun-2018 a jun-2026) y caveats metodológicos",
+    "fechaInvestigacion": "2026-06-05",
+    "nota": "Neutralidad estricta: se etiqueta la orientación de TODAS las fuentes, incluidos fact-checkers. No se valida ni se desmiente ningún conteo; se describe su criterio. Toda cifra lleva URL. WebFetch/curl/Invoke-RestMethod NO disponibles en este entorno: el detalle se obtuvo vía WebSearch (titulares + fragmentos) sobre fuentes primarias (IJM, AIReF, BdE, Funcas, FEDEA, Newtral, Eurostat). Las cifras que no aparecieron literalmente en fragmentos de fuente fiable se marcan como aproximadas (~) o se acotan. No se ha inventado ninguna cifra."
+  },
+  "conteos": [
+    {
+      "cifra": "81 subidas",
+      "fuente": "Instituto Juan de Mariana (informe de noviembre 2024, citado por Feijóo y Gamarra)",
+      "orientacion": "think tank liberal / libertario (autodefinido liberal; premió a Javier Milei)",
+      "url": "https://juandemariana.org/wp-content/uploads/2024/12/IJM-93-SUBIDAS-RECAUDATORIAS.pdf",
+      "fecha": "2024-11 (PDF subido 2024-12)",
+      "criterio": "Cuenta cada medida normativa con efecto recaudatorio publicada en el BOE (PGE, reales decretos, anteproyectos) desde junio 2018. Mezcla impuestos y COTIZACIONES sociales en el mismo recuento. Incluye creación de nuevos tributos, subidas de tipos, supresión de deducciones/bonificaciones y reversiones de rebajas temporales. Una misma figura subida varias veces (p.ej. cotizaciones, MEI año a año) puede contar como varias subidas.",
+      "criticasAlCriterio": "Newtral: incluir cotizaciones es discutible (no son estrictamente impuestos aunque funcionen como tales); no toda subida implica más recaudación; cuenta como 'subidas' medidas heterogéneas. La propia cifra de 81 es de nov-2024 y queda desactualizada en informes posteriores. No descuenta el efecto de rebajas temporales (las computa al revertirse)."
+    },
+    {
+      "cifra": "93 subidas recaudatorias",
+      "fuente": "Instituto Juan de Mariana (titular del PDF 'IJM-93-SUBIDAS-RECAUDATORIAS')",
+      "orientacion": "think tank liberal / libertario",
+      "url": "https://juandemariana.org/wp-content/uploads/2024/12/IJM-93-SUBIDAS-RECAUDATORIAS.pdf",
+      "fecha": "2024-12",
+      "criterio": "Misma metodología que el conteo de 81; al añadir 12 nuevas subidas anunciadas/aprobadas para 2025 la cifra asciende a 93. Incluye impuestos y cotizaciones.",
+      "criticasAlCriterio": "Mismas que el conteo de 81: suma de cotizaciones, medidas anunciadas que pueden no entrar en vigor, y reversiones de rebajas contadas como subidas."
+    },
+    {
+      "cifra": "94 subidas (Impuestómetro 2025)",
+      "fuente": "Instituto Juan de Mariana — Impuestómetro 2025",
+      "orientacion": "think tank liberal / libertario",
+      "url": "https://juandemariana.org/impuestometro-2025/",
+      "fecha": "2025-04-02",
+      "criterio": "Recuento acumulado de 'subidas fiscales' (impuestos + cotizaciones) desde 2018. Asociado al cálculo de que un sueldo medio tributa ~48% del coste laboral. El informe afirma que la presión fiscal sube 1,9 p.p. de PIB en seis años (frente a -0,9 p.p. de media UE).",
+      "criticasAlCriterio": "El propio informe reconoce que, descontando rebajas de efecto temporal y limitado, el aumento neto de recaudación atribuible a normativa baja a ~42.000 M (frente a 127.744 M brutos). Mezcla presión fiscal (afectada por ciclo) con número de medidas."
+    },
+    {
+      "cifra": "97 subidas",
+      "fuente": "El Español (investigación periodística propia con datos de Hacienda y organismos)",
+      "orientacion": "medio de orientación conservadora / centro-derecha",
+      "url": "https://www.elespanol.com/espana/politica/20250303/hacienda-ingresa-ano-subidas-impuestos-cotizaciones-sanchezymontero/927157368_0.html",
+      "fecha": "2025-03-03",
+      "criterio": "Recuento propio de subidas de impuestos y cotizaciones desde junio 2018 (Montero como ministra). Asociado a 85.000 M más de recaudación anual en 2024 vs 2018. Incluye nuevos gravámenes, subidas de tipos, supresión de deducciones y alzas de cotizaciones.",
+      "criticasAlCriterio": "La ministra Montero lo calificó de 'falso' en sede parlamentaria ('hablan de 97 subidas y no lo pueden demostrar'). Mismo problema de mezclar cotizaciones e impuestos y de no separar efecto ciclo/inflación de cambios normativos."
+    },
+    {
+      "cifra": "100 subidas",
+      "fuente": "El Español / El Blog Salmón / Daniel Lacalle (recogen el hito al entrar en vigor las medidas del 1-1-2026); asumido por el PP",
+      "orientacion": "medios y analista de orientación liberal/conservadora; PP partido de oposición (centro-derecha)",
+      "url": "https://www.elespanol.com/espana/politica/20251231/sanchez-alcanza-enero-subidas-impuestos-cotizaciones-presidente-gobierno/1003744074473_0.html",
+      "fecha": "2025-12-31 / 2026-01-01",
+      "criterio": "Acumulado que alcanza el centenar con las medidas que entran en vigor el 1-1-2026 (entre ellas la subida del MEI al 0,9%). Misma base metodológica (impuestos + cotizaciones). El PP fija como objetivo 'revisar el centenar de subidas'.",
+      "criticasAlCriterio": "Cifra redonda con valor simbólico/político. Hereda las críticas a la base IJM: cotizaciones, MEI contado año a año, reversiones de rebajas y medidas anunciadas."
+    },
+    {
+      "cifra": "141 veces (impuestos y cotizaciones, 2018-2026)",
+      "fuente": "Instituto Juan de Mariana — Impuestómetro 2026 (recogido por Libre Mercado)",
+      "orientacion": "think tank liberal / libertario; medio (Libre Mercado) de orientación liberal",
+      "url": "https://www.libertaddigital.com/libremercado/2026-04-08/sanchez-y-montero-subieron-141-veces-los-impuestos-y-las-cotizaciones-que-ya-restan-21-144-euros-al-salario-medio-7384248/",
+      "fecha": "2026-04-08",
+      "criterio": "Recuento ampliado que suma subidas 'explícitas' Y 'ocultas' (no deflactar la tarifa del IRPF con la inflación) MÁS múltiples revisiones de valores catastrales/IBI. Por eso casi duplica el conteo de 'solo explícitas'. Asociado a 21.144 € de carga anual sobre el coste laboral medio (53,6%).",
+      "criticasAlCriterio": "Al incluir la no deflactación y cada revisión catastral como 'subidas' independientes, el criterio se ensancha mucho respecto a los conteos de 81-100. La no deflactación es real pero es discutible contarla como N 'subidas' discretas en lugar de un efecto continuo."
+    }
+  ],
+  "factChecks": [
+    {
+      "medio": "Newtral",
+      "orientacion": "fact-checker; percibido por la derecha como cercano al Gobierno / progresista (fundado por Ana Pastor); firmante del código IFCN",
+      "url": "https://www.newtral.es/subida-impuestos-gobierno/20250206/",
+      "fecha": "2025-02-06",
+      "conclusion": "No desmiente la existencia del listado: rastrea la cifra de '80/81 veces' (Feijóo, Gamarra) hasta el informe del Instituto Juan de Mariana, think tank liberal, que detalla las 81 medidas en un anexo. Matiza el criterio: (1) incluye cotizaciones, que 'no son estrictamente impuestos aunque funcionen como tales'; (2) un experto señala que el informe da por hecho que toda subida genera más recaudación, lo cual no siempre es correcto; (3) la cifra de 81 es de nov-2024 y está desactualizada. Conclusión neutra-crítica con la metodología, no con la existencia del recuento."
+    },
+    {
+      "medio": "Newtral (relacionado)",
+      "orientacion": "fact-checker; ver arriba",
+      "url": "https://www.newtral.es/iva-luz-alimentos-pp-factcheck/20250124/",
+      "fecha": "2025-01-24",
+      "conclusion": "Sobre el debate fiscal asociado: los decretos rechazados (enero 2025) NO incluían subida del IVA de la luz ni de los alimentos. Útil para distinguir reversiones automáticas de rebajas temporales de nuevas subidas."
+    },
+    {
+      "medio": "Newtral (antecedente histórico)",
+      "orientacion": "fact-checker; ver arriba",
+      "url": "https://www.newtral.es/subio-impuestos-feijoo-presion-fiscal-factcheck/20221010/",
+      "fecha": "2022-10-10",
+      "conclusion": "España NO fue el país de la OCDE que más subió impuestos en 2020; Feijóo confundía aumento de presión fiscal (afectada por la caída del PIB en pandemia) con subidas legislativas. Precedente clave del caveat ciclo vs legislación."
+    },
+    {
+      "medio": "Maldita.es",
+      "orientacion": "fact-checker; percibido por la derecha como progresista; firmante IFCN",
+      "url": "https://maldita.es/malditateexplica/20231103/que-es-presion-fiscal-pais/",
+      "fecha": "2023-11-03",
+      "conclusion": "Explicador (no verificación directa del conteo): define presión fiscal y advierte de que es un dato macro que depende sobre todo de la actividad económica, no solo de subir o bajar impuestos. No se localizó una verificación específica de Maldita del número exacto de subidas."
+    }
+  ],
+  "conteoBajadas": {
+    "existe": false,
+    "detalle": "No se ha localizado un conteo oficial simétrico del Gobierno del tipo 'N bajadas de impuestos' con la misma metodología de recuento por medida. El Gobierno comunica rebajas concretas (IVA luz 21%->10%/5% e IEE 5,5%->0,5%; IVA carburantes 21%->10% y descuento 20 cts; IVA alimentos básicos al 0/5%; deducción 15% IRPF vehículo eléctrico; rebaja IRPF rentas bajas; tipo reducido Sociedades pymes) pero sin un número-titular agregado. Caveats: (1) buena parte de esas rebajas fueron TEMPORALES y se revirtieron (IVA luz volvió al 21% el 1-1-2025; IVA alimentos básicos al 4% y semillas/pasta al 10% el 1-1-2025), por lo que su reversión es precisamente lo que los conteos de subidas computan como nuevas subidas. (2) El IJM SÍ neteó el efecto de las rebajas temporales: descontándolas, el aumento de recaudación atribuible a normativa baja de ~127.744 M a ~42.000 M. (3) Como contrapunto regional retórico, Libre Mercado/IJM citan '90 rebajas de impuestos en la Comunidad de Madrid 2019-2025'; no es un conteo de bajadas del Gobierno central."
+  },
+  "caveats": {
+    "cicloVsLegislacion": {
+      "resumen": "La recaudación y la presión fiscal suben también por crecimiento del PIB, empleo, salarios, beneficios e inflación SIN cambiar leyes. AIReF descompone el aumento de ingresos tributarios desde la pandemia: el motor principal es la mejora de la economía; la inflación y la progresividad en frío añaden; los cambios normativos son una parte minoritaria. Ojo: la presión fiscal también subió en 2020 por CAÍDA del PIB (denominador), no por subir impuestos.",
+      "cifras": "Ingresos tributarios: 17% del PIB en 2019 -> 18,5% del PIB en 2024 (la recaudación creció más que la economía). 2021-2024: crecimiento medio interanual de ingresos del 11,1% (vs 3,4% en la expansión 2013-2019). En 2022 la recaudación subió 14,4%: ~38% explicado por actividad económica y ~44% por inflación. AIReF estima que la inflación explica ~43% del aumento de ingresos públicos tras la pandemia. En 2023 las medidas normativas explicaron ~17% del incremento; las normativas aportaron ~12% adicional sobre todo por la retirada parcial en 2024 de las rebajas. Descontando rebajas temporales y devoluciones extraordinarias judiciales, el aumento real de recaudación supera los 2,1 p.p. de PIB respecto a pre-pandemia.",
+      "fuentes": [
+        {"nombre": "AIReF — '¿Por qué han crecido los ingresos tributarios en España desde la pandemia?' (AIReF Divulga)", "url": "https://www.airef.es/es/divulgacion/por-que-han-crecido-los-ingresos-tributarios-en-espana-desde-la-pandemia/"},
+        {"nombre": "AIReF — Documento técnico sobre la variabilidad de los ingresos tributarios desde 2019 (2024)", "url": "https://www.airef.es/wp-content/uploads/2024/07/DT-VARIABILIDAD/DT-Variabilidad-de-ingresos-tributarios_2024.pdf"},
+        {"nombre": "AIReF — Documento técnico sobre la variabilidad de los ingresos tributarios 2025", "url": "https://www.airef.es/wp-content/uploads/2026/02/Documento_t%C3%A9cnico_variabilidad_ingresos_tributarios/DT-Variabilidad-de-ingresos-tributarios_2025.pdf"},
+        {"nombre": "Banco de España — Boletín Económico 2023/T1, art. 16 (recaudación e inflación)", "url": "https://www.bde.es/f/webbde/SES/Secciones/Publicaciones/InformesBoletinesRevistas/BoletinEconomico/23/T1/Fich/be2301-art16.pdf"},
+        {"nombre": "Newtral — España no fue el país OCDE que más subió impuestos en 2020 (presión fiscal vs legislación)", "url": "https://www.newtral.es/subio-impuestos-feijoo-presion-fiscal-factcheck/20221010/"}
+      ]
+    },
+    "noDeflactacion": {
+      "resumen": "Al no deflactar la tarifa del IRPF con la inflación (progresividad en frío / bracket creep), los contribuyentes pasan a tramos superiores y pierden valor real de mínimos y deducciones, aumentando la recaudación sin tocar tipos. Funcas lo describe como 'una reforma fiscal implícita que no requiere aprobación parlamentaria'. Es una subida 'oculta' real, aunque su cuantificación varía según metodología y periodo.",
+      "estimaciones": [
+        {"quien": "Banco de España", "cifra": "~11.000 M de recaudación adicional de IRPF entre 2019 y 2024 por no ajustar el IRPF al IPC. El IRPF pasó de 86.000 a 124.000 M (+38.000 M); con deflactación el aumento habría sido ~27.000 M. Solo ~40% del extra es bracket creep puro; ~60% por pérdida de valor de beneficios fiscales con importes/límites fijos.", "url": "https://www.elindependiente.com/economia/2024/04/29/el-banco-de-espana-calcula-que-hacienda-ha-recaudado-11-millones-por-no-ajustar-el-irpf-a-la-inflacion/"},
+        {"quien": "Banco de España (Documento Ocasional 2422 'Progresividad en frío: el impacto heterogéneo de la inflación')", "cifra": "Análisis técnico del impacto heterogéneo por niveles de renta de la progresividad en frío (sustento del cálculo agregado anterior).", "url": "https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/PublicacionesSeriadas/DocumentosOcasionales/24/Fich/do2422.pdf"},
+        {"quien": "Funcas", "cifra": "~16.700 M de recaudación adicional 2019-2023 por no deflactar: ~9.700 M por no ajustar deducciones, mínimos personales/familiares y reducción por tributación conjunta, y ~7.000 M por mantener congelados los tramos de la tarifa.", "url": "https://www.funcas.es/articulos/estimacion-de-la-progresividad-en-frio-del-irpf-por-niveles-de-renta-en-el-periodo-2021-2024/"},
+        {"quien": "FEDEA", "cifra": "No deflactar la tarifa cuesta ~736 € anuales a una familia de clase media; el sobrecoste va de ~311 € (renta media-baja) a ~622 € (media-alta).", "url": "https://documentos.fedea.net/pubs/eee/2025/eee2025-02.pdf"}
+      ]
+    },
+    "presionFiscalUE": {
+      "espana2018": "~35,1% del PIB (Eurostat; brecha con la UE ~6 p.p.) — valor aproximado, no verificado año a año desde la API de Eurostat en este entorno",
+      "espanaUltimo": "~37,7% del PIB en 2022 (Eurostat); ~38-39% en 2023-2024 según estimaciones (IEE)",
+      "mediaUE2018": "~40% del PIB (UE) — aproximado",
+      "mediaUEUltimo": "~40,2% del PIB en 2022 (UE); ~41,5% UE y ~41,9% eurozona en 2021",
+      "fuente": "Eurostat (presión fiscal % PIB), recopilados por FEDEA, IEF e IEE. Distinción clave: la PRESIÓN fiscal (recaudación/PIB) sitúa a España ~3 p.p. por debajo de la media UE en 2022, pero el ESFUERZO fiscal (presión fiscal ponderada por renta per cápita) sitúa a España POR ENCIMA de la media UE (el IEE lo cifra ~17,8% por encima) porque la renta per cápita española es menor (~23.640 € vs ~51.600 € daneses). España converge hacia la presión UE (brecha 2010: 6,9 p.p.; ~2024: 3,1 p.p.).",
+      "urls": [
+        "https://fedea.net/la-presion-fiscal-en-espana-y-en-la-ue/",
+        "https://documentos.fedea.net/pubs/ap/2023/ap2023-19.pdf",
+        "https://blogfiscal.cronicatributaria.ief.es/convergencia-fiscal-de-espana-con-la-ue-y-la-ocde/",
+        "https://www.newtral.es/presion-fiscal-esfuerzo-fiscal/20221012/",
+        "https://www.eleconomista.es/economia/noticias/13091837/11/24/el-iee-denuncia-que-el-esfuerzo-fiscal-en-espana-supera-en-un-17-la-media-de-la-ue.html"
+      ]
+    },
+    "temporalVsPermanente": {
+      "prorrogadas": [
+        "Gravamen temporal a la banca (Ley 38/2022): nacido como temporal para 2023-2024; en 2024 el Gobierno tramita convertirlo en impuesto PERMANENTE sobre el margen de intereses y comisiones de entidades con ingresos >800 M.",
+        "Impuesto Temporal de Solidaridad de las Grandes Fortunas (Ley 38/2022): nacido temporal, PRORROGADO de forma indefinida 'hasta la revisión de la tributación patrimonial' en el marco de la reforma de financiación autonómica.",
+        "Mecanismo de Equidad Intergeneracional (MEI): cotización CRECIENTE año a año (0,6% en 2023 -> 0,8% en 2025 -> 0,9% en 2026 -> 1,2% en 2029-2050). Diseñado como permanente y escalonado al alza.",
+        "Gravamen temporal energético (Ley 38/2022): NO prorrogado para 2025 (caso de medida temporal que SÍ expiró), útil como contraste con la banca."
+      ],
+      "revertidas": [
+        "IVA de la electricidad: rebajado del 21% al 10% (y luego 5%) durante la crisis energética; REVERTIDO al 21% el 1-1-2025.",
+        "Impuesto Especial sobre la Electricidad (IEE): bajado al 0,5%; revertido al alza tras la crisis.",
+        "Impuesto sobre el Valor de la Producción de Energía Eléctrica (IVPEE): suspendido temporalmente; reactivado.",
+        "IVA de carburantes / descuento de 20 cts: medidas temporales finalizadas.",
+        "IVA de alimentos básicos: rebajado al 0%/5%; REVERTIDO el 1-1-2025 (básicos del 0/2% al 4%; aceites de semillas y pasta del 7,5% al 10%).",
+        "Nota: cada reversión de estas rebajas temporales es lo que los conteos de 'subidas' (IJM/PP) computan como nuevas subidas, mientras que metodológicamente puede verse como el fin de una rebaja excepcional."
+      ],
+      "fuentes": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2022-22684",
+        "https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/hacienda/paginas/2024/270424-gravamenes-banca.aspx",
+        "https://www.newtral.es/sube-iva-2025-alimentos-luz/20241230/",
+        "https://www.articulo14.es/economia/el-iva-de-los-alimentos-basicos-regresa-al-10-y-el-de-la-electricidad-al-21-20250101.html"
+      ]
+    }
+  }
+}

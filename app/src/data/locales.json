@@ -1,0 +1,182 @@
+{
+  "_meta": {
+    "fechaInvestigacion": "2026-06-05",
+    "periodo": "junio 2018 - junio 2026",
+    "estado": "COMPLETO con matices - bloqueo parcial de herramientas de red",
+    "advertenciaCritica": "En este entorno solo estuvo disponible WebSearch (titulares + fragmentos de páginas). WebFetch fue DENEGADO por permisos repetidamente, por lo que NO se pudieron abrir los PDF de las ordenanzas fiscales de Barcelona (1.1 IBI, 1.2 IVTM, 1.3 IIVTNU, 3.18 residuos) ni el informe PDF del Observatorio de la Fiscalidad de los Residuos. Las cifras se han extraído de fragmentos de búsqueda de fuentes oficiales (ajuntament.barcelona.cat, boe.es, idescat, begues.cat) y de medios/notas de prensa fiables. Los importes que NO aparecieron literalmente en fragmentos están marcados 'no verificado'. NO se ha inventado ningún coeficiente ni importe. Ver locales-notas.md.",
+    "tesisCentral": "Los tributos locales los fija cada AYUNTAMIENTO dentro del marco del TRLHL (RDL 2/2004). El Estado fija marcos (mínimos/máximos, tarifas base) y a veces OBLIGA (transponiendo la UE), pero la CUANTÍA concreta es decisión municipal. Hay que distinguir siempre 'quién obliga' de 'quién fija el importe'."
+  },
+  "impuestos": [
+    {
+      "id": "ivtm",
+      "nombre": "IVTM — Impuesto sobre Vehículos de Tracción Mecánica (impuesto de circulación)",
+      "nivel": "local",
+      "quienDecide": "Ayuntamiento (fija el coeficiente, hasta 2x, sobre las tarifas base estatales del TRLHL art. 95, que están congeladas desde 2003)",
+      "cadenaCompetencia": [
+        "Estado (Cortes): fija las tarifas base / cuotas mínimas en el cuadro del art. 95 TRLHL. Pueden modificarse por Ley de Presupuestos Generales del Estado (LPGE), pero NO se han modificado.",
+        "Ayuntamiento: aplica un coeficiente de incremento sobre esas cuotas, con un máximo legal de 2 (art. 95.4 TRLHL). Puede diferenciar coeficiente por clase y tramo de vehículo.",
+        "Ayuntamiento: regula además exenciones y bonificaciones (eléctricos/ECO, históricos, etc.) en su ordenanza."
+      ],
+      "casoBarcelona": {
+        "2018": "Coeficiente sobre tarifas base aplicado en la ordenanza fiscal 1.2. Valor exacto del coeficiente 2018: no verificado (PDF de la ordenanza 2018 no accesible). Barcelona es históricamente de los municipios con IVTM más alto de España (se cita coeficiente del orden de ~1,73-2x y cuota efectiva alta).",
+        "hoy": "Ordenanza fiscal 1.2 vigente (aprobada def. 20-dic-2024, en vigor 1-ene-2025). Las OF 2025 CONGELAN el IVTM a la ciudadanía (declaración expresa del alcalde Collboni: 'congelan impuestos a familias, pymes, autónomos y microempresas'). Cambio relevante 2025: la bonificación ambiental (ECO/ZERO) se limita temporalmente a 5 años desde la primera matriculación; bonificación de aparcamiento a eléctricos reducida al 50%.",
+        "cambio": "Sin subida del IVTM ordinario en 2025 (congelado). Lo que cambia son bonificaciones ambientales (se acotan), no la cuota base municipal. Importe del coeficiente concreto 2018 vs hoy: no verificado al detalle.",
+        "fuente": "ajuntament.barcelona.cat/premsa (25-oct-2024 y 20-dic-2024, OF 2025); ordenanza 1.2-ordenanza-ivtm.pdf (no abierta)"
+      },
+      "casoContraste": {
+        "municipio": "Begues (Baix Llobregat, 7.439 hab. 2024)",
+        "detalle": "En las ordenanzas fiscales 2025, Begues SUBIÓ el coeficiente del IVTM de 1,66 a 1,70 — y la nota destaca que era la PRIMERA actualización del coeficiente desde 2009. Es el ejemplo perfecto de la tesis: si el IVTM de un beguetà sube en 2025, fue una decisión del Pleno de Begues, no del Gobierno central; y prueba además que las tarifas base estatales llevan congeladas tanto tiempo que ni el coeficiente municipal se había tocado en 16 años.",
+        "fuente": "begues.cat/actualitat (aprovació inicial ordenances fiscals 2025)"
+      },
+      "cambios": [
+        {"fecha": "2003 (Ley 51/2002) → consolidado en RDL 2/2004", "que": "Última fijación del cuadro de tarifas base del art. 95. Desde entonces NINGUNA LPGE lo ha modificado: tarifas base estatales congeladas ~20 años.", "quien": "Estado", "noVerificado": true, "nota": "Que el cuadro no se ha tocado por ninguna LPGE posterior es coherente con todas las fuentes consultadas pero no se localizó una cita oficial que lo afirme literalmente; marcado no verificado."},
+        {"fecha": "anual 2018-2026", "que": "Cada ayuntamiento decide en su ordenanza si mantiene o sube su coeficiente (Barcelona congela en 2025; Begues sube de 1,66 a 1,70 en 2025).", "quien": "Ayuntamiento"}
+      ],
+      "veredicto": "MUNICIPAL",
+      "veredictoTexto": "Si a alguien le subió el impuesto de circulación entre 2018 y 2026, fue por decisión de SU ayuntamiento (subir el coeficiente), no del Gobierno central. Las tarifas base estatales no se han tocado desde 2003.",
+      "verificacion": "Tarifas base estatales congeladas desde 2003: alta confianza, no cita literal (no verificado al 100%). Barcelona congela IVTM 2025: verificado (nota de prensa oficial). Begues 1,66→1,70: verificado (web municipal). Coeficiente exacto de Barcelona 2018: no verificado.",
+      "matices": "El Estado SÍ podría subir las tarifas base vía LPGE pero no lo ha hecho; al estar congeladas en términos nominales, en términos reales (inflación) el IVTM estatal se ha 'abaratado'. El margen municipal hasta 2x es amplio: la diferencia de cuota entre municipios para el mismo coche es grande (decisión 100% local).",
+      "fuentes": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214 (TRLHL, art. 92-99, cuota art. 95 y coeficiente art. 95.4)",
+        "https://ajuntament.barcelona.cat/premsa/2024/12/20/el-plenari-aprova-definitivament-les-ordenances-fiscals-2025/",
+        "https://ajuntament.barcelona.cat/hisenda/sites/default/files/normativa/2025-05/1.2-ordenanza-ivtm.pdf?profile=1",
+        "https://www.begues.cat/actualitat/noticies/aprovacio-inicial-de-les-ordenances-fiscals-per-a-lany-2025.html"
+      ]
+    },
+    {
+      "id": "tasa-residuos",
+      "nombre": "Tasa de basuras / residuos domésticos (TRRD) — LA PIEZA CLAVE",
+      "nivel": "local (importe) / estatal-europeo (obligación)",
+      "quienDecide": "El IMPORTE lo fija cada ayuntamiento en su ordenanza. La OBLIGACIÓN de tener una tasa específica, diferenciada y NO deficitaria la imponen las Cortes (Ley 7/2022) transponiendo la Directiva (UE) 2018/851.",
+      "cadenaCompetencia": [
+        "UE: Directiva (UE) 2018/851 (modifica la Directiva marco de residuos 2008/98/CE) — principio 'quien contamina paga' y recuperación de costes.",
+        "Estado (Cortes): Ley 7/2022, de 8 de abril, de residuos y suelos contaminados para una economía circular (BOE-A-2022-5809). Su art. 11.3 OBLIGA a las entidades locales a establecer, en un plazo de 3 años (hasta el 10-abril-2025), una tasa o prestación patrimonial de carácter público no tributario específica, diferenciada y NO DEFICITARIA, que refleje el coste real del servicio y permita avanzar hacia el pago por generación.",
+        "Ayuntamiento: aprueba la ordenanza fiscal con el importe, los tramos, la base (a menudo ligada al consumo de agua o al valor catastral) y las bonificaciones."
+      ],
+      "casoBarcelona": {
+        "2018": "Barcelona NO tenía una tasa de residuos domiciliarios diferenciada en 2018. El servicio se financiaba vía presupuesto general (y existía/existe la tasa metropolitana de tratamiento, TMTR, del AMB, que es otra cosa: trata el residuo, no lo recoge en la calle).",
+        "hoy": "Cronología: (1) En 2020-2021 el gobierno de Ada Colau impulsó la tasa de recogida domiciliaria (ordenanza 3.18), vinculada al titular del contrato de suministro de agua. (2) Fue ANULADA por el TSJC (sentencia ~2022). (3) El Tribunal Supremo anuló esa sentencia del TSJC en 2024, restableciéndola; la tasa nunca se dejó de cobrar de facto. (4) En diciembre de 2024 se aprueba una NUEVA ordenanza fiscal 3.18 que entra en vigor el 1-ene-2025, ya diseñada para cumplir el mandato de no déficit de la Ley 7/2022, con aplicación PROGRESIVA del importe a lo largo de varios años. Sigue vinculada al contrato de agua.",
+        "cambio": "Barcelona pasó de no tener tasa diferenciada (2018) a tener una tasa que debe cubrir el 100% del coste del servicio (2025). Importe concreto por hogar: no verificado (PDF 3.18 no accesible); se aplica de forma progresiva. Aparte está la TMTR metropolitana (AMB), que subió ~10% de media para 2025 (~6€/año más para el 71% de usuarios domésticos).",
+        "fuente": "ajuntament.barcelona.cat (ordenanza 3.18, FAQ tasa residuos); amb.cat (TMTR)"
+      },
+      "casoContraste": {
+        "municipio": "Begues",
+        "detalle": "Begues adaptó su tasa de residuos en las ordenanzas 2025 para cumplir la Ley 7/2022 (cobertura del coste total del servicio). Importe exacto: no verificado para Begues. Como contraste adicional ilustrativo aparece Sant Just Desvern, que para 2026 BAJA la cuota fija de residuos de 120€/año (2025) a 96€/año (2026) — demostrando que, una vez obligados a tener la tasa, los ayuntamientos siguen fijando el importe (incluso bajándolo) según su cálculo de costes.",
+        "fuente": "begues.cat; residus.santjust.net/faq"
+      },
+      "datosAgregados": {
+        "fuente": "Observatorio de la Fiscalidad de los Residuos (Fundació ENT), informe 'Las Tasas de Residuos en España 2025', sobre 131 municipios incl. todas las capitales de provincia.",
+        "tasaMediaDomestica2025": "116,32 € por vivienda",
+        "tasaMediaDomestica2024": "100,12 € por vivienda",
+        "variacion": "+16,2% en 2025 respecto a 2024",
+        "coberturaMediaCostes2025": "65,5% (subió ~12 puntos respecto a 2024)",
+        "cumplimiento": "Pese a que el plazo legal venció el 10-abril-2025, la MAYORÍA de municipios aún NO cubre el 100% del coste (cobertura media 65,5%): el grueso de los municipios incumple todavía el mandato de no déficit.",
+        "urlFuente": "https://www.fiscalidadresiduos.org/wp-content/uploads/2025/10/Tasas_2025.pdf",
+        "noVerificado": false,
+        "nota": "Cifras tomadas de fragmentos de búsqueda del informe y de medios (RETEMA, EyS Municipales) que lo citan. PDF no abierto directamente (WebFetch denegado)."
+      },
+      "cambios": [
+        {"fecha": "2018 (UE)", "que": "Directiva (UE) 2018/851 establece la base europea de recuperación de costes en residuos.", "quien": "UE"},
+        {"fecha": "8-abr-2022", "que": "Ley 7/2022 art. 11.3: obliga a las entidades locales a tener tasa específica, diferenciada y no deficitaria. Plazo: 10-abr-2025.", "quien": "Estado (transponiendo UE)"},
+        {"fecha": "2024-2025", "que": "Oleada de municipios crean o suben su tasa de residuos. Tasa media doméstica +16,2% en 2025.", "quien": "Ayuntamientos (obligados por el Estado/UE, pero fijando ellos el importe)"}
+      ],
+      "veredicto": "ESTADO/UE OBLIGA, AYUNTAMIENTO FIJA EL IMPORTE",
+      "veredictoTexto": "Que ahora 'aparezca' o suba la tasa de basuras es consecuencia de una ley estatal (Ley 7/2022) que transpone una directiva europea y OBLIGA a cobrarla cubriendo el coste real. Pero CUÁNTO se paga lo decide cada ayuntamiento. Es el caso más claro donde 'quién obliga' (Cortes/UE) y 'quién fija la cuantía' (ayuntamiento) son distintos.",
+      "verificacion": "Obligación Ley 7/2022 art. 11.3 y plazo abril 2025: verificado (BOE y múltiples fuentes). Datos agregados ENT (116,32€, +16,2%, cobertura 65,5%): verificado vía fragmentos del informe y medios. Importes concretos de Barcelona y Begues: no verificado (PDFs no abiertos). Historia judicial TSJC/Supremo de la tasa de Barcelona: verificado vía fragmentos de prensa.",
+      "matices": "La Ley 7/2022 NO fija el importe ni obliga a un modelo concreto (pago por generación, vinculación al agua o al catastro): deja el diseño al municipio, solo exige que NO sea deficitaria. Por eso hay enorme dispersión de importes y modelos. El 'no déficit' es lo que provoca subidas: antes el ayuntamiento cubría parte con otros ingresos; ahora la ley se lo prohíbe.",
+      "fuentes": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809 (Ley 7/2022, art. 11.3)",
+        "https://ajuntament.barcelona.cat/hisenda/sites/default/files/normativa/2021-01/3.18-taxa-pel-servei-de-recollida-de-residus-municipals-generats-en-els-domicilis-particulars.pdf",
+        "https://ajuntament.barcelona.cat/transparencia/ca/taxa-recollida-residus-solids-urbans",
+        "https://www.fiscalidadresiduos.org/wp-content/uploads/2025/10/Tasas_2025.pdf",
+        "https://www.retema.es/actualidad/las-tasas-de-residuos-aumentan-un-16-en-2025-pero-siguen-sin-cubrir-los-costes-del",
+        "https://www.amb.cat/s/web/medi-ambient/gestio-i-organitzacio/taxa-metropolitana-de-tractament-de-residus.html",
+        "https://www.begues.cat/actualitat/noticies/aprovacio-inicial-de-les-ordenances-fiscals-per-a-lany-2025.html"
+      ]
+    },
+    {
+      "id": "ibi",
+      "nombre": "IBI — Impuesto sobre Bienes Inmuebles",
+      "nivel": "local (tipo) / estatal (valor catastral y coeficientes de actualización)",
+      "quienDecide": "El TIPO de gravamen lo fija cada ayuntamiento dentro del marco del TRLHL (urbana 0,4%–1,1%; rústica 0,3%–0,9%, con posibles incrementos). El VALOR CATASTRAL (base imponible) lo gestiona el Estado (Catastro), y las actualizaciones por coeficientes vienen en leyes/RD estatales anuales, normalmente A PETICIÓN del municipio.",
+      "cadenaCompetencia": [
+        "Estado (Catastro/Dirección General del Catastro): fija el valor catastral mediante ponencias de valores; las actualizaciones anuales por coeficientes se aprueban por Ley de Presupuestos / RD, pero el municipio debe SOLICITARLAS (art. 32.2 TRLCI).",
+        "Ayuntamiento: fija el TIPO de gravamen dentro de la horquilla del TRLHL (art. 72) y las bonificaciones (familia numerosa, VPO, energía solar, etc.) en su ordenanza 1.1.",
+        "Resultado: cuota = valor catastral × tipo municipal − bonificaciones. La cuota puede subir aunque el tipo no se mueva, si sube el valor catastral."
+      ],
+      "casoBarcelona": {
+        "2018": "Tipo general de gravamen urbana: 0,66% (ordenanza fiscal 1.1).",
+        "hoy": "Tipo general urbana: SIGUE en 0,66% (las OF 2025 lo CONGELAN para la ciudadanía). En contextos de cálculo aparece a veces un 0,769% que corresponde a la suma del tipo general más recargos/tipos diferenciados para ciertos usos, no al tipo residencial general. En las OF 2025 SÍ se sube el IBI a 233 inmuebles de ocio/hostelería y a 130 BICES (Bienes de Características Especiales: Puerto de Barcelona, terminales de cruceros), no a las viviendas.",
+        "cambio": "Tipo residencial general congelado 2018→2025 (0,66%). La cuota individual ha podido variar por actualizaciones del valor catastral, no por subida del tipo. Subidas selectivas solo a ocio/hostelería y BICES.",
+        "fuente": "ajuntament.barcelona.cat ordenanza 1.1-ordenanza-ibi.pdf; nota de prensa OF 2025"
+      },
+      "casoContraste": {
+        "municipio": "Begues",
+        "detalle": "Begues SUBIÓ el tipo de IBI urbana de 0,88% a 0,90% en 2025 (+2,23%): una vivienda que pagaba 900€/año pasaría a ~920€. Decisión 100% del Pleno municipal de Begues. Contraste directo con Barcelona, que lo congeló: dos ayuntamientos, dos decisiones opuestas, mismo marco TRLHL.",
+        "fuente": "begues.cat ordenances fiscals 2025"
+      },
+      "cambios": [
+        {"fecha": "anual", "que": "Posibles actualizaciones del valor catastral por coeficientes en la LPGE, a petición municipal. Funcionan así: el Estado publica el coeficiente, pero solo se aplica a los municipios que lo solicitan.", "quien": "Estado + petición municipal"},
+        {"fecha": "2018-2025", "que": "Barcelona congela el tipo urbana en 0,66%; Begues lo sube de 0,88% a 0,90% en 2025.", "quien": "Ayuntamiento"}
+      ],
+      "veredicto": "MUNICIPAL (tipo) / ESTADO (valor catastral)",
+      "veredictoTexto": "El tipo del IBI lo decide cada ayuntamiento: Barcelona lo congeló en 0,66% desde antes de 2018; Begues lo subió en 2025. Si la cuota sube sin que el ayuntamiento mueva el tipo, suele ser por una actualización del valor catastral (Estado), pero esa actualización casi siempre la PIDE el propio municipio.",
+      "verificacion": "Tipo urbana Barcelona 0,66% en 2018 y vigente: verificado (fragmentos de la ordenanza 1.1 y de OCU/prensa). Congelación 2025 y subida selectiva a ocio/BICES: verificado (nota de prensa oficial). Begues 0,88%→0,90%: verificado (web municipal). No se localizó ponencia de valores reciente específica de Barcelona en este periodo (no verificado si la hubo).",
+      "matices": "El 0,769% que circula en simuladores NO es el tipo residencial general; es el resultado de sumar el tipo general más el recargo/tipo diferenciado aplicable a determinados inmuebles. Conviene no confundirlo con una subida del tipo a las viviendas.",
+      "fuentes": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214 (TRLHL art. 72, tipos IBI)",
+        "https://ajuntament.barcelona.cat/hisenda/sites/default/files/normativa/2025-05/1.1-ordenanza-ibi.pdf?profile=1",
+        "https://ajuntament.barcelona.cat/premsa/2024/12/20/el-plenari-aprova-definitivament-les-ordenances-fiscals-2025/",
+        "https://www.ocu.org/fincas-y-casas/gestion/fiscalidad/analisis/2024/06/cuanto-paga-ibi-barcelona",
+        "https://www.begues.cat/actualitat/noticies/aprovacio-inicial-de-les-ordenances-fiscals-per-a-lany-2025.html"
+      ]
+    },
+    {
+      "id": "iivtnu",
+      "nombre": "IIVTNU — Plusvalía municipal (Impuesto sobre el Incremento de Valor de los Terrenos de Naturaleza Urbana)",
+      "nivel": "local (tipo) / estatal (método de cálculo, tras anulación del TC)",
+      "quienDecide": "El TIPO (máximo 30%) y los coeficientes anuales máximos (dentro de los topes estatales) los fija cada ayuntamiento. El MÉTODO de cálculo de la base lo rediseñó el Estado por RDL tras la anulación del Tribunal Constitucional.",
+      "cadenaCompetencia": [
+        "Tribunal Constitucional: STC 182/2021 (26-oct-2021) ANULÓ el método objetivo de cálculo de la base imponible por vulnerar el principio de capacidad económica (art. 31 CE), dejando el impuesto sin forma de calcularse.",
+        "Estado (Gobierno): RDL 26/2021, de 8 de noviembre (BOE núm. 268, de 9-nov-2021, en vigor 10-nov-2021) RESTABLECIÓ el impuesto con un nuevo método: el contribuyente puede ELEGIR entre (a) método objetivo = valor catastral del suelo × coeficiente según años de tenencia, o (b) método real = diferencia entre precio de venta y de compra. Y NO se paga si no hay incremento real de valor (ganancia). El RDL 26/2021 fue declarado constitucional por STC de 9-mar-2023.",
+        "Ayuntamiento: adapta su ordenanza (en Barcelona, la 1.3), fija el tipo (Barcelona: 30%) y aprueba los coeficientes dentro de los máximos estatales."
+      ],
+      "casoBarcelona": {
+        "2018": "Plusvalía vigente con el método objetivo antiguo (anterior a la STC). Tipo de gravamen 30% (el máximo legal). Ordenanza fiscal 1.3.",
+        "hoy": "Ordenanza 1.3 adaptada al RDL 26/2021: incorpora los coeficientes dinámicos y el doble método (objetivo/real), y la no tributación cuando no hay incremento. Tipo de gravamen: se mantiene en 30%. Modificación aprobada por el Pleno (provisional 23-dic-2022, vigente ejercicio 2023 y ss.; nueva versión def. 20-dic-2024 en vigor 1-ene-2025).",
+        "cambio": "Barcelona NO cambió su tipo (sigue al 30%). Lo que cambió fue el MÉTODO de base imponible, impuesto por el Estado tras el fallo del TC. El efecto sobre lo que paga cada contribuyente depende del caso.",
+        "fuente": "ajuntament.barcelona.cat ordenanza 1.3-iivtnu-plusvalia.pdf; transparència IIVTNU"
+      },
+      "casoContraste": {
+        "municipio": "Begues",
+        "detalle": "Como todo municipio, Begues tuvo que adaptar su ordenanza de plusvalía al RDL 26/2021 (mismo método estatal). El tipo y los coeficientes concretos de Begues: no verificado. El punto clave es que la reforma del método fue idéntica en TODOS los municipios (la impuso el Estado); lo único propio de cada uno es el tipo y los coeficientes dentro de los topes.",
+        "fuente": "begues.cat (ordenanza IIVTNU adaptada)"
+      },
+      "cambios": [
+        {"fecha": "26-oct-2021", "que": "STC 182/2021 anula el método de cálculo de la base imponible. El impuesto queda temporalmente inaplicable.", "quien": "Tribunal Constitucional"},
+        {"fecha": "9-nov-2021", "que": "RDL 26/2021 restablece el impuesto con doble método (objetivo/real) a elección del contribuyente y exención si no hay ganancia.", "quien": "Estado (Gobierno)"},
+        {"fecha": "9-mar-2023", "que": "STC declara constitucional el RDL 26/2021.", "quien": "Tribunal Constitucional"},
+        {"fecha": "2022-2025", "que": "Los ayuntamientos (Barcelona, etc.) adaptan sus ordenanzas al nuevo método; Barcelona mantiene el tipo en 30%.", "quien": "Ayuntamiento"}
+      ],
+      "veredicto": "ESTADO (método, obligado por el TC) / MUNICIPAL (tipo y coeficientes)",
+      "veredictoTexto": "El nuevo sistema NO 'sube' ni 'baja' de forma uniforme: depende del caso. Ahora hay dos métodos a elegir (te quedas con el que te salga más bajo) y, sobre todo, NO se paga si vendes sin ganancia. Para quien vende con poca o ninguna plusvalía, el cambio es a mejor; para grandes plusvalías a largo plazo, el resultado es similar al anterior. El rediseño lo impuso el Estado obligado por el TC; el tipo (30% en Barcelona) lo decide el ayuntamiento.",
+      "verificacion": "STC 182/2021, RDL 26/2021 (BOE 9-nov-2021), doble método y exención sin ganancia, constitucionalidad 2023: verificado (múltiples fuentes jurídicas). Tipo 30% Barcelona y adaptación de la ordenanza 1.3: verificado (fragmentos de la ordenanza y notas oficiales). Tipo/coeficientes de Begues: no verificado.",
+      "matices": "Mejora neutra-positiva para el contribuyente respecto a 2018: antes se pagaba aunque hubiera pérdidas (lo que el TC consideró inconstitucional); ahora no. Pero el método objetivo puede seguir gravando 'plusvalías' algo ficticias en suelos muy revalorizados sobre el papel. La elección de método la hace el contribuyente, no el ayuntamiento.",
+      "fuentes": [
+        "https://www.boe.es/buscar/doc.php?id=BOE-A-2021-18276 (RDL 26/2021, de 8 de noviembre, BOE núm. 268 de 9-nov-2021)",
+        "https://www.hayderecho.com/2021/11/11/la-plusvalia-municipal-tras-la-stc-182-2021-y-el-rdl-26-2021-de-8-de-noviembre/",
+        "https://ajuntament.barcelona.cat/hisenda/sites/default/files/normativa/2025-05/1.3-iivtnu-plusvalia.pdf?profile=1",
+        "https://ajuntament.barcelona.cat/transparencia/es/ordenanza-fiscal-IIVTNU"
+      ]
+    }
+  ],
+  "municipioContraste": {
+    "nombre": "Begues",
+    "comarca": "Baix Llobregat (provincia de Barcelona, Cataluña)",
+    "poblacion": 7439,
+    "anioPoblacion": 2024,
+    "fuentePoblacion": "https://www.idescat.cat/emex/?id=080207",
+    "porQue": "Municipio pequeño (<20.000 hab.) con ordenanzas fiscales accesibles online (begues.cat y CIDO-Diputació de Barcelona) y, crucialmente, con DATOS CONCRETOS Y VERIFICADOS de cambios fiscales 2025 que ilustran a la perfección la tesis: subió el IBI (0,88%→0,90%) y subió el coeficiente del IVTM (1,66→1,70, por primera vez desde 2009) por decisión propia del Pleno, mientras Barcelona congelaba ambos. Dos ayuntamientos, el mismo marco estatal TRLHL, decisiones opuestas: la prueba de que la cuantía es municipal.",
+    "contrasteAdicional": "Sant Just Desvern (Baix Llobregat) se cita como contraste de la tasa de residuos: BAJA la cuota fija de 120€/año (2025) a 96€/año (2026), demostrando que, una vez obligados por la Ley 7/2022 a tener la tasa, los ayuntamientos siguen fijando (e incluso bajando) el importe."
+  }
+}

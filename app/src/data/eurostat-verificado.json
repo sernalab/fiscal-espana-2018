@@ -1,0 +1,20 @@
+{
+  "_meta": {
+    "fuente": "Eurostat, dataset gov_10a_taxag",
+    "indicador": "Total receipts from taxes and social contributions (incl. imputed) after deduction of amounts unlikely to be collected, % del PIB (D2_D5_D91_D61_M_D995, S13_S212)",
+    "urlApi": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_taxag?format=JSON&lang=EN&geo=ES&na_item=D2_D5_D91_D61_M_D995&unit=PC_GDP&sector=S13_S212&sinceTimePeriod=2000",
+    "fechaDescarga": "2026-06-05",
+    "verificacion": "Descargado directamente de la API oficial de Eurostat"
+  },
+  "serie": [
+    {"anio": 2000, "pctPIB": 34.0}, {"anio": 2001, "pctPIB": 33.7}, {"anio": 2002, "pctPIB": 34.1},
+    {"anio": 2003, "pctPIB": 33.9}, {"anio": 2004, "pctPIB": 34.9}, {"anio": 2005, "pctPIB": 36.1},
+    {"anio": 2006, "pctPIB": 36.8}, {"anio": 2007, "pctPIB": 37.2}, {"anio": 2008, "pctPIB": 32.9},
+    {"anio": 2009, "pctPIB": 30.5}, {"anio": 2010, "pctPIB": 32.1}, {"anio": 2011, "pctPIB": 32.0},
+    {"anio": 2012, "pctPIB": 33.2}, {"anio": 2013, "pctPIB": 34.0}, {"anio": 2014, "pctPIB": 34.5},
+    {"anio": 2015, "pctPIB": 34.4}, {"anio": 2016, "pctPIB": 34.1}, {"anio": 2017, "pctPIB": 34.4},
+    {"anio": 2018, "pctPIB": 35.2}, {"anio": 2019, "pctPIB": 35.2}, {"anio": 2020, "pctPIB": 37.3},
+    {"anio": 2021, "pctPIB": 38.1}, {"anio": 2022, "pctPIB": 37.4}, {"anio": 2023, "pctPIB": 37.1},
+    {"anio": 2024, "pctPIB": 37.3}
+  ]
+}
