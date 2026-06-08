@@ -17,9 +17,28 @@ const EFECTOS = {
   vaiven: { label: 'Subió y volvió', color: '#b45309', bg: '#fdf1e7' },
 };
 
+const TANGIBLES = [
+  { cifra: '+16,2 %', label: 'Tasa de basuras (2025)', sub: 'media 116 €/vivienda · la obliga la UE' },
+  { cifra: '≈130 €/año', label: 'Tabaco, un paquete al día', sub: '+37 cént./cajetilla (Ley 7/2024)' },
+  { cifra: '≈800 €/año', label: 'IRPF «silencioso» (sueldo 30.000 €)', sub: 'por no deflactar los tramos', href: '#calculadora', cta: 'calcula el tuyo →' },
+];
+
 export function Cotidiano() {
   return (
-    <div className="dia-grid">
+    <>
+      <div className="tangibles">
+        {TANGIBLES.map((t) => (
+          <div className="tangible" key={t.label}>
+            <span className="t-cifra">{t.cifra}</span>
+            <span className="t-label">{t.label}</span>
+            <span className="t-sub">
+              {t.sub}
+              {t.href && <> · <a href={t.href}>{t.cta}</a></>}
+            </span>
+          </div>
+        ))}
+      </div>
+      <div className="dia-grid">
       {cotidiano.map((c) => {
         const ef = EFECTOS[c.tono] ?? EFECTOS.mixto;
         return (
@@ -38,7 +57,8 @@ export function Cotidiano() {
           </article>
         );
       })}
-    </div>
+      </div>
+    </>
   );
 }
 
@@ -111,7 +131,7 @@ export function Calculadora() {
         Estimación orientativa del <strong>tramo estatal + autonómico de referencia</strong>, solo para rentas del trabajo.
         No incluye deducciones autonómicas ni personales, así que tu cifra real variará según tu comunidad y tu situación.
         El objetivo no es clavar tu declaración, sino ver el efecto de las decisiones del Gobierno central.
-        Inflación acumulada usada: ≈ 18 % (IPC 2018–2025, INE).
+        Inflación acumulada usada: 23,3 % (IPC junio 2018 – diciembre 2025, INE).
         {r.sobreBaseMax && ' Para tu salario, además, se aplica la «cuota de solidaridad» sobre la parte que supera la base máxima de cotización.'}
       </p>
     </div>

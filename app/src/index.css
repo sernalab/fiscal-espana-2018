@@ -268,6 +268,16 @@ a:hover { text-decoration: underline; }
 .stat-sub { font-size: 12.5px; line-height: 1.5; color: #aebad0; }
 
 /* ---------- En tu día a día ---------- */
+.tangibles {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 28px;
+}
+.tangible {
+  background: #fdf3f3; border: 1px solid #f3d4d4; border-left: 4px solid var(--red);
+  border-radius: 12px; padding: 16px 20px; display: flex; flex-direction: column;
+}
+.t-cifra { font-family: 'Newsreader', Georgia, serif; font-size: 28px; font-weight: 700; color: var(--red); line-height: 1; }
+.t-label { font-size: 14px; font-weight: 700; color: var(--ink); margin: 8px 0 4px; }
+.t-sub { font-size: 12px; color: var(--ink-soft); line-height: 1.45; }
 .dia-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px; }
 .dia-card {
   background: var(--card); border: 1px solid var(--border); border-top: 4px solid var(--blue);

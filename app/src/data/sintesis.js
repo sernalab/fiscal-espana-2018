@@ -243,7 +243,7 @@ export const cotidiano = [
     titulo: 'Fumas o vapeas',
     tono: 'sube',
     resumen:
-      'Más caro. El impuesto del tabaco subió en 2025 y, además, se creó un impuesto nuevo sobre los líquidos de los cigarrillos electrónicos y las bolsas de nicotina.',
+      'Más caro. El impuesto del tabaco subió en 2025 (la cajetilla subió unos 37 céntimos): para un paquete al día son unos 130 € más al año. Y se creó un impuesto nuevo sobre los líquidos de los cigarrillos electrónicos y las bolsas de nicotina.',
     norma: 'Ley 7/2024',
   },
   {
@@ -297,8 +297,8 @@ export const impuestosNuevos = [
 
 // ---------- Calculadora: rémora fiscal del IRPF + nueva cotización ----------
 // Estimación orientativa del efecto de las decisiones estatales en una nómina.
-// Inflación acumulada IPC 2018→2025 ≈ 18% (INE).
-export const IPC_2018_2025 = 1.18;
+// Inflación acumulada IPC junio 2018 → diciembre 2025 = 23,3% (INE, calculadora oficial varipc).
+export const IPC_2018_2025 = 1.233;
 
 // Escala de referencia del IRPF 2025 (tramo estatal + autonómico de referencia).
 const ESCALA_IRPF = [
