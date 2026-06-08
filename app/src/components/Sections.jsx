@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {
   RESUMEN, cotidiano, lineaTiempo, caveats, nuevasFiguras2025, DIRECCIONES,
-  balance, impuestosNuevos, calculaImpacto,
+  balance, impuestosNuevos, calculaImpacto, cunaFiscal, gastoPublico,
 } from '../data/sintesis';
 
 const eur = (n) => n.toLocaleString('es-ES', { maximumFractionDigits: 0 }) + ' €';
@@ -133,6 +133,66 @@ export function Calculadora() {
         El objetivo no es clavar tu declaración, sino ver el efecto de las decisiones del Gobierno central.
         Inflación acumulada usada: 23,3 % (IPC junio 2018 – diciembre 2025, INE).
         {r.sobreBaseMax && ' Para tu salario, además, se aplica la «cuota de solidaridad» sobre la parte que supera la base máxima de cotización.'}
+      </p>
+    </div>
+  );
+}
+
+// ---------- Coste de contratar: desglose de 100 € de coste laboral ----------
+export function CunaDesglose() {
+  const d = cunaFiscal;
+  return (
+    <div className="desglose">
+      <p className="desglose-titulo">De cada <strong>100 €</strong> que le cuesta un trabajador a la empresa…</p>
+      <div className="desglose-bar">
+        {d.desglose.map((s) => (
+          <div key={s.label} className="desglose-seg" style={{ width: `${s.v}%`, background: s.color }} title={`${s.label}: ${s.v} €`}>
+            <span>{s.v}€</span>
+          </div>
+        ))}
+      </div>
+      <div className="desglose-leyenda">
+        {d.desglose.map((s) => (
+          <span key={s.label} className="desglose-item">
+            <span className="desglose-punto" style={{ background: s.color }} />
+            {s.label} — <strong>{s.v} €</strong>
+          </span>
+        ))}
+      </div>
+      <p className="desglose-nota">
+        Los impuestos sobre ese trabajador (<strong>41,4 €</strong>) los paga en su mayoría la <strong>empresa</strong>
+        ({d.desglose[0].v} € de cotización), no el trabajador. España cubre con cotizaciones el <strong>{d.cotizPctRecaudacion} %</strong> de
+        todo lo que recauda, frente al <strong>{d.cotizPctRecaudacionUE} %</strong> de media en la UE: el sistema se apoya en el coste de
+        contratar más que casi ningún vecino. Fuente: {d.fuente}.
+      </p>
+    </div>
+  );
+}
+
+// ---------- A dónde va el dinero: gasto público ----------
+export function GastoPublico() {
+  const g = gastoPublico;
+  const max = Math.max(...g.partidas.map((p) => p.pct));
+  return (
+    <div className="gasto">
+      <div className="gasto-bars">
+        {g.partidas.map((p) => (
+          <div className="gasto-row" key={p.label}>
+            <span className="gasto-label">{p.label}</span>
+            <div className="gasto-bar-wrap">
+              <div className="gasto-bar" style={{ width: `${(p.pct / max) * 100}%`, background: p.color }}>
+                <span className="gasto-pct">{p.pct.toLocaleString('es-ES')} %</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p className="gasto-nota">
+        De cada 100 € de gasto público, <strong>41 € son protección social</strong> (28 € solo en pensiones) y
+        otros <strong>14 € sanidad</strong> y <strong>9 € educación</strong>: cerca de dos tercios es Estado del
+        bienestar. Pero los <strong>intereses de la deuda</strong> ya se llevan unos 39.000 M€ al año (dentro de
+        «servicios generales»), más que toda la educación universitaria. Gasto total 2024: {g.total.toLocaleString('es-ES')} M€
+        ({g.pctPIB} % del PIB). Fuente: {g.fuente}.
       </p>
     </div>
   );

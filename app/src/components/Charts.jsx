@@ -2,7 +2,7 @@ import {
   ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
   ReferenceLine, ReferenceArea, BarChart, Bar, Legend, Cell,
 } from 'recharts';
-import { presionFiscal, recaudacion, impactoNormativo, comparativaUE } from '../data/sintesis';
+import { presionFiscal, recaudacion, impactoNormativo, comparativaUE, cunaFiscal } from '../data/sintesis';
 
 const fmtME = (v) =>
   v == null ? '—' : `${v.toLocaleString('es-ES', { maximumFractionDigits: 0 })} M€`;
@@ -131,6 +131,43 @@ export function ComparativaChart() {
         Presión fiscal en 2023 (Eurostat, mismo indicador). España (37,1 %) está <strong>por debajo</strong> de la
         media de la UE (39,9 %), la eurozona (40,5 %), Alemania, Italia y Francia. Pero subió +1,9 puntos desde 2018,
         <strong> mientras la media de la UE bajó</strong> (de 41,1 % a 39,9 %): converge al alza desde un nivel bajo.
+      </p>
+    </div>
+  );
+}
+
+// ---------- Cuña fiscal: coste de contratar (OCDE) ----------
+export function CunaChart() {
+  const data = [...cunaFiscal.paises].sort((a, b) => b.v - a.v);
+  const color = (d) => (d.destacado ? '#d64545' : d.media ? '#0d9488' : '#cbd5e1');
+  return (
+    <div className="chart-wrap">
+      <ResponsiveContainer width="100%" height={330}>
+        <BarChart data={data} layout="vertical" margin={{ top: 8, right: 56, left: 12, bottom: 0 }}>
+          <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" horizontal={false} />
+          <XAxis
+            type="number" domain={[30, 52]} tickFormatter={(v) => `${v}%`}
+            tick={{ fontSize: 12, fill: '#64748b' }} tickLine={false} axisLine={{ stroke: '#cbd5e1' }}
+          />
+          <YAxis
+            type="category" dataKey="label" width={104}
+            tick={{ fontSize: 12.5, fill: '#475569' }} tickLine={false} axisLine={false}
+          />
+          <Tooltip
+            contentStyle={tooltipStyle}
+            formatter={(v) => [`${v.toLocaleString('es-ES')} % del coste laboral`, 'Cuña fiscal']}
+            cursor={{ fill: 'rgba(214,69,69,0.05)' }}
+          />
+          <Bar dataKey="v" radius={[0, 5, 5, 0]} label={{ position: 'right', formatter: (v) => `${v}%`, fontSize: 12, fill: '#64748b' }}>
+            {data.map((d) => <Cell key={d.label} fill={color(d)} />)}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+      <p className="chart-note">
+        Cuña fiscal de un salario medio (OCDE, 2025): lo que se va en IRPF + cotizaciones sobre el coste laboral total.
+        España (41,4 %) está <strong>por encima</strong> de la media UE (38,9 %) y OCDE (35,1 %), aunque por debajo de
+        Alemania, Francia o Italia. Lo característico: <strong>23,4 de cada 100 € los paga la empresa</strong> —
+        por eso contratar es caro aquí.
       </p>
     </div>
   );

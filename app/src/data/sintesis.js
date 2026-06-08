@@ -209,7 +209,7 @@ export const cotidiano = [
     etiqueta: 'Cotización, no impuesto',
     resumen:
       'Cuesta algo más, pero por cotizaciones sociales, no por impuestos. Se añadió el MEI (0,8% del salario en 2025, que paga sobre todo la empresa y sube hasta el 1,2% en 2029). Para los sueldos altos se suma una «cuota de solidaridad» sobre la parte que supera el tope de cotización.',
-    matiz: 'Las cotizaciones no son un impuesto, pero sí encarecen tener una nómina.',
+    matiz: 'Sumando todo, la empresa paga ~30 % del bruto en cotizaciones (media UE ~22 %). La cuña fiscal de un salario medio es del 41,4 %, por encima de la media UE — y la soporta sobre todo la empresa. Ver «El coste de contratar».',
     norma: 'RDL 2/2023 (reforma de pensiones)',
   },
   {
@@ -270,6 +270,54 @@ export const comparativaUE = {
     { label: 'Portugal', y2018: 37.0, y2023: 37.2 },
     { label: 'España', y2018: 35.2, y2023: 37.1, destacado: true },
   ],
+};
+
+// ---------- El coste de contratar: cuña fiscal (OCDE) ----------
+// Cuña fiscal = % del coste laboral total que se va en IRPF + cotizaciones
+// (trabajador soltero, salario medio). Fuente: OCDE, Taxing Wages 2026 (datos 2025).
+export const cunaFiscal = {
+  fuente: 'OCDE, Taxing Wages 2026 (salario medio, soltero, 2025)',
+  paises: [
+    { label: 'Alemania', v: 49.3 },
+    { label: 'Francia', v: 47.2 },
+    { label: 'Austria', v: 47.1 },
+    { label: 'Italia', v: 45.8 },
+    { label: 'España', v: 41.4, destacado: true },
+    { label: 'Media UE + RU', v: 38.9, media: true },
+    { label: 'Media OCDE', v: 35.1, media: true },
+  ],
+  // De cada 100 € de coste laboral en España:
+  desglose: [
+    { label: 'Cotización de la empresa', v: 23.4, color: '#d64545' },
+    { label: 'IRPF del trabajador', v: 13.0, color: '#d9952a' },
+    { label: 'Cotización del trabajador', v: 5.0, color: '#c2641a' },
+    { label: 'Neto que recibe el trabajador', v: 58.6, color: '#2e9e6b' },
+  ],
+  empresaSobreBruto: 30,        // % del salario bruto que paga la empresa en cotizaciones
+  empresaSobreBrutoUE: 21.9,    // media UE-27
+  cotizPctRecaudacion: 25.8,    // cotizaciones como % de todo lo recaudado (España)
+  cotizPctRecaudacionUE: 17.9,  // media UE
+};
+
+// ---------- A dónde va el dinero: gasto público por función (COFOG) ----------
+// Fuente: IGAE, clasificación funcional COFOG 2024 (recopilado por FEDEA).
+// Total administraciones públicas (incluida la Seguridad Social).
+export const gastoPublico = {
+  total: 725001,     // M€ en 2024
+  pctPIB: 45.5,
+  fuente: 'IGAE — clasificación funcional COFOG 2024 (FEDEA)',
+  partidas: [
+    { label: 'Pensiones', pct: 28.4, me: 206119, color: '#2563eb' },
+    { label: 'Sanidad', pct: 14.2, me: 102942, color: '#7c5cd6' },
+    { label: 'Servicios generales (incluye intereses de la deuda)', pct: 12.8, color: '#c2641a' },
+    { label: 'Resto de protección social (paro, dependencia, familia…)', pct: 12.6, color: '#0d9488' },
+    { label: 'Asuntos económicos (infraestructuras, subvenciones…)', pct: 11.2, color: '#d9952a' },
+    { label: 'Educación', pct: 9.1, color: '#2e9e6b' },
+    { label: 'Otros (seguridad, defensa, cultura, medio ambiente, vivienda…)', pct: 11.7, color: '#94a3b8' },
+  ],
+  // Apuntes verificables para la nota
+  proteccionSocialTotal: 41,   // pensiones + resto de protección social, % del gasto
+  interesesDeuda: 39000,       // M€ aprox. en intereses de la deuda (2024)
 };
 
 // ---------- Balance: movimientos normativos por dirección ----------

@@ -1,5 +1,5 @@
-import { Hero, Cotidiano, Calculadora, Balance, Timeline, Caveats, Footer } from './components/Sections';
-import { PressureChart, RevenueChart, ImpactChart, ComparativaChart } from './components/Charts';
+import { Hero, Cotidiano, Calculadora, CunaDesglose, GastoPublico, Balance, Timeline, Caveats, Footer } from './components/Sections';
+import { PressureChart, RevenueChart, ImpactChart, ComparativaChart, CunaChart } from './components/Charts';
 import TaxExplorer from './components/TaxExplorer';
 
 function Section({ id, kicker, title, intro, children }) {
@@ -22,12 +22,12 @@ export default function App() {
         <div className="container topnav-inner">
           <span className="topnav-brand">Impuestos del Gobierno central · 2018–2026</span>
           <div className="topnav-links">
-            <a href="#dia">En tu día a día</a>
+            <a href="#dia">Día a día</a>
             <a href="#calculadora">Tu nómina</a>
+            <a href="#contratar">Coste de contratar</a>
+            <a href="#gasto">A dónde va</a>
             <a href="#macro">La foto macro</a>
-            <a href="#balance">El balance</a>
             <a href="#impuestos">Impuesto a impuesto</a>
-            <a href="#cronologia">Cronología</a>
             <a href="#matices">Cómo leerlo</a>
           </div>
         </div>
@@ -54,8 +54,27 @@ export default function App() {
       </Section>
 
       <Section
+        id="contratar"
+        kicker="03 · El coste de contratar"
+        title="Lo que de verdad ahoga a una PYME: cotizar por cada nómina"
+        intro="En España el peso fiscal del trabajo recae sobre todo en la empresa. La «cuña fiscal» —lo que se va en IRPF y cotizaciones sobre el coste laboral total— está por encima de la media UE, y el grueso lo paga quien contrata."
+      >
+        <CunaChart />
+        <CunaDesglose />
+      </Section>
+
+      <Section
+        id="gasto"
+        kicker="04 · A dónde va tu dinero"
+        title="¿Y en qué se gasta todo eso?"
+        intro="El reparto del gasto público total (todas las administraciones, incluida la Seguridad Social), por función, según la clasificación oficial COFOG de la IGAE. Para que veas dónde acaba cada euro."
+      >
+        <GastoPublico />
+      </Section>
+
+      <Section
         id="macro"
-        kicker="03 · La foto macro"
+        kicker="05 · La foto macro"
         title="Presión fiscal y recaudación, en máximos"
         intro="Total de impuestos y cotizaciones en % del PIB (Eurostat, descarga directa de la API oficial). La franja amarilla marca el periodo desde junio de 2018."
       >
@@ -88,7 +107,7 @@ export default function App() {
 
       <Section
         id="balance"
-        kicker="04 · El balance"
+        kicker="06 · El balance"
         title="Subidas y bajadas, contadas sin trampa"
         intro="Dos recuentos simétricos: todos los movimientos normativos por dirección, y las figuras tributarias creadas desde 2018. Los números, sin adjetivos."
       >
@@ -97,7 +116,7 @@ export default function App() {
 
       <Section
         id="impuestos"
-        kicker="05 · Impuesto a impuesto"
+        kicker="07 · Impuesto a impuesto"
         title="Qué cambió en cada tributo del Gobierno central"
         intro="Filtra por lo que pasó (subió, bajó, nuevo…) o por origen. Las figuras impuestas por la UE están etiquetadas «Origen UE». Cada cambio enlaza a su norma en el BOE o en EUR-Lex."
       >
@@ -106,7 +125,7 @@ export default function App() {
 
       <Section
         id="cronologia"
-        kicker="06 · Cronología"
+        kicker="08 · Cronología"
         title="Todos los cambios, año a año"
         intro="Lista neutral de las modificaciones tributarias del Gobierno central desde junio de 2018, en orden cronológico. Cada línea indica la dirección del cambio, la norma y si es de origen europeo."
       >
@@ -115,7 +134,7 @@ export default function App() {
 
       <Section
         id="matices"
-        kicker="07 · Cómo leer los datos"
+        kicker="09 · Cómo leer los datos"
         title="Contexto para interpretar las cifras"
         intro="La recaudación récord no equivale a «subida de impuestos»: parte es ciclo, parte inflación, parte cambios de ley. Con cifras de AIReF, Banco de España, Funcas y FEDEA."
       >
