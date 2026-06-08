@@ -75,15 +75,17 @@ export function Calculadora() {
         <label htmlFor="bruto">Tu salario bruto anual</label>
         <div className="calc-field">
           <input
-            id="bruto" type="number" min="0" step="1000" value={bruto}
-            onChange={(e) => setBruto(e.target.value)}
+            id="bruto" type="number" inputMode="numeric" min="0" step="1000" value={bruto}
+            onChange={(e) => setBruto(e.target.value)} aria-label="Salario bruto anual en euros"
           />
-          <span>€/año</span>
+          <span>€ / año</span>
         </div>
         <input
           type="range" min="12000" max="120000" step="1000" value={Math.min(v, 120000)}
           onChange={(e) => setBruto(e.target.value)} className="calc-range"
+          aria-label="Ajusta tu salario bruto anual"
         />
+        <div className="calc-range-labels"><span>12.000 €</span><span>arrastra para ajustar</span><span>120.000 €+</span></div>
       </div>
       <div className="calc-out">
         <div className="calc-card calc-card-main">
