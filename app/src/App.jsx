@@ -1,4 +1,4 @@
-import { Hero, WhoDecides, Counts, Caveats, Footer } from './components/Sections';
+import { Hero, Timeline, Caveats, Footer } from './components/Sections';
 import { PressureChart, RevenueChart, ImpactChart } from './components/Charts';
 import TaxExplorer from './components/TaxExplorer';
 
@@ -20,13 +20,12 @@ export default function App() {
     <>
       <nav className="topnav">
         <div className="container topnav-inner">
-          <span className="topnav-brand">Impuestos 2018–2026 · verificación</span>
+          <span className="topnav-brand">Impuestos del Gobierno central · 2018–2026</span>
           <div className="topnav-links">
             <a href="#macro">La foto macro</a>
             <a href="#impuestos">Impuesto a impuesto</a>
-            <a href="#quien">Quién decide</a>
-            <a href="#conteos">Las «97 subidas»</a>
-            <a href="#matices">Matices</a>
+            <a href="#cronologia">Cronología</a>
+            <a href="#matices">Cómo leerlo</a>
           </div>
         </div>
       </nav>
@@ -36,8 +35,8 @@ export default function App() {
       <Section
         id="macro"
         kicker="01 · La foto macro"
-        title="Presión fiscal: sí está en máximos, pero el porqué importa"
-        intro="Total de impuestos y cotizaciones en % del PIB (Eurostat, descarga directa de la API oficial). La franja amarilla marca el periodo Sánchez."
+        title="Presión fiscal y recaudación, en máximos"
+        intro="Total de impuestos y cotizaciones en % del PIB (Eurostat, descarga directa de la API oficial). La franja amarilla marca el periodo desde junio de 2018."
       >
         <PressureChart />
         <h3 className="sub-h3">Recaudación por figura (AEAT, millones de euros)</h3>
@@ -45,8 +44,8 @@ export default function App() {
         <h3 className="sub-h3">¿Cuánto de eso fue cambio de ley? El dato de la propia AEAT</h3>
         <p className="section-intro">
           La AEAT publica cada año el impacto recaudatorio de los cambios normativos (cuadro 1.5 del Informe
-          Anual de Recaudación). Es el dato que separa «subida legislada» de «efecto del ciclo y la inflación» —
-          y sorprende: en 5 de los 8 años del periodo, los cambios de ley <em>restaron</em> recaudación.
+          Anual de Recaudación). Es el dato oficial que separa «subida legislada» de «efecto del ciclo y la
+          inflación»: en 5 de los 8 años del periodo, los cambios de ley <em>restaron</em> recaudación.
         </p>
         <ImpactChart />
       </Section>
@@ -54,35 +53,26 @@ export default function App() {
       <Section
         id="impuestos"
         kicker="02 · Impuesto a impuesto"
-        title="Las fichas: qué cambió, cuándo, quién lo decidió y dónde comprobarlo"
-        intro="Filtra por nivel de administración y por veredicto. Cada cambio enlaza a su norma en el BOE (o se marca como no verificado)."
+        title="Qué cambió en cada tributo del Gobierno central"
+        intro="Filtra por lo que pasó (subió, bajó, nuevo…) o por origen. Las figuras impuestas por la UE están etiquetadas «Origen UE». Cada cambio enlaza a su norma en el BOE o en EUR-Lex."
       >
         <TaxExplorer />
       </Section>
 
       <Section
-        id="quien"
-        kicker="03 · La clave del análisis"
-        title="¿Quién decide qué? Las cadenas de competencia"
-        intro="El error más común del debate: atribuir al Gobierno central subidas que decidió un ayuntamiento o una CCAA — o no ver la mano estatal/europea donde sí la hay."
+        id="cronologia"
+        kicker="03 · Cronología"
+        title="Todos los cambios, año a año"
+        intro="Lista neutral de las modificaciones tributarias del Gobierno central desde junio de 2018, en orden cronológico. Cada línea indica la dirección del cambio, la norma y si es de origen europeo."
       >
-        <WhoDecides />
-      </Section>
-
-      <Section
-        id="conteos"
-        kicker="04 · El origen de la cifra"
-        title="«81, 93, 97, 100, 141 subidas»: de dónde salen los conteos"
-        intro="No son cifras neutras ni necesariamente falsas: son recuentos con un criterio concreto, elaborados por actores con orientación identificable. Aquí están trazados hasta su fuente original."
-      >
-        <Counts />
+        <Timeline />
       </Section>
 
       <Section
         id="matices"
-        kicker="05 · Para leer bien los datos"
-        title="Matices metodológicos"
-        intro="Lo que hay que tener en cuenta antes de sacar conclusiones — con cifras de AIReF, Banco de España, Funcas y FEDEA."
+        kicker="04 · Cómo leer los datos"
+        title="Contexto para interpretar las cifras"
+        intro="La recaudación récord no equivale a «subida de impuestos»: parte es ciclo, parte inflación, parte cambios de ley. Con cifras de AIReF, Banco de España, Funcas y FEDEA."
       >
         <Caveats />
       </Section>

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { impuestos, NIVELES, nivelKey, VEREDICTOS, DIRECCIONES } from '../data/sintesis';
+import { impuestos, ORIGENES, VEREDICTOS, DIRECCIONES } from '../data/sintesis';
 
 const VERIFICACION = {
   verificado: { label: '✓ verificado', color: '#2e9e6b' },
@@ -29,6 +29,7 @@ function CambioRow({ c }) {
         <span className="cambio-dir" style={{ color: dir.color }}>{dir.label}</span>
         <span className="cambio-fecha">{c.fecha}</span>
         {c.temporal && <span className="cambio-temp">temporal</span>}
+        {c.ue && <span className="cambio-ue">UE</span>}
       </div>
       <p className="cambio-que">{c.que}</p>
       {(c.antes || c.despues) && (
@@ -49,15 +50,14 @@ function CambioRow({ c }) {
 }
 
 function TaxCard({ imp, open, onToggle }) {
-  const nk = nivelKey(imp.nivel);
-  const nivel = NIVELES[nk];
+  const origen = imp.origenUE ? ORIGENES.ue : ORIGENES.estatal;
   const ver = VEREDICTOS[imp.veredicto] ?? VEREDICTOS.mixto;
   const verif = VERIFICACION[imp.verificacion] ?? VERIFICACION.parcial;
   return (
     <article className={`tax-card ${open ? 'tax-card-open' : ''}`}>
       <button className="tax-card-head" onClick={onToggle} aria-expanded={open}>
         <div className="tax-card-tags">
-          <span className="tag" style={{ background: nivel.color }}>{nivel.label}{imp.ccaa ? ` · ${imp.ccaa}` : ''}</span>
+          <span className="tag" style={{ background: origen.color }}>{origen.label}</span>
           <span className="tag-veredicto" style={{ color: ver.color, background: ver.bg }}>{ver.label}</span>
           <span className="tag-verif" style={{ color: verif.color }}>{verif.label}</span>
         </div>
@@ -67,8 +67,7 @@ function TaxCard({ imp, open, onToggle }) {
       </button>
       {open && (
         <div className="tax-card-body">
-          <p className="quien-decide"><strong>Quién decide:</strong> {imp.quienDecide}</p>
-          {imp.atribucion && <p className="quien-decide"><strong>Atribución:</strong> {imp.atribucion}</p>}
+          {imp.origenUE && <p className="origen-ue"><strong>Origen europeo:</strong> {imp.origenUE}</p>}
           <h4>Cambios desde junio de 2018</h4>
           {imp.cambios.map((c, i) => <CambioRow key={i} c={c} />)}
           {imp.matices && <p className="matices"><strong>Matices:</strong> {imp.matices}</p>}
@@ -88,36 +87,34 @@ function TaxCard({ imp, open, onToggle }) {
 }
 
 export default function TaxExplorer() {
-  const [nivel, setNivel] = useState('todos');
   const [veredicto, setVeredicto] = useState('todos');
+  const [soloUE, setSoloUE] = useState(false);
   const [openId, setOpenId] = useState(null);
 
   const visibles = useMemo(
     () =>
       impuestos.filter(
         (i) =>
-          (nivel === 'todos' || nivelKey(i.nivel) === nivel) &&
-          (veredicto === 'todos' || i.veredicto === veredicto)
+          (veredicto === 'todos' || i.veredicto === veredicto) &&
+          (!soloUE || i.origenUE)
       ),
-    [nivel, veredicto]
+    [veredicto, soloUE]
   );
 
   return (
     <div>
       <div className="filters">
         <div className="filter-group">
-          <span className="filter-label">Nivel</span>
-          <Chip active={nivel === 'todos'} color="#475569" onClick={() => setNivel('todos')}>Todos</Chip>
-          {Object.entries(NIVELES).map(([k, v]) => (
-            <Chip key={k} active={nivel === k} color={v.color} onClick={() => setNivel(k)}>{v.label}</Chip>
-          ))}
-        </div>
-        <div className="filter-group">
-          <span className="filter-label">Veredicto</span>
+          <span className="filter-label">Qué pasó</span>
           <Chip active={veredicto === 'todos'} color="#475569" onClick={() => setVeredicto('todos')}>Todos</Chip>
           {Object.entries(VEREDICTOS).map(([k, v]) => (
             <Chip key={k} active={veredicto === k} color={v.color} onClick={() => setVeredicto(k)}>{v.label}</Chip>
           ))}
+        </div>
+        <div className="filter-group">
+          <span className="filter-label">Origen</span>
+          <Chip active={!soloUE} color="#475569" onClick={() => setSoloUE(false)}>Todos</Chip>
+          <Chip active={soloUE} color={ORIGENES.ue.color} onClick={() => setSoloUE(true)}>Solo origen UE</Chip>
         </div>
       </div>
       <p className="result-count">{visibles.length} figuras tributarias</p>

@@ -1,9 +1,8 @@
 // Capa de síntesis: normaliza la investigación (research/*.json) para la UI.
-// Cada dato citable conserva su fuente; la síntesis y los veredictos globales
-// se elaboran a partir de los veredictos por impuesto ya verificados.
+// Enfoque: impuestos del GOBIERNO CENTRAL desde junio de 2018, con datos
+// oficiales. Las figuras de origen europeo se etiquetan como tales. Cada
+// cambio conserva su norma (BOE) o queda marcado como no verificado.
 import estatales from './estatales.json';
-import autonomicos from './autonomicos.json';
-import locales from './locales.json';
 import conteos from './conteos-caveats.json';
 import eurostat from './eurostat-verificado.json';
 import aeat from './aeat-verificado.json';
@@ -35,98 +34,137 @@ export const nuevasFiguras2025 = [
   { nombre: 'Imp. servicios digitales («tasa Google»)', me: f2025.idsd },
 ].filter((f) => f.me != null);
 
-// ---------- Impuestos normalizados ----------
+// ---------- Origen europeo ----------
+// Figuras cuya obligación/marco proviene de una directiva de la UE, transpuesta
+// por el Estado. Se etiquetan para distinguir "lo decidió el Gobierno central"
+// de "lo impuso Europa y el Gobierno lo transpuso".
+const ORIGEN_UE = {
+  'plastico-no-reutilizable': 'Marco europeo de economía circular (Directiva UE 2018/851), transpuesto por la Ley 7/2022',
+  'residuos-vertedero': 'Marco europeo de economía circular (Directiva UE 2018/851), transpuesto por la Ley 7/2022',
+  'tasa-residuos': 'Obligación europea (Directiva UE 2018/851) transpuesta por la Ley 7/2022',
+};
+
 const normFuentes = (fuentes = []) =>
   fuentes.map((f) => (typeof f === 'string' ? { nombre: f.replace(/^https?:\/\/(www\.)?/, '').split('/')[0], url: f } : f));
 
-// Los veredictos de la capa local usan etiquetas competenciales; se mapean a dirección + atribución.
-const VEREDICTO_LOCAL = {
-  ivtm: { veredicto: 'depende', atribucion: 'Decisión de cada ayuntamiento (tarifas base estatales congeladas desde 2003)' },
-  'tasa-residuos': { veredicto: 'subio', atribucion: 'Estado/UE obligan a tenerla y a que no sea deficitaria; el importe lo fija cada ayuntamiento' },
-  ibi: { veredicto: 'depende', atribucion: 'Tipo municipal; valor catastral estatal (normalmente a petición del municipio)' },
-  iivtnu: { veredicto: 'mixto', atribucion: 'Método rediseñado por el Estado obligado por el Tribunal Constitucional; tipo municipal' },
+// Tasa de basuras: única figura local incluida, por ser de origen europeo.
+// Se presenta reenfocada en la cadena UE → Estado, con su efecto agregado real.
+const basuras = {
+  id: 'tasa-residuos',
+  nombre: 'Tasa de basuras / residuos domésticos',
+  cambios: [
+    {
+      fecha: '2018-05-30',
+      que: 'La Directiva (UE) 2018/851 establece el principio «quien contamina paga» y la recuperación del coste real del servicio de residuos.',
+      direccion: 'nuevo', temporal: false, ue: true,
+      norma: 'Directiva (UE) 2018/851 (modifica la Directiva marco de residuos 2008/98/CE)',
+      urlBOE: 'https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32018L0851',
+    },
+    {
+      fecha: '2022-04-08',
+      que: 'La Ley 7/2022 (art. 11.3) obliga a todos los municipios a tener una tasa de residuos específica, diferenciada y NO deficitaria —que cubra el coste real del servicio— antes de abril de 2025.',
+      direccion: 'nuevo', temporal: false, ue: true,
+      norma: 'Ley 7/2022, de 8 de abril, art. 11.3 (transpone la Directiva UE 2018/851)',
+      urlBOE: 'https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809',
+    },
+    {
+      fecha: '2025-01-01',
+      que: 'Oleada de creación y subida de la tasa para cumplir el mandato de no déficit. La cobertura media de costes alcanzó el 65,5%, por lo que en muchos municipios seguirá subiendo.',
+      antes: 'Media 2024: 100,12 €/vivienda',
+      despues: 'Media 2025: 116,32 €/vivienda (+16,2%)',
+      direccion: 'sube', temporal: false,
+      norma: 'Importe fijado por cada ordenanza municipal, en cumplimiento de la Ley 7/2022',
+      urlBOE: null,
+    },
+  ],
+  veredicto: 'subio',
+  veredictoTexto:
+    'La tasa de basuras sube en toda España porque una directiva europea (2018/851), transpuesta por la Ley 7/2022, obliga a que cubra el coste real del servicio. La media subió un 16,2% en 2025 (116,32 €/vivienda) y seguirá subiendo: la cobertura de costes todavía es del 65,5%.',
+  verificacion: 'verificado',
+  matices:
+    'El origen de la subida es europeo, transpuesto por una ley estatal (la obligación de no déficit). El importe concreto lo fija cada ordenanza municipal, de ahí la gran dispersión entre municipios.',
+  fuentes: [
+    { nombre: 'BOE — Ley 7/2022, art. 11.3', url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809' },
+    { nombre: 'Directiva (UE) 2018/851', url: 'https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32018L0851' },
+    { nombre: 'Observatorio de la Fiscalidad de los Residuos (Fundació ENT) — Tasas 2025', url: 'https://www.fiscalidadresiduos.org/wp-content/uploads/2025/10/Tasas_2025.pdf' },
+  ],
 };
 
-const norm = (imp, extra = {}) => ({
-  ...imp,
-  fuentes: normFuentes(imp.fuentes),
-  ...extra,
-});
-
+// Impuestos del Gobierno central (+ tasa de basuras, de origen UE).
+// Marca el cambio del Impuesto Complementario (Pilar 2) como de origen europeo.
 export const impuestos = [
-  ...estatales.impuestos.map((i) => norm(i)),
-  ...autonomicos.impuestos.map((i) => norm(i)),
-  ...locales.impuestos.map((i) =>
-    norm(i, {
-      veredictoCompetencial: i.veredicto,
-      veredicto: VEREDICTO_LOCAL[i.id]?.veredicto ?? 'mixto',
-      atribucion: VEREDICTO_LOCAL[i.id]?.atribucion,
-      verificacionTexto: i.verificacion,
-      verificacion: 'parcial',
-    })
-  ),
+  ...estatales.impuestos.map((imp) => ({
+    ...imp,
+    fuentes: normFuentes(imp.fuentes),
+    origenUE: ORIGEN_UE[imp.id] ?? null,
+    cambios: imp.cambios.map((c) => ({
+      ...c,
+      ue: c.ue || /pilar 2|2022\/2523/i.test(c.que + ' ' + (c.norma ?? '')),
+    })),
+  })),
+  { ...basuras, fuentes: normFuentes(basuras.fuentes), origenUE: ORIGEN_UE['tasa-residuos'] },
 ];
 
-export const resumenCCAA = autonomicos.resumenPorCCAA;
-export const valorReferencia = autonomicos.valorReferencia;
-export const municipioContraste = locales.municipioContraste;
-export const conteosSubidas = conteos.conteos;
-export const factChecks = conteos.factChecks;
-export const conteoBajadas = conteos.conteoBajadas;
+// ---------- Línea de tiempo: lista neutral de cambios ----------
+const parseYear = (fecha) => {
+  const m = String(fecha).match(/(\d{4})/);
+  return m ? parseInt(m[1], 10) : 9999;
+};
+
+export const lineaTiempo = impuestos
+  .flatMap((imp) =>
+    imp.cambios.map((c) => ({
+      anio: parseYear(c.fecha),
+      fecha: c.fecha,
+      figura: imp.nombre,
+      figuraId: imp.id,
+      que: c.que,
+      direccion: c.direccion,
+      norma: c.norma,
+      url: c.urlBOE ?? c.urlNorma ?? null,
+      temporal: !!c.temporal,
+      ue: !!c.ue,
+    }))
+  )
+  .filter((e) => e.anio >= 2018 && e.anio <= 2026)
+  .sort((a, b) => a.anio - b.anio || a.fecha.localeCompare(b.fecha));
+
 export const caveats = conteos.caveats;
 
-// ---------- Veredicto global (síntesis propia a partir de lo verificado) ----------
-export const VEREDICTO_GLOBAL = {
-  afirmacion:
-    '«Desde que Pedro Sánchez es presidente (junio 2018) han subido prácticamente todos los impuestos en España, incluyendo la tasa de basuras y el impuesto de circulación.»',
-  resumen:
-    'Parcialmente cierta en el ámbito estatal —con subidas concentradas en rentas altas, grandes empresas y nuevos impuestos— y falsa o engañosa en su atribución para el impuesto de circulación, los tributos autonómicos y, en parte, la tasa de basuras. La recaudación récord se explica sobre todo por ciclo económico e inflación, no por las subidas legisladas.',
-  porNivel: [
+// ---------- Resumen neutral (cabecera) ----------
+export const RESUMEN = {
+  titulo: 'Los impuestos del Gobierno central desde junio de 2018',
+  intro:
+    'Qué subió, qué bajó y qué se creó en los tributos que decide el Gobierno central, con datos oficiales (Eurostat, AEAT, BOE). Las figuras impuestas por la Unión Europea aparecen señaladas. Sin recuentos de parte: cada cambio enlaza a su norma.',
+  destacados: [
     {
-      nivel: 'Estatal',
-      etiqueta: 'parcial',
-      titulo: 'Parcialmente cierta',
-      texto:
-        'Subieron IRPF (tramos altos), Sociedades (grandes empresas) y tabaco, y se crearon al menos 8 figuras nuevas (plásticos, vertederos, ITF, IDSD, grandes fortunas, banca, vapeo, Pilar 2). Pero los tipos generales de IVA e IRPF de rentas medias no subieron por ley, hubo bajadas (pymes, rentas bajas, higiene femenina, aceite de oliva) y, según la propia AEAT, los cambios normativos RESTARON recaudación en 2019, 2021, 2022, 2023 y 2024 por las rebajas anti-inflación. La subida real silenciosa para rentas medias fue la no deflactación del IRPF (~11.000 M€ según Banco de España).',
+      cifra: '+56%',
+      label: 'Recaudación tributaria (nominal)',
+      sub: 'De 208.685 M€ (2018) a 325.356 M€ (2025). Fuente: AEAT, Informe Anual de Recaudación.',
     },
     {
-      nivel: 'Autonómico',
-      etiqueta: 'no-atribuible',
-      titulo: 'Depende de cada CCAA — no atribuible al Gobierno central',
-      texto:
-        'Sucesiones, Patrimonio, ITP y tramo autonómico del IRPF los decide cada comunidad. En el periodo, Madrid y Andalucía BAJARON prácticamente todo; Cataluña SUBIÓ casi todo; la C. Valenciana subió primero y bajó después con el cambio de gobierno. Atribuir estos movimientos a Sánchez es incorrecto en ambas direcciones.',
+      cifra: '38,1%',
+      label: 'Presión fiscal — máximo histórico',
+      sub: 'Del PIB en 2021 (37,3% en 2024). Nunca antes había superado el 37,2% de 2007. Fuente: Eurostat.',
     },
     {
-      nivel: 'Local — circulación (IVTM)',
-      etiqueta: 'falsa',
-      titulo: 'Atribución falsa',
-      texto:
-        'Las tarifas base estatales del IVTM están congeladas desde 2003 (ningún gobierno las ha tocado). Si la cuota subió, fue porque el ayuntamiento subió su coeficiente: Begues lo hizo en 2025 (1,66→1,70, primera vez desde 2009); Barcelona lo congeló. En términos reales, la parte estatal del impuesto se ha abaratado con la inflación.',
+      cifra: '8',
+      label: 'Nuevas figuras tributarias estatales',
+      sub: 'Plásticos, residuos, transacciones financieras, servicios digitales, grandes fortunas, banca, vapeo e impuesto complementario (Pilar 2).',
     },
     {
-      nivel: 'Local — tasa de basuras',
-      etiqueta: 'parcial',
-      titulo: 'Parcialmente cierta (con matiz competencial)',
-      texto:
-        'Aquí sí hay una cadena que llega al Gobierno: la Ley 7/2022 (transponiendo la Directiva UE 2018/851) obliga a los municipios a tener una tasa específica y NO deficitaria desde abril de 2025. Eso explica la oleada de creaciones y subidas (+16,2% de media en 2025). Pero el importe concreto lo fija cada ayuntamiento: quién obliga (Cortes/UE) y quién fija la cuantía (municipio) son distintos.',
-    },
-    {
-      nivel: 'Cotizaciones sociales',
-      etiqueta: 'verificado-matiz',
-      titulo: 'Subieron — pero no son impuestos',
-      texto:
-        'MEI creciente (0,6%→1,2% en 2029), cuota de solidaridad sobre salarios altos desde 2025 y destope progresivo de bases máximas. Son subidas estructurales verificadas que elevan la presión fiscal, aunque técnicamente son cotizaciones, no impuestos. Los conteos de «97/100 subidas» las incluyen.',
+      cifra: '3',
+      label: 'De origen europeo',
+      sub: 'Impuesto complementario (Directiva UE 2022/2523) y las figuras de residuos —incluida la tasa de basuras— (Directiva UE 2018/851).',
     },
   ],
 };
 
-export const NIVELES = {
-  estatal: { label: 'Estatal', color: '#2563eb' },
-  autonomico: { label: 'Autonómico', color: '#0d9488' },
-  local: { label: 'Local', color: '#c2641a' },
+// ---------- Catálogos de presentación ----------
+export const ORIGENES = {
+  estatal: { label: 'Gobierno central', color: '#2563eb' },
+  ue: { label: 'Origen UE', color: '#0d9488' },
 };
-
-export const nivelKey = (nivel) => (nivel.startsWith('local') ? 'local' : nivel);
 
 export const VEREDICTOS = {
   subio: { label: 'Subió', color: '#d64545', bg: '#fdecec' },
@@ -134,7 +172,6 @@ export const VEREDICTOS = {
   mixto: { label: 'Mixto', color: '#d9952a', bg: '#fdf4e3' },
   nuevo: { label: 'Nuevo impuesto', color: '#7c5cd6', bg: '#f1ecfb' },
   sin_cambio: { label: 'Sin cambio', color: '#64748b', bg: '#f1f5f9' },
-  depende: { label: 'Depende del municipio', color: '#c2641a', bg: '#fdf1e7' },
 };
 
 export const DIRECCIONES = {
