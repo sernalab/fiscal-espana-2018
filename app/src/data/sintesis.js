@@ -185,6 +185,16 @@ export const cotidiano = [
     norma: 'Ley 11/2021 (valor de referencia del Catastro)',
   },
   {
+    icono: '🏖️',
+    titulo: 'Tienes una segunda vivienda',
+    tono: 'mixto',
+    resumen:
+      'Por tenerla, no pagas más que antes: el «alquiler ficticio» que Hacienda imputa en el IRPF (1,1%–2% del valor catastral) sigue igual. Lo que sí endureció el Estado es el recargo del IBI a las viviendas vacías: la Ley de Vivienda de 2023 elevó el tope del 50% al 150% de la cuota.',
+    matiz:
+      'Ese recargo apunta a pisos vacíos más de 2 años y sobre todo a grandes tenedores (4+ viviendas en el municipio): la segunda residencia de uso estacional está exenta, y solo se aplica si tu ayuntamiento lo activa. Vender con ganancia sí tributa algo más por la subida de los tramos del ahorro (2021–2025).',
+    norma: 'Ley 12/2023 por el derecho a la vivienda; tramos del ahorro del IRPF',
+  },
+  {
     icono: '🏢',
     titulo: 'Tienes o montas una empresa',
     tono: 'mixto',

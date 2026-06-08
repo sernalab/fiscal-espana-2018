@@ -154,12 +154,18 @@ export function Caveats() {
         </div>
       )}
       <div className="caveat-card">
-        <h3>6 · Qué NO se aprobó</h3>
+        <h3>6 · Qué NO se aprobó (o solo se anunció)</h3>
         <p>
           La <strong>equiparación fiscal diésel-gasolina</strong> se intentó y fue rechazada en el Congreso
-          (diciembre 2024): a junio de 2026 el tipo del gasóleo no ha subido. Y el <strong>gravamen a las
+          (diciembre 2024): a junio de 2026 el tipo del gasóleo no ha subido. El <strong>gravamen a las
           energéticas</strong> decayó en enero de 2025 al no convalidarse el RDL 10/2024 — a diferencia del de
-          banca, que se hizo permanente. Dar visibilidad también es registrar lo que no llegó a entrar en vigor.
+          banca, que se hizo permanente.
+        </p>
+        <p>
+          En <strong>vivienda</strong>, el paquete anunciado por el Gobierno en enero de 2025 —un impuesto de
+          hasta el <strong>100% a la compra por no residentes extracomunitarios</strong> y más IVA y regulación a
+          los <strong>pisos turísticos</strong>— sigue <em>sin aprobarse</em> a junio de 2026: es un anuncio, no una
+          norma en vigor. Dar visibilidad también es registrar lo que no llegó a entrar en vigor.
         </p>
       </div>
       <div className="caveat-card caveat-card-muted">
