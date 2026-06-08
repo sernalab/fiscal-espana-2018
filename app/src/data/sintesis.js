@@ -160,6 +160,92 @@ export const RESUMEN = {
   ],
 };
 
+// ---------- "En tu día a día": traducción a la vida cotidiana ----------
+// Cada escenario traduce los datos oficiales a un caso real, con su matiz honesto.
+// tono: sube | baja | mixto | nuevo | sin_cambio | ue | vaiven
+export const cotidiano = [
+  {
+    icono: '💶',
+    titulo: 'Te suben el sueldo para seguir el ritmo de la inflación',
+    tono: 'sube',
+    resumen:
+      'Pagas más IRPF del que tocaría. El Estado no ajusta los tramos ni el mínimo del IRPF a la inflación desde hace años, así que cuando tu sueldo sube solo para no perder poder adquisitivo, pasas a pagar un porcentaje algo mayor sin haber ganado más en términos reales.',
+    matiz:
+      'Se llama «progresividad en frío». El Banco de España calcula que recaudó unos 11.000 M€ de más entre 2019 y 2024. Varias comunidades sí ajustaron su parte; el Estado no.',
+    norma: 'Sin norma: ausencia de deflactación de la tarifa estatal del IRPF',
+  },
+  {
+    icono: '🏠',
+    titulo: 'Compras una vivienda de segunda mano (o recibes una herencia)',
+    tono: 'mixto',
+    resumen:
+      'Puedes pagar más aunque no haya subido ningún tipo. Desde 2022 el impuesto se calcula sobre el «valor de referencia» que fija el Catastro (Estado), no sobre el precio que pagas. Si ese valor oficial es mayor que el precio real, la factura sube.',
+    matiz:
+      'El tipo concreto (ITP o Sucesiones) lo fija tu comunidad autónoma; lo que cambió a nivel estatal es la base sobre la que se aplica.',
+    norma: 'Ley 11/2021 (valor de referencia del Catastro)',
+  },
+  {
+    icono: '🏢',
+    titulo: 'Tienes o montas una empresa',
+    tono: 'mixto',
+    resumen:
+      'Depende del tamaño. Las grandes pagan más: un mínimo del 15%, un nuevo impuesto complementario global (exigido por la UE) y más límites para compensar pérdidas. Las pequeñas pagan menos: el tipo bajó del 25% al 23% en 2023 y sigue bajando para micropymes desde 2025.',
+    norma: 'Ley 31/2022 y Ley 7/2024 (Impuesto sobre Sociedades)',
+  },
+  {
+    icono: '👷',
+    titulo: 'Contratas a un trabajador',
+    tono: 'sube',
+    etiqueta: 'Cotización, no impuesto',
+    resumen:
+      'Cuesta algo más, pero por cotizaciones sociales, no por impuestos. Se añadió el MEI (0,8% del salario en 2025, que paga sobre todo la empresa y sube hasta el 1,2% en 2029). Para los sueldos altos se suma una «cuota de solidaridad» sobre la parte que supera el tope de cotización.',
+    matiz: 'Las cotizaciones no son un impuesto, pero sí encarecen tener una nómina.',
+    norma: 'RDL 2/2023 (reforma de pensiones)',
+  },
+  {
+    icono: '🗑️',
+    titulo: 'Te llega el recibo de la basura',
+    tono: 'ue',
+    resumen:
+      'Sube en casi toda España, y la causa es europea: una directiva de la UE obliga a que la tasa cubra el coste real del servicio. La Ley 7/2022 lo trasladó a los municipios. La media subió un 16,2% en 2025 (unos 116 € por vivienda) y seguirá subiendo.',
+    matiz:
+      'El importe exacto lo pone tu ayuntamiento; la obligación de cobrarla y de que no tenga déficit viene de Europa.',
+    norma: 'Directiva (UE) 2018/851 → Ley 7/2022, art. 11.3',
+  },
+  {
+    icono: '⚡',
+    titulo: 'Tu factura de la luz y la cesta de la compra',
+    tono: 'vaiven',
+    resumen:
+      'Subió, bajó y ha vuelto a su sitio. Durante la crisis de precios, el IVA de la luz bajó al 10% y el de los alimentos básicos al 0%. En 2025 ambos han vuelto a sus tipos normales (21% la luz, 4% los alimentos). El aceite de oliva se quedó rebajado al 4% de forma permanente.',
+    norma: 'Varios Reales Decretos-leyes (2021–2025)',
+  },
+  {
+    icono: '⛽',
+    titulo: 'Llenas el depósito de diésel',
+    tono: 'sin_cambio',
+    resumen:
+      'No subió. El Gobierno intentó igualar el impuesto del diésel al de la gasolina a finales de 2024, pero el Congreso lo rechazó. A junio de 2026 sigue sin aprobarse (aunque es un compromiso pendiente con la UE para más adelante).',
+    norma: 'La enmienda decayó en la tramitación de la Ley 7/2024',
+  },
+  {
+    icono: '🚬',
+    titulo: 'Fumas o vapeas',
+    tono: 'sube',
+    resumen:
+      'Más caro. El impuesto del tabaco subió en 2025 y, además, se creó un impuesto nuevo sobre los líquidos de los cigarrillos electrónicos y las bolsas de nicotina.',
+    norma: 'Ley 7/2024',
+  },
+  {
+    icono: '📈',
+    titulo: 'Inviertes en bolsa o tienes un gran patrimonio',
+    tono: 'sube',
+    resumen:
+      'Más impuestos para el capital alto. Comprar acciones de grandes empresas españolas paga un 0,2% desde 2021 (la «tasa Tobin»). Las rentas del ahorro más altas tributan más (nuevos tramos en 2021, 2023 y 2025). Y los patrimonios de más de 3 millones pagan el nuevo impuesto de grandes fortunas.',
+    norma: 'Ley 5/2020 (ITF), Ley 38/2022 (grandes fortunas) y Ley 7/2024',
+  },
+];
+
 // ---------- Catálogos de presentación ----------
 export const ORIGENES = {
   estatal: { label: 'Gobierno central', color: '#2563eb' },

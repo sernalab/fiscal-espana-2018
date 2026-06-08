@@ -1,4 +1,40 @@
-import { RESUMEN, lineaTiempo, caveats, nuevasFiguras2025, DIRECCIONES } from '../data/sintesis';
+import { RESUMEN, cotidiano, lineaTiempo, caveats, nuevasFiguras2025, DIRECCIONES } from '../data/sintesis';
+
+// ---------- En tu día a día ----------
+const EFECTOS = {
+  sube: { label: 'Pagas más', color: '#d64545', bg: '#fdecec' },
+  baja: { label: 'Pagas menos', color: '#2e9e6b', bg: '#e9f7f0' },
+  mixto: { label: 'Depende', color: '#d9952a', bg: '#fdf4e3' },
+  nuevo: { label: 'Impuesto nuevo', color: '#7c5cd6', bg: '#f1ecfb' },
+  sin_cambio: { label: 'No cambió', color: '#64748b', bg: '#f1f5f9' },
+  ue: { label: 'Sube · origen UE', color: '#0d9488', bg: '#e6f5f3' },
+  vaiven: { label: 'Subió y volvió', color: '#b45309', bg: '#fdf1e7' },
+};
+
+export function Cotidiano() {
+  return (
+    <div className="dia-grid">
+      {cotidiano.map((c) => {
+        const ef = EFECTOS[c.tono] ?? EFECTOS.mixto;
+        return (
+          <article className="dia-card" key={c.titulo} style={{ borderTopColor: ef.color }}>
+            <div className="dia-head">
+              <span className="dia-icono" aria-hidden="true">{c.icono}</span>
+              <span className="dia-efecto" style={{ color: ef.color, background: ef.bg }}>{ef.label}</span>
+            </div>
+            <h3>{c.titulo}</h3>
+            <p className="dia-resumen">{c.resumen}</p>
+            {c.matiz && <p className="dia-matiz">{c.matiz}</p>}
+            <p className="dia-norma">
+              {c.etiqueta && <span className="dia-etiqueta">{c.etiqueta}</span>}
+              {c.norma}
+            </p>
+          </article>
+        );
+      })}
+    </div>
+  );
+}
 
 // ---------- Hero ----------
 export function Hero() {

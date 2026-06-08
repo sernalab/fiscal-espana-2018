@@ -1,4 +1,4 @@
-import { Hero, Timeline, Caveats, Footer } from './components/Sections';
+import { Hero, Cotidiano, Timeline, Caveats, Footer } from './components/Sections';
 import { PressureChart, RevenueChart, ImpactChart } from './components/Charts';
 import TaxExplorer from './components/TaxExplorer';
 
@@ -22,6 +22,7 @@ export default function App() {
         <div className="container topnav-inner">
           <span className="topnav-brand">Impuestos del Gobierno central · 2018–2026</span>
           <div className="topnav-links">
+            <a href="#dia">En tu día a día</a>
             <a href="#macro">La foto macro</a>
             <a href="#impuestos">Impuesto a impuesto</a>
             <a href="#cronologia">Cronología</a>
@@ -33,8 +34,17 @@ export default function App() {
       <Hero />
 
       <Section
+        id="dia"
+        kicker="01 · En tu día a día"
+        title="¿Y esto a mí cómo me afecta?"
+        intro="Lo que dicen los datos oficiales, traducido a situaciones cotidianas. Cada tarjeta indica si pagas más, menos o igual, con el matiz honesto: a veces «depende», a veces lo obliga la UE y a veces no llegó a aprobarse."
+      >
+        <Cotidiano />
+      </Section>
+
+      <Section
         id="macro"
-        kicker="01 · La foto macro"
+        kicker="02 · La foto macro"
         title="Presión fiscal y recaudación, en máximos"
         intro="Total de impuestos y cotizaciones en % del PIB (Eurostat, descarga directa de la API oficial). La franja amarilla marca el periodo desde junio de 2018."
       >
@@ -52,7 +62,7 @@ export default function App() {
 
       <Section
         id="impuestos"
-        kicker="02 · Impuesto a impuesto"
+        kicker="03 · Impuesto a impuesto"
         title="Qué cambió en cada tributo del Gobierno central"
         intro="Filtra por lo que pasó (subió, bajó, nuevo…) o por origen. Las figuras impuestas por la UE están etiquetadas «Origen UE». Cada cambio enlaza a su norma en el BOE o en EUR-Lex."
       >
@@ -61,7 +71,7 @@ export default function App() {
 
       <Section
         id="cronologia"
-        kicker="03 · Cronología"
+        kicker="04 · Cronología"
         title="Todos los cambios, año a año"
         intro="Lista neutral de las modificaciones tributarias del Gobierno central desde junio de 2018, en orden cronológico. Cada línea indica la dirección del cambio, la norma y si es de origen europeo."
       >
@@ -70,7 +80,7 @@ export default function App() {
 
       <Section
         id="matices"
-        kicker="04 · Cómo leer los datos"
+        kicker="05 · Cómo leer los datos"
         title="Contexto para interpretar las cifras"
         intro="La recaudación récord no equivale a «subida de impuestos»: parte es ciclo, parte inflación, parte cambios de ley. Con cifras de AIReF, Banco de España, Funcas y FEDEA."
       >
