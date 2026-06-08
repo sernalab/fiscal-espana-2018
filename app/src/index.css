@@ -98,6 +98,20 @@ a:hover { text-decoration: underline; }
   font-family: 'Newsreader', Georgia, serif; font-size: 24px; margin: 52px 0 10px; color: var(--ink);
 }
 
+/* ---------- Explainer (desplegable) ---------- */
+.explainer {
+  background: #eef2fb; border: 1px solid #d8e1f5; border-radius: 12px;
+  padding: 2px 20px; margin: 0 0 22px;
+}
+.explainer summary {
+  cursor: pointer; font-weight: 700; font-size: 14.5px; color: var(--blue);
+  padding: 14px 0; list-style: none; display: flex; align-items: center; gap: 8px;
+}
+.explainer summary::-webkit-details-marker { display: none; }
+.explainer summary::before { content: '＋'; font-weight: 700; }
+.explainer[open] summary::before { content: '−'; }
+.explainer p { font-size: 13.5px; color: var(--ink-soft); margin: 0 0 12px; line-height: 1.6; }
+
 /* ---------- Gráficos ---------- */
 .chart-wrap {
   background: var(--card); border: 1px solid var(--border); border-radius: 16px;

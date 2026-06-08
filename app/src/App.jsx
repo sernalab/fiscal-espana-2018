@@ -59,6 +59,19 @@ export default function App() {
         title="Presión fiscal y recaudación, en máximos"
         intro="Total de impuestos y cotizaciones en % del PIB (Eurostat, descarga directa de la API oficial). La franja amarilla marca el periodo desde junio de 2018."
       >
+        <details className="explainer">
+          <summary>¿Qué es exactamente la «presión fiscal»?</summary>
+          <p>
+            Es <strong>todo lo que el Estado recauda</strong> (impuestos + cotizaciones sociales) <strong>dividido entre el PIB</strong>
+            —todo lo que produce el país en un año—, en porcentaje. Si España genera 1,5 billones y recauda 0,55, la presión
+            fiscal es ≈ 37 %.
+          </p>
+          <p>
+            Ojo al truco: <strong>es un cociente</strong>. Sube si suben los impuestos, pero también se mueve según cómo crezca el
+            PIB. Y mide la carga del <em>país en conjunto</em>, no la tuya: por eso existe el <strong>«esfuerzo fiscal»</strong>
+            (ajustado a la renta per cápita), donde España sale peor, porque pagamos parecido a países más ricos siendo más pobres.
+          </p>
+        </details>
         <PressureChart />
         <h3 className="sub-h3">Recaudación por figura (AEAT, millones de euros)</h3>
         <RevenueChart />
