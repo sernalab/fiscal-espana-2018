@@ -256,6 +256,90 @@ export const cotidiano = [
   },
 ];
 
+// ---------- Comparativa europea (Eurostat, mismo indicador) ----------
+// Presión fiscal total (% PIB), descarga directa de la API de Eurostat.
+export const comparativaUE = {
+  anioA: 2018,
+  anioB: 2023,
+  serie: [
+    { label: 'Francia', y2018: 48.3, y2023: 45.6 },
+    { label: 'Italia', y2018: 41.8, y2023: 41.4 },
+    { label: 'Eurozona', y2018: 41.5, y2023: 40.5 },
+    { label: 'Alemania', y2018: 41.1, y2023: 40.1 },
+    { label: 'Media UE-27', y2018: 41.1, y2023: 39.9 },
+    { label: 'Portugal', y2018: 37.0, y2023: 37.2 },
+    { label: 'España', y2018: 35.2, y2023: 37.1, destacado: true },
+  ],
+};
+
+// ---------- Balance: movimientos normativos por dirección ----------
+const cuenta = (d) => lineaTiempo.filter((e) => e.direccion === d).length;
+export const balance = [
+  { key: 'sube', label: 'Subidas', n: cuenta('sube'), color: '#d64545' },
+  { key: 'nuevo', label: 'Impuestos nuevos', n: cuenta('nuevo'), color: '#7c5cd6' },
+  { key: 'baja', label: 'Bajadas', n: cuenta('baja'), color: '#2e9e6b' },
+  { key: 'reversion', label: 'Reversiones (rebajas que volvieron)', n: cuenta('reversion'), color: '#b45309' },
+  { key: 'temporal', label: 'Prórrogas temporales', n: cuenta('temporal'), color: '#d9952a' },
+  { key: 'sin_cambio', label: 'Intentos no aprobados / sin cambio', n: cuenta('sin_cambio'), color: '#64748b' },
+];
+
+// ---------- Las 8 figuras nuevas, con año y recaudación 2025 (AEAT) ----------
+export const impuestosNuevos = [
+  { nombre: 'Transacciones financieras («tasa Tobin»)', anio: 2021, me: f2025.itf },
+  { nombre: 'Servicios digitales («tasa Google»)', anio: 2021, me: f2025.idsd },
+  { nombre: 'Grandes fortunas (ITSGF)', anio: 2022, me: null },
+  { nombre: 'Envases de plástico no reutilizables', anio: 2023, me: f2025.plasticos },
+  { nombre: 'Depósito de residuos e incineración', anio: 2023, me: null, ue: true },
+  { nombre: 'Impuesto complementario (Pilar 2)', anio: 2024, me: null, ue: true },
+  { nombre: 'Margen de entidades financieras (banca)', anio: 2025, me: f2025.impuestoMargenEntidadesFinancieras },
+  { nombre: 'Líquidos de vapeo y nicotina', anio: 2025, me: null },
+];
+
+// ---------- Calculadora: rémora fiscal del IRPF + nueva cotización ----------
+// Estimación orientativa del efecto de las decisiones estatales en una nómina.
+// Inflación acumulada IPC 2018→2025 ≈ 18% (INE).
+export const IPC_2018_2025 = 1.18;
+
+// Escala de referencia del IRPF 2025 (tramo estatal + autonómico de referencia).
+const ESCALA_IRPF = [
+  [0, 12450, 0.19],
+  [12450, 20200, 0.24],
+  [20200, 35200, 0.30],
+  [35200, 60000, 0.37],
+  [60000, 300000, 0.45],
+  [300000, Infinity, 0.47],
+];
+const escala = (base) =>
+  ESCALA_IRPF.reduce((acc, [a, b, t]) => acc + Math.max(0, Math.min(base, b) - a) * t, 0);
+
+// Cuota de IRPF simplificada (solo nómina, sin deducciones autonómicas/personales).
+export function cuotaIRPF(bruto) {
+  const rnt = Math.max(0, bruto - 2000); // gastos deducibles
+  let redTrabajo = 0;
+  if (rnt <= 14852) redTrabajo = 7302;
+  else if (rnt < 19747.5) redTrabajo = Math.max(0, 7302 - 1.49 * (rnt - 14852));
+  const base = Math.max(0, bruto - 2000 - redTrabajo);
+  return Math.max(0, escala(base) - escala(5550)); // mínimo personal
+}
+
+// Base máxima de cotización 2025 ≈ 4.909,50 €/mes.
+const BASE_MAX_2025 = 4909.5 * 12;
+export function calculaImpacto(bruto) {
+  // Rémora fiscal: lo que pagas de más porque los tramos no se han deflactado.
+  const remora = Math.max(0, cuotaIRPF(bruto) - IPC_2018_2025 * cuotaIRPF(bruto / IPC_2018_2025));
+  // MEI: nueva cotización del trabajador (0,13% en 2025 sobre base, tope base máxima).
+  const mei = 0.0013 * Math.min(bruto, BASE_MAX_2025);
+  const irpf = cuotaIRPF(bruto);
+  return {
+    irpf,
+    tipoMedio: bruto > 0 ? irpf / bruto : 0,
+    remora,
+    mei,
+    total: remora + mei,
+    sobreBaseMax: bruto > BASE_MAX_2025,
+  };
+}
+
 // ---------- Catálogos de presentación ----------
 export const ORIGENES = {
   estatal: { label: 'Gobierno central', color: '#2563eb' },

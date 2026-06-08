@@ -2,7 +2,7 @@ import {
   ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
   ReferenceLine, ReferenceArea, BarChart, Bar, Legend, Cell,
 } from 'recharts';
-import { presionFiscal, recaudacion, impactoNormativo } from '../data/sintesis';
+import { presionFiscal, recaudacion, impactoNormativo, comparativaUE } from '../data/sintesis';
 
 const fmtME = (v) =>
   v == null ? '—' : `${v.toLocaleString('es-ES', { maximumFractionDigits: 0 })} M€`;
@@ -94,6 +94,43 @@ export function RevenueChart() {
       <p className="chart-note">
         De 208.685 M€ (2018) a 325.356 M€ (2025): +56 % nominal. El IRPF aporta el mayor salto
         (86.892 → 142.466 M€), empujado por empleo, salarios, inflación y no deflactación.
+      </p>
+    </div>
+  );
+}
+
+// ---------- Comparativa europea (Eurostat, % PIB) ----------
+export function ComparativaChart() {
+  const data = [...comparativaUE.serie].sort((a, b) => b.y2023 - a.y2023);
+  return (
+    <div className="chart-wrap">
+      <ResponsiveContainer width="100%" height={360}>
+        <BarChart data={data} layout="vertical" margin={{ top: 8, right: 56, left: 12, bottom: 0 }}>
+          <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" horizontal={false} />
+          <XAxis
+            type="number" domain={[30, 50]} tickFormatter={(v) => `${v}%`}
+            tick={{ fontSize: 12, fill: '#64748b' }} tickLine={false} axisLine={{ stroke: '#cbd5e1' }}
+          />
+          <YAxis
+            type="category" dataKey="label" width={96}
+            tick={{ fontSize: 12.5, fill: '#475569' }} tickLine={false} axisLine={false}
+          />
+          <Tooltip
+            contentStyle={tooltipStyle}
+            formatter={(v) => [`${v.toLocaleString('es-ES')} % del PIB`, '2023']}
+            cursor={{ fill: 'rgba(37,99,235,0.05)' }}
+          />
+          <Bar dataKey="y2023" radius={[0, 5, 5, 0]} label={{ position: 'right', formatter: (v) => `${v}%`, fontSize: 12, fill: '#64748b' }}>
+            {data.map((d) => (
+              <Cell key={d.label} fill={d.destacado ? '#2563eb' : '#cbd5e1'} />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+      <p className="chart-note">
+        Presión fiscal en 2023 (Eurostat, mismo indicador). España (37,1 %) está <strong>por debajo</strong> de la
+        media de la UE (39,9 %), la eurozona (40,5 %), Alemania, Italia y Francia. Pero subió +1,9 puntos desde 2018,
+        <strong> mientras la media de la UE bajó</strong> (de 41,1 % a 39,9 %): converge al alza desde un nivel bajo.
       </p>
     </div>
   );

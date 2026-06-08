@@ -1,4 +1,10 @@
-import { RESUMEN, cotidiano, lineaTiempo, caveats, nuevasFiguras2025, DIRECCIONES } from '../data/sintesis';
+import { useState } from 'react';
+import {
+  RESUMEN, cotidiano, lineaTiempo, caveats, nuevasFiguras2025, DIRECCIONES,
+  balance, impuestosNuevos, calculaImpacto,
+} from '../data/sintesis';
+
+const eur = (n) => n.toLocaleString('es-ES', { maximumFractionDigits: 0 }) + ' €';
 
 // ---------- En tu día a día ----------
 const EFECTOS = {
@@ -55,6 +61,102 @@ export function Hero() {
         </div>
       </div>
     </header>
+  );
+}
+
+// ---------- Calculadora: tu nómina ----------
+export function Calculadora() {
+  const [bruto, setBruto] = useState(30000);
+  const v = Math.max(0, Number(bruto) || 0);
+  const r = calculaImpacto(v);
+  return (
+    <div className="calc">
+      <div className="calc-input">
+        <label htmlFor="bruto">Tu salario bruto anual</label>
+        <div className="calc-field">
+          <input
+            id="bruto" type="number" min="0" step="1000" value={bruto}
+            onChange={(e) => setBruto(e.target.value)}
+          />
+          <span>€/año</span>
+        </div>
+        <input
+          type="range" min="12000" max="120000" step="1000" value={Math.min(v, 120000)}
+          onChange={(e) => setBruto(e.target.value)} className="calc-range"
+        />
+      </div>
+      <div className="calc-out">
+        <div className="calc-card calc-card-main">
+          <span className="calc-label">Rémora fiscal del IRPF</span>
+          <span className="calc-cifra">{eur(r.remora)}<span className="calc-unit">/año</span></span>
+          <span className="calc-sub">
+            Lo que pagas de más porque, si tu sueldo solo siguió la inflación desde 2018, los tramos del IRPF
+            no se han actualizado con ella.
+          </span>
+        </div>
+        <div className="calc-card">
+          <span className="calc-label">Nueva cotización MEI (tu parte)</span>
+          <span className="calc-cifra calc-cifra-sm">{eur(r.mei)}<span className="calc-unit">/año</span></span>
+          <span className="calc-sub">Cotización creada en 2023; en 2025 es el 0,8 % del salario, la mayor parte a cargo de la empresa.</span>
+        </div>
+        <div className="calc-card calc-card-total">
+          <span className="calc-label">Coste anual estimado de estas medidas estatales</span>
+          <span className="calc-cifra">{eur(r.total)}<span className="calc-unit">/año</span></span>
+          <span className="calc-sub">IRPF estimado este año: {eur(r.irpf)} ({(r.tipoMedio * 100).toFixed(1)} % de tipo medio).</span>
+        </div>
+      </div>
+      <p className="calc-disclaimer">
+        Estimación orientativa del <strong>tramo estatal + autonómico de referencia</strong>, solo para rentas del trabajo.
+        No incluye deducciones autonómicas ni personales, así que tu cifra real variará según tu comunidad y tu situación.
+        El objetivo no es clavar tu declaración, sino ver el efecto de las decisiones del Gobierno central.
+        Inflación acumulada usada: ≈ 18 % (IPC 2018–2025, INE).
+        {r.sobreBaseMax && ' Para tu salario, además, se aplica la «cuota de solidaridad» sobre la parte que supera la base máxima de cotización.'}
+      </p>
+    </div>
+  );
+}
+
+// ---------- El balance: subidas vs bajadas + figuras nuevas ----------
+export function Balance() {
+  const max = Math.max(...balance.map((b) => b.n), 1);
+  return (
+    <div className="balance">
+      <div className="marcador">
+        <h3 className="sub-h3" style={{ marginTop: 0 }}>Movimientos normativos por dirección</h3>
+        <p className="section-intro" style={{ marginBottom: 20 }}>
+          Recuento simétrico de los cambios desde junio de 2018: tantas subidas como bajadas, sin descartar ninguna.
+          Cuenta <em>cambios de norma</em>, no euros (una bajada y una subida no pesan lo mismo en recaudación).
+        </p>
+        {balance.map((b) => (
+          <div className="marcador-row" key={b.key}>
+            <span className="marcador-label">{b.label}</span>
+            <div className="marcador-bar-wrap">
+              <div className="marcador-bar" style={{ width: `${(b.n / max) * 100}%`, background: b.color }} />
+            </div>
+            <span className="marcador-n" style={{ color: b.color }}>{b.n}</span>
+          </div>
+        ))}
+      </div>
+      <div className="contador">
+        <h3 className="sub-h3">Las 8 figuras tributarias nuevas</h3>
+        <p className="section-intro" style={{ marginBottom: 20 }}>
+          Impuestos que no existían antes de 2018, con su año de creación y lo que recaudaron en 2025 (AEAT) donde el dato está cerrado.
+        </p>
+        <ol className="contador-list">
+          {impuestosNuevos.map((f) => (
+            <li key={f.nombre}>
+              <span className="contador-anio">{f.anio}</span>
+              <span className="contador-nombre">
+                {f.nombre}
+                {f.ue && <span className="cambio-ue">UE</span>}
+              </span>
+              <span className="contador-me">{f.me != null ? `${f.me.toLocaleString('es-ES', { maximumFractionDigits: 0 })} M€` : '—'}</span>
+            </li>
+          ))}
+        </ol>
+        <p className="fuentes-mini">M€ = millones de euros recaudados en 2025. «—» = sin recaudación cerrada o cedida a las CCAA.</p>
+      </div>
+    </div>
   );
 }
 
